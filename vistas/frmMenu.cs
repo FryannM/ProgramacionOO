@@ -16,5 +16,23 @@ namespace ProgramacionOO
         {
             InitializeComponent();
         }
+        private void bancosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vistas.frmBanco frm = new vistas.frmBanco();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show(datamanager.SMensajes, "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

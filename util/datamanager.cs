@@ -197,6 +197,9 @@ namespace ProgramacionOO
             }
             return lRet;
         }
+
+        // Mensajes del sistema 
+        public static string SMensajes = ("Estas seguro que deseas Salir?");
     }
 
 }
