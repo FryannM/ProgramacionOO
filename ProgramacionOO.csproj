@@ -111,6 +111,7 @@
     <None Include="resources\Entry.png" />
     <None Include="resources\bank.png" />
     <None Include="resources\clients.png" />
+    <None Include="resources\bankdocuments.png" />
     <Content Include="resources\facilitador.ico" />
     <Content Include="resources\Home.ico" />
     <Content Include="resources\if_custom-reports_63120.ico" />
