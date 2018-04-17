@@ -55,6 +55,18 @@
     <Compile Include="vistas\frmBanco.Designer.cs">
       <DependentUpon>frmBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="vistas\frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistas\frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\frmCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistas\frmCuentas.Designer.cs">
+      <DependentUpon>frmCuentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="vistas\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +83,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="vistas\frmBanco.resx">
       <DependentUpon>frmBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vistas\frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vistas\frmCuentas.resx">
+      <DependentUpon>frmCuentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vistas\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -112,6 +130,9 @@
     <None Include="resources\bank.png" />
     <None Include="resources\clients.png" />
     <None Include="resources\bankdocuments.png" />
+    <None Include="resources\agregar.png" />
+    <None Include="resources\edit.png" />
+    <None Include="resources\delete.png" />
     <Content Include="resources\facilitador.ico" />
     <Content Include="resources\Home.ico" />
     <Content Include="resources\if_custom-reports_63120.ico" />
@@ -119,6 +140,7 @@
     <Content Include="resources\Login.ico" />
     <None Include="resources\login.jpg" />
     <None Include="resources\oficina.png" />
+    <None Include="resources\save.png" />
     <Content Include="resources\taller.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

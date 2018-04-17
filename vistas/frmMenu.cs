@@ -34,5 +34,12 @@ namespace ProgramacionOO
                 return;
             }
         }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vistas.frmClientes frm = new vistas.frmClientes();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

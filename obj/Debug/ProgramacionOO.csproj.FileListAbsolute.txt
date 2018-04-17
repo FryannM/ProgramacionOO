@@ -12,3 +12,5 @@ E:\Proyectos\NET\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.pdb
 E:\Proyectos\NET\ProgramacionOO\ProgramacionOO\bin\Debug\Oracle.DataAccess.dll
 E:\Proyectos\NET\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.csproj.CopyComplete
 E:\Proyectos\NET\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmBanco.resources
+E:\Proyectos\NET\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmclientes.resources
+E:\Proyectos\NET\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmCuentas.resources
