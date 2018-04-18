@@ -123,6 +123,16 @@ namespace ProgramacionOO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete1 {
+            get {
+                object obj = ResourceManager.GetObject("delete1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit {
             get {
                 object obj = ResourceManager.GetObject("edit", resourceCulture);
@@ -136,6 +146,16 @@ namespace ProgramacionOO.Properties {
         internal static System.Drawing.Bitmap Entry {
             get {
                 object obj = ResourceManager.GetObject("Entry", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Entry1 {
+            get {
+                object obj = ResourceManager.GetObject("Entry1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

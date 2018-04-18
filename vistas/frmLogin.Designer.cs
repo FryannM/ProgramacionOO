@@ -48,11 +48,13 @@
             // 
             this.txtpassword.Location = new System.Drawing.Point(430, 89);
             this.txtpassword.Name = "txtpassword";
+            this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(141, 20);
             this.txtpassword.TabIndex = 1;
             // 
             // btnCancel
             // 
+            this.btnCancel.Image = global::ProgramacionOO.Properties.Resources.delete1;
             this.btnCancel.Location = new System.Drawing.Point(430, 124);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(60, 50);
@@ -62,6 +64,7 @@
             // 
             // btnEntry
             // 
+            this.btnEntry.Image = global::ProgramacionOO.Properties.Resources.Entry1;
             this.btnEntry.Location = new System.Drawing.Point(509, 124);
             this.btnEntry.Name = "btnEntry";
             this.btnEntry.Size = new System.Drawing.Size(62, 50);

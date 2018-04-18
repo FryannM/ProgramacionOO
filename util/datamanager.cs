@@ -168,9 +168,7 @@ namespace ProgramacionOO
             bool lRet = false;
             string lpassword = "";
             int lidUsuario = 0;
-            string lEncriptPsw = md5(pnombre.Trim() + pclave.Trim());
-            //System.Windows.Clipboard.SetText(lEncriptPsw);
-
+          
             if (ConexionAbrir())
             {
                 var dr = ConsultaLeer("Select usuario_id, contrasena  from Usuario where  Nombre_Usuario='" + pnombre + "'");
