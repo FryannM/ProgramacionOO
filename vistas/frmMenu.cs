@@ -7,12 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace ProgramacionOO
 {
     public partial class frmMenu : Form
     {
-        public frmMenu()
+       public frmMenu()
         {
             InitializeComponent();
         }
@@ -34,10 +33,16 @@ namespace ProgramacionOO
                 return;
             }
         }
-
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             vistas.frmClientes frm = new vistas.frmClientes();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void cuentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vistas.frmCuentas frm = new vistas.frmCuentas();
             frm.MdiParent = this;
             frm.Show();
         }

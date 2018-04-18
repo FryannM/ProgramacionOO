@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="util\datamanager.cs" />
+    <Compile Include="vistas\conectar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistas\conectar.Designer.cs">
+      <DependentUpon>conectar.cs</DependentUpon>
+    </Compile>
     <Compile Include="vistas\frmBanco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,12 @@
     <Compile Include="vistas\frmCuentas.Designer.cs">
       <DependentUpon>frmCuentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="vistas\frmdocbancarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistas\frmdocbancarios.Designer.cs">
+      <DependentUpon>frmdocbancarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="vistas\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +93,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="vistas\conectar.resx">
+      <DependentUpon>conectar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vistas\frmBanco.resx">
       <DependentUpon>frmBanco.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vistas\frmCuentas.resx">
       <DependentUpon>frmCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vistas\frmdocbancarios.resx">
+      <DependentUpon>frmdocbancarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vistas\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -121,7 +139,9 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="clases\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="resources\account.png" />
     <Content Include="resources\activity.ico" />

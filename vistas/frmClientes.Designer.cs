@@ -43,12 +43,13 @@
             this.cbtipoDoc = new System.Windows.Forms.ComboBox();
             this.lblnodoc = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(242, 184);
+            this.btnEliminar.Location = new System.Drawing.Point(283, 133);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(49, 29);
             this.btnEliminar.TabIndex = 23;
@@ -57,7 +58,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(187, 184);
+            this.btnGuardar.Location = new System.Drawing.Point(283, 98);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(49, 29);
             this.btnGuardar.TabIndex = 22;
@@ -66,7 +67,7 @@
             // btnEditar
             // 
             this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
-            this.btnEditar.Location = new System.Drawing.Point(132, 184);
+            this.btnEditar.Location = new System.Drawing.Point(283, 69);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(49, 29);
             this.btnEditar.TabIndex = 21;
@@ -75,7 +76,7 @@
             // btnNuevo
             // 
             this.btnNuevo.Image = global::ProgramacionOO.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(77, 184);
+            this.btnNuevo.Location = new System.Drawing.Point(283, 35);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(49, 29);
             this.btnNuevo.TabIndex = 20;
@@ -169,11 +170,20 @@
             this.cbEstado.Size = new System.Drawing.Size(182, 21);
             this.cbEstado.TabIndex = 5;
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(12, 182);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(398, 141);
+            this.listView1.TabIndex = 43;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 238);
+            this.ClientSize = new System.Drawing.Size(428, 335);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.lblnodoc);
             this.Controls.Add(this.cbtipoDoc);
@@ -213,5 +223,6 @@
         private System.Windows.Forms.ComboBox cbtipoDoc;
         private System.Windows.Forms.Label lblnodoc;
         private System.Windows.Forms.ComboBox cbEstado;
+        private System.Windows.Forms.ListView listView1;
     }
 }

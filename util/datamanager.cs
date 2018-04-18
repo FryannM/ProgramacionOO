@@ -173,25 +173,15 @@ namespace ProgramacionOO
 
             if (ConexionAbrir())
             {
-                var dr = ConsultaLeer("Select usuario_id, contrasena  from Usuario where  Nombres='" + pnombre + "'");
+                var dr = ConsultaLeer("Select usuario_id, contrasena  from Usuario where  Nombre_Usuario='" + pnombre + "'");
                 if (dr != null)
                 {
                     if (dr.Read())
                     {
                         lidUsuario = dr.GetInt32(0);
-                        lpassword = dr.GetString(3);
+                        lpassword = dr.GetString(1);
 
 
-                        if (lEncriptPsw.Equals(lpassword))
-                        {
-                            lRet = true;
-                            // Asigno valor a propiedades de la clase.
-                            loginName = pnombre;
-                            idUsuario = lidUsuario;
-
-                         
-                          
-                        }
                     }
                 }
             }
@@ -200,6 +190,7 @@ namespace ProgramacionOO
 
         // Mensajes del sistema 
         public static string SMensajes = ("Estas seguro que deseas Salir?");
+        public static string ErrorSys = ("Favor Comunicarse con el Fryann Martinez ");
     }
 
 }

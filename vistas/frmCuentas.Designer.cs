@@ -41,12 +41,13 @@
             this.lblcodigo = new System.Windows.Forms.Label();
             this.txtdebito = new System.Windows.Forms.TextBox();
             this.txtcodigo = new System.Windows.Forms.TextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // cbEstado
             // 
             this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(114, 60);
+            this.cbEstado.Location = new System.Drawing.Point(114, 71);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(182, 21);
             this.cbEstado.TabIndex = 30;
@@ -55,7 +56,7 @@
             // 
             this.lblbalances.AutoSize = true;
             this.lblbalances.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbalances.Location = new System.Drawing.Point(25, 92);
+            this.lblbalances.Location = new System.Drawing.Point(25, 103);
             this.lblbalances.Name = "lblbalances";
             this.lblbalances.Size = new System.Drawing.Size(87, 15);
             this.lblbalances.TabIndex = 39;
@@ -64,7 +65,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(238, 181);
+            this.btnEliminar.Location = new System.Drawing.Point(305, 112);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(49, 29);
             this.btnEliminar.TabIndex = 38;
@@ -73,7 +74,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(183, 181);
+            this.btnGuardar.Location = new System.Drawing.Point(305, 77);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(49, 29);
             this.btnGuardar.TabIndex = 37;
@@ -82,7 +83,7 @@
             // btnEditar
             // 
             this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
-            this.btnEditar.Location = new System.Drawing.Point(128, 181);
+            this.btnEditar.Location = new System.Drawing.Point(305, 47);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(49, 29);
             this.btnEditar.TabIndex = 36;
@@ -91,7 +92,7 @@
             // btnNuevo
             // 
             this.btnNuevo.Image = global::ProgramacionOO.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(73, 181);
+            this.btnNuevo.Location = new System.Drawing.Point(305, 12);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(49, 29);
             this.btnNuevo.TabIndex = 35;
@@ -101,7 +102,7 @@
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(27, 62);
+            this.lblEstado.Location = new System.Drawing.Point(27, 73);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(44, 15);
             this.lblEstado.TabIndex = 33;
@@ -109,7 +110,7 @@
             // 
             // txtcredito
             // 
-            this.txtcredito.Location = new System.Drawing.Point(114, 113);
+            this.txtcredito.Location = new System.Drawing.Point(114, 124);
             this.txtcredito.Name = "txtcredito";
             this.txtcredito.Size = new System.Drawing.Size(182, 20);
             this.txtcredito.TabIndex = 29;
@@ -118,17 +119,17 @@
             // 
             this.lblbalancecd.AutoSize = true;
             this.lblbalancecd.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbalancecd.Location = new System.Drawing.Point(25, 113);
+            this.lblbalancecd.Location = new System.Drawing.Point(25, 124);
             this.lblbalancecd.Name = "lblbalancecd";
-            this.lblbalancecd.Size = new System.Drawing.Size(49, 15);
+            this.lblbalancecd.Size = new System.Drawing.Size(90, 15);
             this.lblbalancecd.TabIndex = 32;
-            this.lblbalancecd.Text = "Nombre";
+            this.lblbalancecd.Text = "Balance-credito";
             // 
             // lblcodigo
             // 
             this.lblcodigo.AutoSize = true;
             this.lblcodigo.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcodigo.Location = new System.Drawing.Point(27, 35);
+            this.lblcodigo.Location = new System.Drawing.Point(27, 46);
             this.lblcodigo.Name = "lblcodigo";
             this.lblcodigo.Size = new System.Drawing.Size(46, 15);
             this.lblcodigo.TabIndex = 31;
@@ -136,7 +137,7 @@
             // 
             // txtdebito
             // 
-            this.txtdebito.Location = new System.Drawing.Point(114, 87);
+            this.txtdebito.Location = new System.Drawing.Point(114, 98);
             this.txtdebito.Name = "txtdebito";
             this.txtdebito.Size = new System.Drawing.Size(182, 20);
             this.txtdebito.TabIndex = 28;
@@ -144,16 +145,25 @@
             // txtcodigo
             // 
             this.txtcodigo.Enabled = false;
-            this.txtcodigo.Location = new System.Drawing.Point(114, 36);
+            this.txtcodigo.Location = new System.Drawing.Point(114, 47);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(57, 20);
             this.txtcodigo.TabIndex = 26;
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(12, 173);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(398, 141);
+            this.listView1.TabIndex = 44;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // frmCuentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 255);
+            this.ClientSize = new System.Drawing.Size(431, 339);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.lblbalances);
             this.Controls.Add(this.btnEliminar);
@@ -190,5 +200,6 @@
         private System.Windows.Forms.Label lblcodigo;
         private System.Windows.Forms.TextBox txtdebito;
         private System.Windows.Forms.TextBox txtcodigo;
+        private System.Windows.Forms.ListView listView1;
     }
 }

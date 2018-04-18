@@ -18,31 +18,39 @@ namespace ProgramacionOO.vistas
         public Nullable<bool> DialogResult { get; set; }
 
         public frmLogin()
-        {
-           
+        {   
             InitializeComponent();
         }
 
         private void btnEntry_Click(object sender, EventArgs e)
         {
+
             int intentos = 0;
             intentos += 1;
 
             if (datamanager.ValidarUsuario(txtUser.Text, txtpassword.Text))
             {
-                MessageBox.Show("HOla");
+                DialogResult = true;
             }
             else
             {
-                MessageBox.Show("Usuario O Contraseña no son validas \n" +
-                                "Intento " + intentos.ToString().Trim() + "/3",
-                "Error al inicio de Sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (intentos == 3) DialogResult = false;
+                frmMenu frm = new frmMenu();
+                frm.Show();
 
-            }   
+            } 
+           
+                //MessageBox.Show("Usuario O Contraseña no son validas \n" +
+                //                "Intento " + intentos.ToString().Trim() + "/3",
+                //"Error al inicio de Sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //if (intentos == 3) DialogResult = false;
+            
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void frmLogin_Load(object sender, EventArgs e)
         {
 
         }

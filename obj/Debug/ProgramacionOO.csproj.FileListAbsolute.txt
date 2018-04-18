@@ -14,3 +14,5 @@ E:\Proyectos\NET\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.csproj.C
 E:\Proyectos\NET\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmBanco.resources
 E:\Proyectos\NET\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmclientes.resources
 E:\Proyectos\NET\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmCuentas.resources
+E:\Proyectos\NET\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmdocbancarios.resources
+E:\Proyectos\NET\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.conectar.resources
