@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBanco));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtcodigo = new System.Windows.Forms.TextBox();
+            this.txtRnc = new System.Windows.Forms.TextBox();
             this.lblcodigo = new System.Windows.Forms.Label();
             this.lblnombre = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblRnc = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtcodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(57, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtcodigo.Location = new System.Drawing.Point(85, 24);
+            this.txtcodigo.Name = "txtcodigo";
+            this.txtcodigo.Size = new System.Drawing.Size(57, 20);
+            this.txtcodigo.TabIndex = 0;
             // 
-            // textBox2
+            // txtRnc
             // 
-            this.textBox2.Location = new System.Drawing.Point(85, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtRnc.Location = new System.Drawing.Point(85, 50);
+            this.txtRnc.Name = "txtRnc";
+            this.txtRnc.Size = new System.Drawing.Size(132, 20);
+            this.txtRnc.TabIndex = 1;
             // 
             // lblcodigo
             // 
@@ -77,12 +77,12 @@
             this.lblnombre.TabIndex = 3;
             this.lblnombre.Text = "Nombre";
             // 
-            // textBox3
+            // txtNombre
             // 
-            this.textBox3.Location = new System.Drawing.Point(85, 76);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 20);
-            this.textBox3.TabIndex = 4;
+            this.txtNombre.Location = new System.Drawing.Point(85, 76);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(132, 20);
+            this.txtNombre.TabIndex = 4;
             // 
             // label1
             // 
@@ -104,12 +104,12 @@
             this.lblRnc.TabIndex = 6;
             this.lblRnc.Text = "Rnc";
             // 
-            // textBox4
+            // txtDireccion
             // 
-            this.textBox4.Location = new System.Drawing.Point(85, 105);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(239, 20);
-            this.textBox4.TabIndex = 7;
+            this.txtDireccion.Location = new System.Drawing.Point(85, 105);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(239, 20);
+            this.txtDireccion.TabIndex = 7;
             // 
             // btnEliminar
             // 
@@ -157,18 +157,19 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.lblRnc);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblnombre);
             this.Controls.Add(this.lblcodigo);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtRnc);
+            this.Controls.Add(this.txtcodigo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBanco";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario Bancos";
+            this.Load += new System.EventHandler(this.frmBanco_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,14 +177,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtcodigo;
+        private System.Windows.Forms.TextBox txtRnc;
         private System.Windows.Forms.Label lblcodigo;
         private System.Windows.Forms.Label lblnombre;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRnc;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;

@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clases\bc_bancos.cs" />
     <Compile Include="util\datamanager.cs" />
     <Compile Include="vistas\conectar.cs">
       <SubType>Form</SubType>
@@ -139,9 +140,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="clases\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="resources\account.png" />
     <Content Include="resources\activity.ico" />

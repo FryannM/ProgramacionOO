@@ -202,6 +202,7 @@
             this.Name = "frmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.frmClientes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
