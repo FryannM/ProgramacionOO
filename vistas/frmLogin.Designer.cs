@@ -39,14 +39,14 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(430, 47);
+            this.txtUser.Location = new System.Drawing.Point(299, 47);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(141, 20);
             this.txtUser.TabIndex = 0;
             // 
             // txtpassword
             // 
-            this.txtpassword.Location = new System.Drawing.Point(430, 89);
+            this.txtpassword.Location = new System.Drawing.Point(299, 89);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(141, 20);
@@ -55,7 +55,7 @@
             // btnCancel
             // 
             this.btnCancel.Image = global::ProgramacionOO.Properties.Resources.delete1;
-            this.btnCancel.Location = new System.Drawing.Point(430, 124);
+            this.btnCancel.Location = new System.Drawing.Point(299, 124);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(60, 50);
             this.btnCancel.TabIndex = 4;
@@ -65,7 +65,7 @@
             // btnEntry
             // 
             this.btnEntry.Image = global::ProgramacionOO.Properties.Resources.Entry1;
-            this.btnEntry.Location = new System.Drawing.Point(509, 124);
+            this.btnEntry.Location = new System.Drawing.Point(378, 124);
             this.btnEntry.Name = "btnEntry";
             this.btnEntry.Size = new System.Drawing.Size(62, 50);
             this.btnEntry.TabIndex = 3;
@@ -75,9 +75,10 @@
             // picmain
             // 
             this.picmain.Image = global::ProgramacionOO.Properties.Resources.login;
-            this.picmain.Location = new System.Drawing.Point(23, 22);
+            this.picmain.Location = new System.Drawing.Point(23, 47);
             this.picmain.Name = "picmain";
-            this.picmain.Size = new System.Drawing.Size(348, 137);
+            this.picmain.Size = new System.Drawing.Size(247, 112);
+            this.picmain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picmain.TabIndex = 2;
             this.picmain.TabStop = false;
             // 
@@ -85,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 186);
+            this.ClientSize = new System.Drawing.Size(484, 186);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEntry);
             this.Controls.Add(this.picmain);

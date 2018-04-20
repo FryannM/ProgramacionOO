@@ -41,18 +41,20 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtid = new System.Windows.Forms.TextBox();
+            this.lblcodigoBanco = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtcodigo
             // 
-            this.txtcodigo.Location = new System.Drawing.Point(85, 24);
+            this.txtcodigo.Location = new System.Drawing.Point(87, 55);
             this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(57, 20);
+            this.txtcodigo.Size = new System.Drawing.Size(132, 20);
             this.txtcodigo.TabIndex = 0;
             // 
             // txtRnc
             // 
-            this.txtRnc.Location = new System.Drawing.Point(85, 50);
+            this.txtRnc.Location = new System.Drawing.Point(87, 81);
             this.txtRnc.Name = "txtRnc";
             this.txtRnc.Size = new System.Drawing.Size(132, 20);
             this.txtRnc.TabIndex = 1;
@@ -61,7 +63,7 @@
             // 
             this.lblcodigo.AutoSize = true;
             this.lblcodigo.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcodigo.Location = new System.Drawing.Point(21, 26);
+            this.lblcodigo.Location = new System.Drawing.Point(23, 57);
             this.lblcodigo.Name = "lblcodigo";
             this.lblcodigo.Size = new System.Drawing.Size(46, 15);
             this.lblcodigo.TabIndex = 2;
@@ -71,7 +73,7 @@
             // 
             this.lblnombre.AutoSize = true;
             this.lblnombre.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombre.Location = new System.Drawing.Point(21, 76);
+            this.lblnombre.Location = new System.Drawing.Point(23, 107);
             this.lblnombre.Name = "lblnombre";
             this.lblnombre.Size = new System.Drawing.Size(49, 15);
             this.lblnombre.TabIndex = 3;
@@ -79,7 +81,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(85, 76);
+            this.txtNombre.Location = new System.Drawing.Point(87, 107);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(132, 20);
             this.txtNombre.TabIndex = 4;
@@ -88,7 +90,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 105);
+            this.label1.Location = new System.Drawing.Point(23, 136);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 15);
             this.label1.TabIndex = 5;
@@ -98,7 +100,7 @@
             // 
             this.lblRnc.AutoSize = true;
             this.lblRnc.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRnc.Location = new System.Drawing.Point(21, 50);
+            this.lblRnc.Location = new System.Drawing.Point(23, 81);
             this.lblRnc.Name = "lblRnc";
             this.lblRnc.Size = new System.Drawing.Size(28, 15);
             this.lblRnc.TabIndex = 6;
@@ -106,7 +108,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(85, 105);
+            this.txtDireccion.Location = new System.Drawing.Point(87, 136);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(239, 20);
             this.txtDireccion.TabIndex = 7;
@@ -114,7 +116,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(232, 150);
+            this.btnEliminar.Location = new System.Drawing.Point(234, 181);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(49, 29);
             this.btnEliminar.TabIndex = 11;
@@ -123,16 +125,17 @@
             // btnGuardar
             // 
             this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(177, 150);
+            this.btnGuardar.Location = new System.Drawing.Point(179, 181);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(49, 29);
             this.btnGuardar.TabIndex = 10;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEditar
             // 
             this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
-            this.btnEditar.Location = new System.Drawing.Point(122, 150);
+            this.btnEditar.Location = new System.Drawing.Point(124, 181);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(49, 29);
             this.btnEditar.TabIndex = 9;
@@ -141,18 +144,37 @@
             // btnNuevo
             // 
             this.btnNuevo.Image = global::ProgramacionOO.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(67, 150);
+            this.btnNuevo.Location = new System.Drawing.Point(69, 181);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(49, 29);
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.UseVisualStyleBackColor = true;
+            // 
+            // txtid
+            // 
+            this.txtid.Location = new System.Drawing.Point(87, 29);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(41, 20);
+            this.txtid.TabIndex = 12;
+            // 
+            // lblcodigoBanco
+            // 
+            this.lblcodigoBanco.AutoSize = true;
+            this.lblcodigoBanco.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcodigoBanco.Location = new System.Drawing.Point(23, 34);
+            this.lblcodigoBanco.Name = "lblcodigoBanco";
+            this.lblcodigoBanco.Size = new System.Drawing.Size(51, 15);
+            this.lblcodigoBanco.TabIndex = 13;
+            this.lblcodigoBanco.Text = "Bancoid";
             // 
             // frmBanco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(406, 215);
+            this.ClientSize = new System.Drawing.Size(406, 312);
+            this.Controls.Add(this.lblcodigoBanco);
+            this.Controls.Add(this.txtid);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEditar);
@@ -189,5 +211,7 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.Label lblcodigoBanco;
     }
 }

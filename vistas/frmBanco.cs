@@ -22,7 +22,7 @@ namespace ProgramacionOO.vistas
         private void frmBanco_Load(object sender, EventArgs e)
         {
             registro = new clases.bc_bancos();
-            registro.buscarUltimo();
+          registro.buscarUltimo();
 
         
             mostrar();
@@ -40,5 +40,26 @@ namespace ProgramacionOO.vistas
            
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            registro.bc_bancoCodigo = txtcodigo.Text;
+            registro.bc_bancoNombre = txtNombre.Text;
+            registro.bc_bancoDireccion = txtDireccion.Text;
+            registro.bc_bancoRnc = txtRnc.Text;
+
+            bool lret;
+            lret = registro.crearDatos()>0;
+
+           
+        
+            if (lret)
+            {
+             
+                MessageBox.Show("Información del Banco fue almacenada.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                registro.limpiar();
+            }
+            else
+                MessageBox.Show(registro.errormsg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

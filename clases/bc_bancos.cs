@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OracleClient;
+using System.Windows.Forms;
 
 using System.Linq;
 using System.Text;
@@ -52,7 +53,7 @@ namespace ProgramacionOO.clases
 
         #region Métodos y funciones
 
-
+     
         public void limpiar()
         {
             bc_bancoid = 0;
@@ -79,29 +80,27 @@ namespace ProgramacionOO.clases
 
         public int crearDatos()
         {
-            bc_bancoid = 0;
+            bc_bancoid = 1;
 
             if (datamanager.ConexionAbrir())
             {
+               
 
-                // Preparamos consulta pra la actualización
-                OracleCommand cmd = new OracleCommand("Insert into bc_bancos(Bancoid,Codigo,Nombre,Direccion,Rnc)" +
-                                                " output INSERTED.bancoid" +
-                                                " Values(@bancoid,@codigo,@Nombre,@Direccion,@Rnc)", datamanager.ConexionSQL);
 
+                OracleCommand cmd = new OracleCommand("Insert into bc_bancos(Codigo,Nombre,Direccion,Rnc)" +
+                                                        " Values(:Codigo,:Nombre,:Direccion,:Rnc)", datamanager.ConexionSQL);
+                //:SL_NO,:empane,:empid,:salary
 
                 // Ponemos valores a los Parametros incluidos en la consulta de Creacion
-                cmd.Parameters.AddWithValue("@bancoid", bc_bancoid);
-                cmd.Parameters.AddWithValue("@Codigo", bc_bancoCodigo);
-                cmd.Parameters.AddWithValue("@Nombre", bc_bancoNombre);
-                cmd.Parameters.AddWithValue("@Direccion", bc_bancoDireccion);
-                cmd.Parameters.AddWithValue("@Rnc", bc_bancoRnc);
+                 //cmd.Parameters.AddWithValue("bancoid", bc_bancoid);
+                 cmd.Parameters.AddWithValue("Codigo", bc_bancoCodigo);
+                cmd.Parameters.AddWithValue("Nombre", bc_bancoNombre);
+                cmd.Parameters.AddWithValue("Direccion", bc_bancoDireccion);
+                cmd.Parameters.AddWithValue("Rnc", bc_bancoRnc);
+                datamanager.ConexionAbrir();
+                cmd.ExecuteNonQuery();
+              
 
-
-                // y Retornamos el idbanco Insertado.
-                bc_bancoid = (int)cmd.ExecuteScalar();
-
-                // Cerramos conexión.
                 datamanager.ConexionCerrar();
 
             }
@@ -119,7 +118,7 @@ namespace ProgramacionOO.clases
                 encontrado = true;
                 if (asignar)
                 {
-                    bc_bancoid = (int)dr["bancoid"];
+                  //  bc_bancoid = (int)dr["bancoid"];
                     bc_bancoCodigo = dr["Codigo"].ToString();
                     bc_bancoNombre = dr["Nombre"].ToString();
                     bc_bancoDireccion = dr["Direccion"].ToString();
@@ -158,7 +157,7 @@ namespace ProgramacionOO.clases
         {
             var dr = datamanager.ConsultaLeer(" Select  bancoid,Codigo, Nombre,Direccion,Rnc" +
                                               " From bc_bancos" +
-                                              " Order by bancoid desc ");
+                                              " Order by bancoid asc ");
             return leerDatos(dr, true);
 
         }
