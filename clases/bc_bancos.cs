@@ -15,7 +15,7 @@ namespace ProgramacionOO.clases
 
         #region Atributos
 
-        public int bc_bancoid = 0;
+        public int bc_bancoid { get; set; }
         public string bc_bancoCodigo { get; set; }
         public string bc_bancoNombre { get; set; }
         public string bc_bancoDireccion { get; set; }
@@ -53,7 +53,7 @@ namespace ProgramacionOO.clases
 
         #region Métodos y funciones
 
-     
+
         public void limpiar()
         {
             bc_bancoid = 0;
@@ -80,25 +80,25 @@ namespace ProgramacionOO.clases
 
         public int crearDatos()
         {
-            bc_bancoid = 1;
+            bc_bancoid = 0;
 
             if (datamanager.ConexionAbrir())
             {
-               
 
 
-                OracleCommand cmd = new OracleCommand("Insert into bc_bancos(Codigo,Nombre,Direccion,Rnc)" +
-                                                        " Values(:Codigo,:Nombre,:Direccion,:Rnc)", datamanager.ConexionSQL);
 
-                 //cmd.Parameters.AddWithValue("bancoid", bc_bancoid);
-                 cmd.Parameters.AddWithValue("Codigo", bc_bancoCodigo);
+                OracleCommand cmd = new OracleCommand("Insert into bc_bancos(Bancoid,Codigo,Nombre,Direccion,Rnc)" +
+                                                        " Values(:Bancoid,:Codigo,:Nombre,:Direccion,:Rnc)", datamanager.ConexionSQL);
+
+                cmd.Parameters.AddWithValue("bancoid", bc_bancoid);
+                cmd.Parameters.AddWithValue("Codigo", bc_bancoCodigo);
                 cmd.Parameters.AddWithValue("Nombre", bc_bancoNombre);
                 cmd.Parameters.AddWithValue("Direccion", bc_bancoDireccion);
                 cmd.Parameters.AddWithValue("Rnc", bc_bancoRnc);
                 datamanager.ConexionAbrir();
-                cmd.ExecuteNonQuery();
-              
+                bc_bancoid =(int)cmd.ExecuteNonQuery();
 
+                // (int)cmd.ExecuteScalar();
                 datamanager.ConexionCerrar();
 
             }
@@ -116,7 +116,7 @@ namespace ProgramacionOO.clases
                 encontrado = true;
                 if (asignar)
                 {
-                  //  bc_bancoid = (int)dr["bancoid"];
+                    bc_bancoid =  Convert.ToInt16(dr["bancoid"]);
                     bc_bancoCodigo = dr["Codigo"].ToString();
                     bc_bancoNombre = dr["Nombre"].ToString();
                     bc_bancoDireccion = dr["Direccion"].ToString();
@@ -155,7 +155,7 @@ namespace ProgramacionOO.clases
         {
             var dr = datamanager.ConsultaLeer(" Select  bancoid,Codigo, Nombre,Direccion,Rnc" +
                                               " From bc_bancos" +
-                                              " Order by bancoid asc ");
+                                              " Order by bancoid desc ");
             return leerDatos(dr, true);
 
         }
@@ -167,25 +167,24 @@ namespace ProgramacionOO.clases
             if (datamanager.ConexionAbrir())
             {
 
-                // Preparamos consulta pra la actualización
                 OracleCommand cmd = new OracleCommand(" Update bc_bancos" +
-                                                      " Set Codigo = :Codigo," +
+                                                     " Set Bancoid = :Bancoid," +
+                                                      " Codigo = :Codigo," +
                                                       " Nombre = :Nombre," +
                                                       " Direccion = :Direccion, " +
                                                       " Rnc = :Rnc " +
-                                                      " Where Bancoid = @Bancoid ", datamanager.ConexionSQL);
- 
+                                                      " Where Bancoid = :Bancoid ", datamanager.ConexionSQL);
+
                 // Ponemos valores a los Parametros incluidos en la consulta de actualización
-                cmd.Parameters.AddWithValue("@bancoid", bc_bancoid);
-                cmd.Parameters.AddWithValue("@Nombre", bc_bancoNombre);
-                cmd.Parameters.AddWithValue("@Direccion", bc_bancoDireccion);
-                cmd.Parameters.AddWithValue("@Rnc", bc_bancoRnc);
+                cmd.Parameters.AddWithValue("Bancoid", bc_bancoid);
+                cmd.Parameters.AddWithValue("Codigo", bc_bancoCodigo);
+                cmd.Parameters.AddWithValue("Nombre", bc_bancoNombre);
+                cmd.Parameters.AddWithValue("Direccion", bc_bancoDireccion);
+                cmd.Parameters.AddWithValue("Rnc", bc_bancoRnc);
+                datamanager.ConexionAbrir();
+                cmd.ExecuteNonQuery();
 
 
-                // Ejecutamos consulta de Actualización
-                lRet = cmd.ExecuteNonQuery();
-
-                // Cerramos conexión.
                 datamanager.ConexionCerrar();
 
             }

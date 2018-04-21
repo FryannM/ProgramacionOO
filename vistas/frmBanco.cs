@@ -22,18 +22,16 @@ namespace ProgramacionOO.vistas
         private void frmBanco_Load(object sender, EventArgs e)
         {
             registro = new clases.bc_bancos();
-          registro.buscarUltimo();
-
-        
+           registro.buscarUltimo(); 
             mostrar();
             bool result = true;
             Disable(result);
         }
         private void mostrar()
         {
-            //Convert.ToInt16(registro.bc_bancoid).ToString();
+          //  Convert.ToInt16(registro.bc_bancoid).ToString();
 
-
+            txtid.Text = Convert.ToInt16(registro.bc_bancoid).ToString();
             txtcodigo.Text = registro.bc_bancoCodigo;
             txtRnc.Text = registro.bc_bancoRnc;
             txtNombre.Text = registro.bc_bancoNombre;
@@ -48,28 +46,34 @@ namespace ProgramacionOO.vistas
             txtNombre.Clear();
             txtDireccion.Clear();
             txtRnc.Clear();
-            btnActualizar.Visible = false;
             bool result = false;
             Disable(result);    
 
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            registro.bc_bancoid = Convert.ToInt16(txtid.Text);
             registro.bc_bancoCodigo = txtcodigo.Text;
             registro.bc_bancoNombre = txtNombre.Text;
             registro.bc_bancoDireccion = txtDireccion.Text;
             registro.bc_bancoRnc = txtRnc.Text;
 
             bool lret;
-            lret = registro.crearDatos()>0;
-
-           
-        
-            if (lret)
+            if (txtid.Text =="0")
+            {
+                lret = registro.crearDatos() > 0;
+             
+            }
+             else
+            {
+                lret = registro.actualizarDatos();
+                lret = true;
+            }
+         if (lret)
             {
              
                 MessageBox.Show(datamanager.MensajeGuardar, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                registro.limpiar();
+                Disable(true);
             }
             else
                 MessageBox.Show(registro.errormsg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -89,6 +93,7 @@ namespace ProgramacionOO.vistas
                 txtNombre.Enabled = false;
                 txtDireccion.Enabled = false;
                 txtRnc.Enabled = false;
+                btnGuardar.Enabled = false;
                 
             }
             else
@@ -97,6 +102,7 @@ namespace ProgramacionOO.vistas
                 txtNombre.Enabled = true;
                 txtDireccion.Enabled = true;
                 txtRnc.Enabled = true;
+                btnGuardar.Enabled = true;
             }
 
 
@@ -104,10 +110,6 @@ namespace ProgramacionOO.vistas
 
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            bool lret;
-            lret = registro.actualizarDatos();
-        }
+       
     }
 }

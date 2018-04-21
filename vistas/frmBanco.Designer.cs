@@ -39,7 +39,6 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtid = new System.Windows.Forms.TextBox();
             this.lblcodigoBanco = new System.Windows.Forms.Label();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -131,16 +130,6 @@
             this.lblcodigoBanco.TabIndex = 13;
             this.lblcodigoBanco.Text = "Bancoid";
             // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Image = global::ProgramacionOO.Properties.Resources.actualizar;
-            this.btnActualizar.Location = new System.Drawing.Point(296, 93);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(49, 29);
-            this.btnActualizar.TabIndex = 14;
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
@@ -186,7 +175,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(383, 238);
-            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.lblcodigoBanco);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.btnEliminar);
@@ -227,6 +215,5 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label lblcodigoBanco;
-        private System.Windows.Forms.Button btnActualizar;
     }
 }
