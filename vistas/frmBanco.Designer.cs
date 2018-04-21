@@ -43,6 +43,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.LsBanco = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // txtcodigo
@@ -133,16 +134,17 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(296, 128);
+            this.btnEliminar.Location = new System.Drawing.Point(317, 127);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(49, 29);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(296, 93);
+            this.btnGuardar.Location = new System.Drawing.Point(317, 92);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(49, 29);
             this.btnGuardar.TabIndex = 10;
@@ -152,7 +154,7 @@
             // btnEditar
             // 
             this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
-            this.btnEditar.Location = new System.Drawing.Point(296, 58);
+            this.btnEditar.Location = new System.Drawing.Point(317, 57);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(49, 29);
             this.btnEditar.TabIndex = 9;
@@ -162,19 +164,28 @@
             // btnNuevo
             // 
             this.btnNuevo.Image = global::ProgramacionOO.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(296, 28);
+            this.btnNuevo.Location = new System.Drawing.Point(317, 27);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(49, 29);
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // LsBanco
+            // 
+            this.LsBanco.Location = new System.Drawing.Point(12, 171);
+            this.LsBanco.Name = "LsBanco";
+            this.LsBanco.Size = new System.Drawing.Size(398, 141);
+            this.LsBanco.TabIndex = 44;
+            this.LsBanco.UseCompatibleStateImageBehavior = false;
+            // 
             // frmBanco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(383, 238);
+            this.ClientSize = new System.Drawing.Size(427, 315);
+            this.Controls.Add(this.LsBanco);
             this.Controls.Add(this.lblcodigoBanco);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.btnEliminar);
@@ -215,5 +226,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label lblcodigoBanco;
+        private System.Windows.Forms.ListView LsBanco;
     }
 }

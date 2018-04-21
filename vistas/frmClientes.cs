@@ -24,5 +24,10 @@ namespace ProgramacionOO.vistas
         {
 
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

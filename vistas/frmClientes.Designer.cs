@@ -81,6 +81,7 @@
             this.btnNuevo.Size = new System.Drawing.Size(49, 29);
             this.btnNuevo.TabIndex = 20;
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // lblTipoDoc
             // 

@@ -201,6 +201,8 @@ namespace ProgramacionOO
         public static string SMensajes = ("Estas seguro que deseas Salir?");
         public static string ErrorSys = ("Favor Comunicarse con el Fryann Martinez ");
         public static string MensajeGuardar=("Información del Banco fue almacenada.");
+        public static string MensajeEliminar = ("Seguro que quieres eliminar este Resgistro?");
+        public static string ConfirmacionEliminar = ("Datos Elimnados Correctamente");
     }
 
 }

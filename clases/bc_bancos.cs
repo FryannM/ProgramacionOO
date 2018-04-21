@@ -24,9 +24,8 @@ namespace ProgramacionOO.clases
 
         #endregion
 
-
-
         #region Constructores
+
         public bc_bancos()
         {
             limpiar();
@@ -46,7 +45,6 @@ namespace ProgramacionOO.clases
             this.bc_bancoDireccion = pbc_bancoDireccion;
             this.bc_bancoRnc = pbc_bancoRnc;
 
-
         }
 
         #endregion
@@ -58,12 +56,11 @@ namespace ProgramacionOO.clases
         {
             bc_bancoid = 0;
             bc_bancoNombre = "";
+            bc_bancoCodigo = "";
             bc_bancoDireccion = "";
             bc_bancoRnc = "";
 
-
         }
-
 
         public bool validar()
         {
@@ -96,13 +93,11 @@ namespace ProgramacionOO.clases
                 cmd.Parameters.AddWithValue("Direccion", bc_bancoDireccion);
                 cmd.Parameters.AddWithValue("Rnc", bc_bancoRnc);
                 datamanager.ConexionAbrir();
-                bc_bancoid =(int)cmd.ExecuteNonQuery();
+                bc_bancoid = (int)cmd.ExecuteNonQuery();
 
-                // (int)cmd.ExecuteScalar();
                 datamanager.ConexionCerrar();
 
             }
-            // si no logra insertar nada el idbanco Retornado es Cero
             return bc_bancoid;
         }
 
@@ -116,7 +111,7 @@ namespace ProgramacionOO.clases
                 encontrado = true;
                 if (asignar)
                 {
-                    bc_bancoid =  Convert.ToInt16(dr["bancoid"]);
+                    bc_bancoid = Convert.ToInt16(dr["bancoid"]);
                     bc_bancoCodigo = dr["Codigo"].ToString();
                     bc_bancoNombre = dr["Nombre"].ToString();
                     bc_bancoDireccion = dr["Direccion"].ToString();
@@ -147,7 +142,6 @@ namespace ProgramacionOO.clases
                                                " from bc_bancos" +
                                                " where bancoid = " + Bancoid.ToString());
 
-
             return leerDatos(dr, asignar);
         }
 
@@ -157,7 +151,6 @@ namespace ProgramacionOO.clases
                                               " From bc_bancos" +
                                               " Order by bancoid desc ");
             return leerDatos(dr, true);
-
         }
 
         public bool actualizarDatos()
@@ -166,7 +159,6 @@ namespace ProgramacionOO.clases
 
             if (datamanager.ConexionAbrir())
             {
-
                 OracleCommand cmd = new OracleCommand(" Update bc_bancos" +
                                                      " Set Bancoid = :Bancoid," +
                                                       " Codigo = :Codigo," +
@@ -175,7 +167,6 @@ namespace ProgramacionOO.clases
                                                       " Rnc = :Rnc " +
                                                       " Where Bancoid = :Bancoid ", datamanager.ConexionSQL);
 
-                // Ponemos valores a los Parametros incluidos en la consulta de actualización
                 cmd.Parameters.AddWithValue("Bancoid", bc_bancoid);
                 cmd.Parameters.AddWithValue("Codigo", bc_bancoCodigo);
                 cmd.Parameters.AddWithValue("Nombre", bc_bancoNombre);
@@ -183,10 +174,7 @@ namespace ProgramacionOO.clases
                 cmd.Parameters.AddWithValue("Rnc", bc_bancoRnc);
                 datamanager.ConexionAbrir();
                 cmd.ExecuteNonQuery();
-
-
                 datamanager.ConexionCerrar();
-
             }
             return lRet > 0;
         }

@@ -12,7 +12,6 @@ namespace ProgramacionOO.vistas
 {
     public partial class frmBanco : Form
     {
-        // private entidades.dmCargo registro { get; set; }
         private clases.bc_bancos registro { get; set; }
         public frmBanco()
         {
@@ -22,24 +21,19 @@ namespace ProgramacionOO.vistas
         private void frmBanco_Load(object sender, EventArgs e)
         {
             registro = new clases.bc_bancos();
-           registro.buscarUltimo(); 
+            registro.buscarUltimo();
             mostrar();
             bool result = true;
             Disable(result);
         }
         private void mostrar()
         {
-          //  Convert.ToInt16(registro.bc_bancoid).ToString();
-
             txtid.Text = Convert.ToInt16(registro.bc_bancoid).ToString();
             txtcodigo.Text = registro.bc_bancoCodigo;
             txtRnc.Text = registro.bc_bancoRnc;
             txtNombre.Text = registro.bc_bancoNombre;
             txtDireccion.Text = registro.bc_bancoDireccion;
-            
-           
         }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             txtcodigo.Clear();
@@ -47,7 +41,8 @@ namespace ProgramacionOO.vistas
             txtDireccion.Clear();
             txtRnc.Clear();
             bool result = false;
-            Disable(result);    
+            Disable(result);
+            txtid.Text = "0";
 
         }
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -59,19 +54,19 @@ namespace ProgramacionOO.vistas
             registro.bc_bancoRnc = txtRnc.Text;
 
             bool lret;
-            if (txtid.Text =="0")
+            if (txtid.Text == "0")
             {
                 lret = registro.crearDatos() > 0;
-             
+
             }
-             else
+            else
             {
                 lret = registro.actualizarDatos();
                 lret = true;
             }
-         if (lret)
+            if (lret)
             {
-             
+
                 MessageBox.Show(datamanager.MensajeGuardar, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Disable(true);
             }
@@ -84,7 +79,21 @@ namespace ProgramacionOO.vistas
             bool result = false;
             Disable(result);
         }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            bool lret = false;
+            if (MessageBox.Show(datamanager.MensajeEliminar, "Borrar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                lret = registro.borrarDatos(registro.bc_bancoid);
 
+                if (lret)
+                {
+                    MessageBox.Show(datamanager.ConfirmacionEliminar, "Eliminando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mostrar();
+                }
+            }
+            txtNombre.Focus();
+        }
         private bool Disable(bool result)
         {
             if (result == true)
@@ -94,7 +103,8 @@ namespace ProgramacionOO.vistas
                 txtDireccion.Enabled = false;
                 txtRnc.Enabled = false;
                 btnGuardar.Enabled = false;
-                
+                btnEliminar.Enabled = false;
+
             }
             else
             {
@@ -103,13 +113,11 @@ namespace ProgramacionOO.vistas
                 txtDireccion.Enabled = true;
                 txtRnc.Enabled = true;
                 btnGuardar.Enabled = true;
+                btnEliminar.Enabled = true;
             }
 
-
             return result;
-
         }
-
-       
     }
 }
+
