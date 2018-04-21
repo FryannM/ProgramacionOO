@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProgramacionOO.clases
 {
-    class bc_bancos
+    public  class bc_bancos : Mantenimientos
     {
 
 
@@ -28,7 +28,7 @@ namespace ProgramacionOO.clases
 
         public bc_bancos()
         {
-            limpiar();
+            Limpiar();
         }
 
         public bc_bancos(
@@ -52,7 +52,7 @@ namespace ProgramacionOO.clases
         #region Métodos y funciones
 
 
-        public void limpiar()
+        public   void Limpiar()
         {
             bc_bancoid = 0;
             bc_bancoNombre = "";
@@ -62,7 +62,7 @@ namespace ProgramacionOO.clases
 
         }
 
-        public bool validar()
+        public  bool Validar()
         {
             bool lret = true;
 
@@ -75,7 +75,7 @@ namespace ProgramacionOO.clases
         }
 
 
-        public int crearDatos()
+        public  int CrearDatos()
         {
             bc_bancoid = 0;
 
@@ -84,8 +84,9 @@ namespace ProgramacionOO.clases
 
 
 
-                OracleCommand cmd = new OracleCommand("Insert into bc_bancos(Bancoid,Codigo,Nombre,Direccion,Rnc)" +
-                                                        " Values(:Bancoid,:Codigo,:Nombre,:Direccion,:Rnc)", datamanager.ConexionSQL);
+                OracleCommand cmd = new OracleCommand("Insert into bc_bancos" +
+                    "(Bancoid,Codigo,Nombre,Direccion,Rnc)" +
+                    " Values(:Bancoid,:Codigo,:Nombre,:Direccion,:Rnc)", datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("bancoid", bc_bancoid);
                 cmd.Parameters.AddWithValue("Codigo", bc_bancoCodigo);
@@ -102,7 +103,7 @@ namespace ProgramacionOO.clases
         }
 
 
-        public bool leerDatos(OracleDataReader dr, bool asignar)
+        public   bool LeerDatos(OracleDataReader dr, bool asignar)
         {
 
             bool encontrado = false;
@@ -121,39 +122,39 @@ namespace ProgramacionOO.clases
             }
             else
             {
-                if (asignar) limpiar();
+                if (asignar) Limpiar();
             }
 
             return encontrado;
         }
 
-        public bool buscar(String pNombre, bool asignar)
+        public  bool Buscar(String pNombre, bool asignar)
         {
             var dr = datamanager.ConsultaLeer("select bancoid, Codigo,Nombre,Direccion,Rnc" +
                                                " from bc_bancos" +
                                                " where Nombre = '" + pNombre + "'");
-            return leerDatos(dr, asignar);
+            return LeerDatos(dr, asignar);
 
         }
 
-        public bool buscar(int Bancoid, bool asignar)
+        public  bool Buscar(int Bancoid, bool asignar)
         {
             var dr = datamanager.ConsultaLeer("select bancoid,Codigo, nombre,Direccion,Rnc" +
                                                " from bc_bancos" +
                                                " where bancoid = " + Bancoid.ToString());
 
-            return leerDatos(dr, asignar);
+            return LeerDatos(dr, asignar);
         }
 
-        public bool buscarUltimo()
+         public    bool BuscarUltimo()
         {
             var dr = datamanager.ConsultaLeer(" Select  bancoid,Codigo, Nombre,Direccion,Rnc" +
                                               " From bc_bancos" +
                                               " Order by bancoid desc ");
-            return leerDatos(dr, true);
+            return LeerDatos(dr, true);
         }
 
-        public bool actualizarDatos()
+        public  bool ActualizarDatos()
         {
             int lRet = 0;
 
@@ -179,15 +180,16 @@ namespace ProgramacionOO.clases
             return lRet > 0;
         }
 
-        public bool borrarDatos(int pbancoid)
+        public virtual bool BorrarDatos(int pbancoid)
         {
             bool lret = datamanager.ConsultaNodata("delete " +
                                                " from bc_bancos" +
                                                " where bancoid = " + pbancoid.ToString());
-            if (lret) limpiar();
+            if (lret) Limpiar();
             return lret;
         }
 
+       
     }
 }
 #endregion

@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clases\bc_bancos.cs" />
+    <Compile Include="clases\bc_clientes.cs" />
+    <Compile Include="clases\Mantenimientos.cs" />
     <Compile Include="util\datamanager.cs" />
     <Compile Include="vistas\conectar.cs">
       <SubType>Form</SubType>

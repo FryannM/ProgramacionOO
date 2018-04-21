@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OracleClient;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,12 +23,13 @@ namespace ProgramacionOO.vistas
         private void frmBanco_Load(object sender, EventArgs e)
         {
             registro = new clases.bc_bancos();
-            registro.buscarUltimo();
-            mostrar();
+            registro.BuscarUltimo();
+            Mostrar();
+         //   LoadData("select  * from bc_bancos;");
             bool result = true;
             Disable(result);
         }
-        private void mostrar()
+        private void Mostrar()
         {
             txtid.Text = Convert.ToInt16(registro.bc_bancoid).ToString();
             txtcodigo.Text = registro.bc_bancoCodigo;
@@ -56,12 +59,12 @@ namespace ProgramacionOO.vistas
             bool lret;
             if (txtid.Text == "0")
             {
-                lret = registro.crearDatos() > 0;
+                lret = registro.CrearDatos() > 0;
 
             }
             else
             {
-                lret = registro.actualizarDatos();
+                lret = registro.ActualizarDatos();
                 lret = true;
             }
             if (lret)
@@ -84,12 +87,12 @@ namespace ProgramacionOO.vistas
             bool lret = false;
             if (MessageBox.Show(datamanager.MensajeEliminar, "Borrar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                lret = registro.borrarDatos(registro.bc_bancoid);
+                lret = registro.BorrarDatos(registro.bc_bancoid);
 
                 if (lret)
                 {
                     MessageBox.Show(datamanager.ConfirmacionEliminar, "Eliminando", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mostrar();
+                    Mostrar();
                 }
             }
             txtNombre.Focus();
@@ -118,6 +121,59 @@ namespace ProgramacionOO.vistas
 
             return result;
         }
+
+        private void LoadLvBanco()
+        {
+
+            LsBanco.View = View.Details;
+            LsBanco.LabelEdit = true;
+            LsBanco.AllowColumnReorder = true;
+            LsBanco.FullRowSelect = true;
+            LsBanco.GridLines = true;
+            LsBanco.Columns.Add("BANCOID", 100, HorizontalAlignment.Center);
+            LsBanco.Columns.Add("CODIGO", 0, HorizontalAlignment.Center);
+            LsBanco.Columns.Add("NOMBRE", 100, HorizontalAlignment.Center);
+            LsBanco.Columns.Add("DIRECCION", 0, HorizontalAlignment.Center);
+            LsBanco.Columns.Add("RNC", 0, HorizontalAlignment.Center);
+           
+        }
+
+        private void LoadData(string sql)
+        {
+
+            if (datamanager.ConexionAbrir())
+            {
+                try
+                {
+                    datamanager.ConexionAbrir();
+                    OracleCommand cmd = new OracleCommand(sql, datamanager.ConexionSQL);
+                    OracleDataReader dr = cmd.ExecuteReader();
+
+                    LsBanco.Clear();
+                    LoadLvBanco();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            ListViewItem lv = new ListViewItem(dr[0].ToString());
+                            lv.SubItems.Add(dr[1].ToString());
+                            lv.SubItems.Add(dr[2].ToString());
+                            lv.SubItems.Add(dr[3].ToString());
+                            lv.SubItems.Add(dr[4].ToString());
+                            lv.SubItems.Add(dr[5].ToString());
+                            LsBanco.Items.Add(lv);
+                        }
+                    }
+                    dr.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                datamanager.ConexionCerrar();
+            }
+        }
+
     }
 }
 

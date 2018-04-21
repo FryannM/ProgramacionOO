@@ -10,7 +10,7 @@ using System.Configuration;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 using System.Data.OracleClient;
-using System.Security.Cryptography;
+
 
 namespace ProgramacionOO
 {
@@ -196,6 +196,36 @@ namespace ProgramacionOO
             }
             return lRet;
         }
+
+
+        public static void LoadDataBanco(string sql)
+        {
+            if (ConexionAbrir()) 
+            try
+            {
+                
+                OracleCommand cmd = new OracleCommand(sql,ConexionSQL);
+                OracleDataReader dr = cmd.ExecuteReader();
+
+
+                if (dr.HasRows)
+                {
+                    MessageBox.Show("Ya se ha pasado Asistencia en el dia de HOY  ", "ADVERTENCIA!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    return;
+                }
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            datamanager.ConexionCerrar();
+        }
+
+
 
         // Mensajes del sistema 
         public static string SMensajes = ("Estas seguro que deseas Salir?");
