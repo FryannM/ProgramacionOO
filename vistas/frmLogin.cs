@@ -9,17 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Windows.Forms;
 
 namespace ProgramacionOO.vistas
 {
     public partial class frmLogin : Form
     {
-        public object MessageBoxButton { get; private set; }
-        public Nullable<bool> DialogResult { get; set; }
+
+
         int intentos = 0;
 
         public frmLogin()
-        {   
+        {
             InitializeComponent();
         }
 
@@ -29,23 +30,25 @@ namespace ProgramacionOO.vistas
 
             if (datamanager.ValidarUsuario(txtUser.Text, txtpassword.Text))
             {
-               
-                //   DialogResult = true;
-            }
-            else
-            {
+
                 frmMenu frm = new frmMenu();
                 frm.Show();
                 this.Hide();
-                //MessageBox.Show("Usuario O Contraseña no son validas \n" +
-                //                "Intento " + intentos.ToString().Trim() + "/3",
-                //"Error al inicio de Sesion", MessageBoxButton.OK, MessageBoxImage.Error);
-                //if (intentos == 3) DialogResult = false;
-                
+
+            }
+            else
+            {
+                MessageBox.Show("Usuario O Contraseña no son validas \n" +
+                                "Intento " + intentos.ToString().Trim() + "/3",
+                "Error al inicio de Sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (intentos == 3)
+                {
+                    this.Hide();
+                }
             }
 
         }
-            private void btnCancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

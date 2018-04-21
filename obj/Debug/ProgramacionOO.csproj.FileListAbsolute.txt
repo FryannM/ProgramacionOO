@@ -20,7 +20,6 @@ E:\Proyectos\NET\ProgramacionOO\bin\Debug\ProgramacionOO.exe.config
 E:\Proyectos\NET\ProgramacionOO\bin\Debug\ProgramacionOO.exe
 E:\Proyectos\NET\ProgramacionOO\bin\Debug\ProgramacionOO.pdb
 E:\Proyectos\NET\ProgramacionOO\bin\Debug\Oracle.DataAccess.dll
-E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.csprojResolveAssemblyReference.cache
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.conectar.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmBanco.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmClientes.resources
@@ -34,3 +33,4 @@ E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.csproj.CoreCompileInput
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.csproj.CopyComplete
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.exe
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.pdb
+E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.csprojResolveAssemblyReference.cache

@@ -20,8 +20,8 @@ namespace ProgramacionOO.vistas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OracleConnection ore = new OracleConnection("Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.0.3)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)));User Id=Fryann;Password=harold;");
-
+            OracleConnection ore = new OracleConnection("Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.72)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)));User Id=mamf;Password=numero4401;");
+            //<!--192.168.1.72  System numero4401-->
             MessageBox.Show("EXITO");
         }
     }

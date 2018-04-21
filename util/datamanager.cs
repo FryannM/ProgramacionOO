@@ -168,16 +168,27 @@ namespace ProgramacionOO
             bool lRet = false;
             string lpassword = "";
             int lidUsuario = 0;
-          
+            string lEncriptPsw = md5(pnombre.Trim() + pclave.Trim());
             if (ConexionAbrir())
             {
                 var dr = ConsultaLeer("Select usuario_id, contrasena  from Usuario where  Nombre_Usuario='" + pnombre + "'");
                 if (dr != null)
                 {
                     if (dr.Read())
+                       
                     {
                         lidUsuario = dr.GetInt32(0);
                         lpassword = dr.GetString(1);
+
+                       
+                            lRet = true;
+                            // Asigno valor a propiedades de la clase.
+                            loginName = pnombre;
+                            idUsuario = lidUsuario;
+
+                            // Cargo los permisos
+                            
+                        
 
 
                     }
@@ -189,6 +200,7 @@ namespace ProgramacionOO
         // Mensajes del sistema 
         public static string SMensajes = ("Estas seguro que deseas Salir?");
         public static string ErrorSys = ("Favor Comunicarse con el Fryann Martinez ");
+        public static string MensajeGuardar=("Información del Banco fue almacenada.");
     }
 
 }

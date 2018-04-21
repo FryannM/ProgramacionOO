@@ -152,6 +152,7 @@
     <None Include="resources\agregar.png" />
     <None Include="resources\edit.png" />
     <None Include="resources\delete.png" />
+    <None Include="resources\actualizar.png" />
     <Content Include="resources\facilitador.ico" />
     <Content Include="resources\Home.ico" />
     <Content Include="resources\if_custom-reports_63120.ico" />
@@ -160,6 +161,7 @@
     <None Include="resources\login.jpg" />
     <None Include="resources\oficina.png" />
     <None Include="resources\save.png" />
+    <None Include="resources\Logo.png" />
     <Content Include="resources\taller.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

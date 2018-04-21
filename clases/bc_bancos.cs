@@ -89,9 +89,7 @@ namespace ProgramacionOO.clases
 
                 OracleCommand cmd = new OracleCommand("Insert into bc_bancos(Codigo,Nombre,Direccion,Rnc)" +
                                                         " Values(:Codigo,:Nombre,:Direccion,:Rnc)", datamanager.ConexionSQL);
-                //:SL_NO,:empane,:empid,:salary
 
-                // Ponemos valores a los Parametros incluidos en la consulta de Creacion
                  //cmd.Parameters.AddWithValue("bancoid", bc_bancoid);
                  cmd.Parameters.AddWithValue("Codigo", bc_bancoCodigo);
                 cmd.Parameters.AddWithValue("Nombre", bc_bancoNombre);
@@ -171,10 +169,10 @@ namespace ProgramacionOO.clases
 
                 // Preparamos consulta pra la actualización
                 OracleCommand cmd = new OracleCommand(" Update bc_bancos" +
-                                                      " Set Codigo = @Codigo," +
-                                                      " Nombre = @Nombre," +
-                                                      " Direccion = @Direccion, " +
-                                                      " Rnc = @Rnc " +
+                                                      " Set Codigo = :Codigo," +
+                                                      " Nombre = :Nombre," +
+                                                      " Direccion = :Direccion, " +
+                                                      " Rnc = :Rnc " +
                                                       " Where Bancoid = @Bancoid ", datamanager.ConexionSQL);
  
                 // Ponemos valores a los Parametros incluidos en la consulta de actualización

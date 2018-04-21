@@ -26,6 +26,8 @@ namespace ProgramacionOO.vistas
 
         
             mostrar();
+            bool result = true;
+            Disable(result);
         }
         private void mostrar()
         {
@@ -40,6 +42,17 @@ namespace ProgramacionOO.vistas
            
         }
 
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            txtcodigo.Clear();
+            txtNombre.Clear();
+            txtDireccion.Clear();
+            txtRnc.Clear();
+            btnActualizar.Visible = false;
+            bool result = false;
+            Disable(result);    
+
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             registro.bc_bancoCodigo = txtcodigo.Text;
@@ -55,11 +68,46 @@ namespace ProgramacionOO.vistas
             if (lret)
             {
              
-                MessageBox.Show("Información del Banco fue almacenada.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(datamanager.MensajeGuardar, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 registro.limpiar();
             }
             else
-                MessageBox.Show(registro.errormsg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(registro.errormsg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            bool result = false;
+            Disable(result);
+        }
+
+        private bool Disable(bool result)
+        {
+            if (result == true)
+            {
+                txtcodigo.Enabled = false;
+                txtNombre.Enabled = false;
+                txtDireccion.Enabled = false;
+                txtRnc.Enabled = false;
+                
+            }
+            else
+            {
+                txtcodigo.Enabled = true;
+                txtNombre.Enabled = true;
+                txtDireccion.Enabled = true;
+                txtRnc.Enabled = true;
+            }
+
+
+            return result;
+
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            bool lret;
+            lret = registro.actualizarDatos();
         }
     }
 }

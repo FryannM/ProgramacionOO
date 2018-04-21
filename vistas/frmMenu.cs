@@ -22,7 +22,7 @@ namespace ProgramacionOO
             frm.Show();
         }
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+            {
             DialogResult dialogResult = MessageBox.Show(datamanager.SMensajes, "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
@@ -45,6 +45,11 @@ namespace ProgramacionOO
             vistas.frmCuentas frm = new vistas.frmCuentas();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
