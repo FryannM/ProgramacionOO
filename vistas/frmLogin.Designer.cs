@@ -42,7 +42,7 @@
             this.txtUser.Location = new System.Drawing.Point(299, 47);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(141, 20);
-            this.txtUser.TabIndex = 0;
+            this.txtUser.TabIndex = 1;
             // 
             // txtpassword
             // 
@@ -50,7 +50,7 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(141, 20);
-            this.txtpassword.TabIndex = 1;
+            this.txtpassword.TabIndex = 2;
             // 
             // btnCancel
             // 
