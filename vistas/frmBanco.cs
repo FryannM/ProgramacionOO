@@ -25,7 +25,7 @@ namespace ProgramacionOO.vistas
             registro = new clases.bc_bancos();
             registro.BuscarUltimo();
             Mostrar();
-         //   LoadData("select  * from bc_bancos;");
+         LoadData("select  * from bc_bancos");
             bool result = true;
             Disable(result);
         }
@@ -122,22 +122,6 @@ namespace ProgramacionOO.vistas
             return result;
         }
 
-        private void LoadLvBanco()
-        {
-
-            LsBanco.View = View.Details;
-            LsBanco.LabelEdit = true;
-            LsBanco.AllowColumnReorder = true;
-            LsBanco.FullRowSelect = true;
-            LsBanco.GridLines = true;
-            LsBanco.Columns.Add("BANCOID", 100, HorizontalAlignment.Center);
-            LsBanco.Columns.Add("CODIGO", 0, HorizontalAlignment.Center);
-            LsBanco.Columns.Add("NOMBRE", 100, HorizontalAlignment.Center);
-            LsBanco.Columns.Add("DIRECCION", 0, HorizontalAlignment.Center);
-            LsBanco.Columns.Add("RNC", 0, HorizontalAlignment.Center);
-           
-        }
-
         private void LoadData(string sql)
         {
 
@@ -150,18 +134,18 @@ namespace ProgramacionOO.vistas
                     OracleDataReader dr = cmd.ExecuteReader();
 
                     LsBanco.Clear();
-                    LoadLvBanco();
+                    LoadListView();
                     if (dr.HasRows)
                     {
                         while (dr.Read())
                         {
-                            ListViewItem lv = new ListViewItem(dr[0].ToString());
-                            lv.SubItems.Add(dr[1].ToString());
-                            lv.SubItems.Add(dr[2].ToString());
-                            lv.SubItems.Add(dr[3].ToString());
-                            lv.SubItems.Add(dr[4].ToString());
-                            lv.SubItems.Add(dr[5].ToString());
-                            LsBanco.Items.Add(lv);
+                            ListViewItem lvi = new ListViewItem(dr[0].ToString());
+                            lvi.SubItems.Add(dr[1].ToString());
+                            lvi.SubItems.Add(dr[4].ToString());
+                            lvi.SubItems.Add(dr[2].ToString());
+                            lvi.SubItems.Add(dr[3].ToString());
+                          
+                            LsBanco.Items.Add(lvi);
                         }
                     }
                     dr.Close();
@@ -172,6 +156,22 @@ namespace ProgramacionOO.vistas
                 }
                 datamanager.ConexionCerrar();
             }
+        }
+        private void LoadListView()
+        {
+            LsBanco.View = View.Details;
+            LsBanco.LabelEdit = true;
+            LsBanco.AllowColumnReorder = true;
+            LsBanco.FullRowSelect = true;
+            LsBanco.GridLines = true;
+            LsBanco.Sorting = System.Windows.Forms.SortOrder.Ascending;
+
+            LsBanco.Columns.Add("Bancoid", 0, HorizontalAlignment.Center);
+            LsBanco.Columns.Add("Codigo", 50, HorizontalAlignment.Center);
+            LsBanco.Columns.Add("Rnc", 150, HorizontalAlignment.Center);
+            LsBanco.Columns.Add("Banco", 150, HorizontalAlignment.Center);
+            LsBanco.Columns.Add("Direccion", 150, HorizontalAlignment.Center);
+
         }
 
     }
