@@ -109,6 +109,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(87, 136);
+            this.txtDireccion.MaxLength = 20;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(180, 20);
             this.txtDireccion.TabIndex = 7;

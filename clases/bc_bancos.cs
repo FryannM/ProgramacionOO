@@ -93,11 +93,6 @@ namespace ProgramacionOO.clases
                     MessageBox.Show(vr.ErrorMessage, Environment.NewLine);
                 }
             }
-            else
-            {
-                rsult = false;
-                valid = false;
-            }
             return rsult;
         }
 

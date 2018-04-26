@@ -18,7 +18,7 @@ namespace ProgramacionOO.clases
         private string bc_Nombre { get; set; }
         private string bc_estado { get; set; }
         private int bc_numeroControlRecurrencia { get; set; }
-        private string Errormsg = "";
+      //  private string Errormsg = "";
 
 
         public bc_clientes(int pbc_Clienteid,
@@ -55,7 +55,7 @@ namespace ProgramacionOO.clases
 
             if (lret && bc_Nombre.Equals(""))
             {
-                Errormsg = "Nombre de Banco no puede estar vacío.";
+             //   Errormsg = "Nombre de Banco no puede estar vacío.";
                 lret = false;
             }
             return lret;
