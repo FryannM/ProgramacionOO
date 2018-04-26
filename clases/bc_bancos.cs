@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Data.OracleClient;
 using System.Windows.Forms;
-
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProgramacionOO.clases
 {
@@ -14,10 +14,12 @@ namespace ProgramacionOO.clases
 
 
         #region Atributos
-
         public int bc_bancoid { get; set; }
+       
         public string bc_bancoCodigo { get; set; }
+        [StringLength(20, MinimumLength = 3, ErrorMessage = "El nombre debe de tener de 3 a 50 caracteres")]
         public string bc_bancoNombre { get; set; }
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "La Direccion  debe de tener de 3 a 30 caracteres")]
         public string bc_bancoDireccion { get; set; }
         public string bc_bancoRnc { get; set; }
         public string errormsg = "";
@@ -75,16 +77,39 @@ namespace ProgramacionOO.clases
         }
 
 
-        public  int CrearDatos()
+        public bool ValidarCamposRequeridos()
+        {
+            clases.bc_bancos registro = new clases.bc_bancos();
+            bool rsult = true;
+
+            ValidationContext context = new ValidationContext(registro, null, null);
+            List<ValidationResult> results = new List<ValidationResult>();
+            bool valid = Validator.TryValidateObject(registro, context, results, true);
+
+            if (!valid)
+            {
+                foreach (ValidationResult vr in results)
+                {
+                    MessageBox.Show(vr.ErrorMessage, Environment.NewLine);
+                }
+            }
+            else
+            {
+                rsult = false;
+                valid = false;
+            }
+            return rsult;
+        }
+
+
+        public int CrearDatos()
         {
             bc_bancoid = 0;
 
             if (datamanager.ConexionAbrir())
             {
 
-
-
-                OracleCommand cmd = new OracleCommand("Insert into bc_bancos" +
+                   OracleCommand cmd = new OracleCommand("Insert into bc_bancos" +
                     "(Bancoid,Codigo,Nombre,Direccion,Rnc)" +
                     " Values(:Bancoid,:Codigo,:Nombre,:Direccion,:Rnc)", datamanager.ConexionSQL);
 
@@ -102,10 +127,8 @@ namespace ProgramacionOO.clases
             return bc_bancoid;
         }
 
-
-        public   bool LeerDatos(OracleDataReader dr, bool asignar)
+       public   bool LeerDatos(OracleDataReader dr, bool asignar)
         {
-
             bool encontrado = false;
             if (dr.Read())
             {
@@ -117,7 +140,6 @@ namespace ProgramacionOO.clases
                     bc_bancoNombre = dr["Nombre"].ToString();
                     bc_bancoDireccion = dr["Direccion"].ToString();
                     bc_bancoRnc = dr["Rnc"].ToString();
-
                 }
             }
             else
@@ -147,13 +169,13 @@ namespace ProgramacionOO.clases
         }
 
          public    bool BuscarUltimo()
+
         {
             var dr = datamanager.ConsultaLeer(" Select  bancoid,Codigo, Nombre,Direccion,Rnc" +
                                               " From bc_bancos" +
                                               " Order by bancoid desc ");
             return LeerDatos(dr, true);
         }
-
         public  bool ActualizarDatos()
         {
             int lRet = 0;
@@ -179,7 +201,6 @@ namespace ProgramacionOO.clases
             }
             return lRet > 0;
         }
-
         public virtual bool BorrarDatos(int pbancoid)
         {
             bool lret = datamanager.ConsultaNodata("delete " +
@@ -187,9 +208,7 @@ namespace ProgramacionOO.clases
                                                " where bancoid = " + pbancoid.ToString());
             if (lret) Limpiar();
             return lret;
-        }
-
-       
+        }       
     }
 }
 #endregion

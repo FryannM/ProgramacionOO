@@ -37,13 +37,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblRnc = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtid = new System.Windows.Forms.TextBox();
-            this.lblcodigoBanco = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.LsBanco = new System.Windows.Forms.ListView();
+            this.lblcodigoBanco = new System.Windows.Forms.Label();
+            this.txtid = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtcodigo
@@ -114,24 +113,6 @@
             this.txtDireccion.Size = new System.Drawing.Size(180, 20);
             this.txtDireccion.TabIndex = 7;
             // 
-            // txtid
-            // 
-            this.txtid.Location = new System.Drawing.Point(87, 29);
-            this.txtid.Name = "txtid";
-            this.txtid.ReadOnly = true;
-            this.txtid.Size = new System.Drawing.Size(41, 20);
-            this.txtid.TabIndex = 12;
-            // 
-            // lblcodigoBanco
-            // 
-            this.lblcodigoBanco.AutoSize = true;
-            this.lblcodigoBanco.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcodigoBanco.Location = new System.Drawing.Point(23, 34);
-            this.lblcodigoBanco.Name = "lblcodigoBanco";
-            this.lblcodigoBanco.Size = new System.Drawing.Size(51, 15);
-            this.lblcodigoBanco.TabIndex = 13;
-            this.lblcodigoBanco.Text = "Bancoid";
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
@@ -172,21 +153,32 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // LsBanco
+            // lblcodigoBanco
             // 
-            this.LsBanco.Location = new System.Drawing.Point(12, 171);
-            this.LsBanco.Name = "LsBanco";
-            this.LsBanco.Size = new System.Drawing.Size(398, 141);
-            this.LsBanco.TabIndex = 44;
-            this.LsBanco.UseCompatibleStateImageBehavior = false;
+            this.lblcodigoBanco.AutoSize = true;
+            this.lblcodigoBanco.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcodigoBanco.Location = new System.Drawing.Point(23, 34);
+            this.lblcodigoBanco.Name = "lblcodigoBanco";
+            this.lblcodigoBanco.Size = new System.Drawing.Size(51, 15);
+            this.lblcodigoBanco.TabIndex = 13;
+            this.lblcodigoBanco.Text = "Bancoid";
+            this.lblcodigoBanco.Visible = false;
+            // 
+            // txtid
+            // 
+            this.txtid.Location = new System.Drawing.Point(87, 29);
+            this.txtid.Name = "txtid";
+            this.txtid.ReadOnly = true;
+            this.txtid.Size = new System.Drawing.Size(41, 20);
+            this.txtid.TabIndex = 12;
+            this.txtid.Visible = false;
             // 
             // frmBanco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(427, 315);
-            this.Controls.Add(this.LsBanco);
+            this.ClientSize = new System.Drawing.Size(427, 210);
             this.Controls.Add(this.lblcodigoBanco);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.btnEliminar);
@@ -225,8 +217,7 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label lblcodigoBanco;
-        private System.Windows.Forms.ListView LsBanco;
+        private System.Windows.Forms.TextBox txtid;
     }
 }

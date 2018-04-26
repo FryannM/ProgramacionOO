@@ -10,11 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ProgramacionOO.vistas
 {
     public partial class frmBanco : Form
     {
         private clases.bc_bancos registro { get; set; }
+
+
         public frmBanco()
         {
             InitializeComponent();
@@ -23,19 +26,25 @@ namespace ProgramacionOO.vistas
         private void frmBanco_Load(object sender, EventArgs e)
         {
             registro = new clases.bc_bancos();
+           
             registro.BuscarUltimo();
             Mostrar();
-         LoadData("select  * from bc_bancos");
+
             bool result = true;
             Disable(result);
         }
         private void Mostrar()
         {
+
+
+
             txtid.Text = Convert.ToInt16(registro.bc_bancoid).ToString();
             txtcodigo.Text = registro.bc_bancoCodigo;
             txtRnc.Text = registro.bc_bancoRnc;
             txtNombre.Text = registro.bc_bancoNombre;
             txtDireccion.Text = registro.bc_bancoDireccion;
+          
+
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -59,11 +68,15 @@ namespace ProgramacionOO.vistas
             bool lret;
             if (txtid.Text == "0")
             {
-                lret = registro.CrearDatos() > 0;
+
+                  registro.ValidarCamposRequeridos();
+                  lret = registro.CrearDatos() > 0;
+                
 
             }
             else
             {
+                registro.ValidarCamposRequeridos();
                 lret = registro.ActualizarDatos();
                 lret = true;
             }
@@ -73,8 +86,8 @@ namespace ProgramacionOO.vistas
                 MessageBox.Show(datamanager.MensajeGuardar, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Disable(true);
             }
-            else
-                MessageBox.Show(registro.errormsg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else 
+                MessageBox.Show(clases.Exepciones.ExepcionGuardar,"Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -122,57 +135,8 @@ namespace ProgramacionOO.vistas
             return result;
         }
 
-        private void LoadData(string sql)
-        {
 
-            if (datamanager.ConexionAbrir())
-            {
-                try
-                {
-                    datamanager.ConexionAbrir();
-                    OracleCommand cmd = new OracleCommand(sql, datamanager.ConexionSQL);
-                    OracleDataReader dr = cmd.ExecuteReader();
-
-                    LsBanco.Clear();
-                    LoadListView();
-                    if (dr.HasRows)
-                    {
-                        while (dr.Read())
-                        {
-                            ListViewItem lvi = new ListViewItem(dr[0].ToString());
-                            lvi.SubItems.Add(dr[1].ToString());
-                            lvi.SubItems.Add(dr[4].ToString());
-                            lvi.SubItems.Add(dr[2].ToString());
-                            lvi.SubItems.Add(dr[3].ToString());
-                          
-                            LsBanco.Items.Add(lvi);
-                        }
-                    }
-                    dr.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-                datamanager.ConexionCerrar();
-            }
-        }
-        private void LoadListView()
-        {
-            LsBanco.View = View.Details;
-            LsBanco.LabelEdit = true;
-            LsBanco.AllowColumnReorder = true;
-            LsBanco.FullRowSelect = true;
-            LsBanco.GridLines = true;
-            LsBanco.Sorting = System.Windows.Forms.SortOrder.Ascending;
-
-            LsBanco.Columns.Add("Bancoid", 0, HorizontalAlignment.Center);
-            LsBanco.Columns.Add("Codigo", 50, HorizontalAlignment.Center);
-            LsBanco.Columns.Add("Rnc", 150, HorizontalAlignment.Center);
-            LsBanco.Columns.Add("Banco", 150, HorizontalAlignment.Center);
-            LsBanco.Columns.Add("Direccion", 150, HorizontalAlignment.Center);
-
-        }
+        
 
     }
 }
