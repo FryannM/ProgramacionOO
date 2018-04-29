@@ -9,9 +9,6 @@ namespace ProgramacionOO.clases
 {
     class bc_clientes : Mantenimientos
     {
-
-
-
         private int bc_Clienteid { get; set; }
         private string bc_TipoDocumento { get; set; }
         private string bc_NumeroDocumento { get; set; }
