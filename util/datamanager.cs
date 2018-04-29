@@ -161,42 +161,38 @@ namespace ProgramacionOO
 
             return ret2;
         }
-    
 
-    public static bool ValidarUsuario(string pnombre, string pclave)
+
+        public static bool ValidarUsuario(string pnombre, string pclave)
         {
             bool lRet = false;
             string lpassword = "";
             int lidUsuario = 0;
             string lEncriptPsw = md5(pnombre.Trim() + pclave.Trim());
+            ConexionAbrir();
             if (ConexionAbrir())
             {
-                var dr = ConsultaLeer("Select usuario_id, contrasena  from Usuario where  Nombre_Usuario='" + pnombre + "'");
+                var dr = ConsultaLeer("SELECT * FROM USUARIOS WHERE USUARIOS.USUARIO='" + pnombre + "'");
                 if (dr != null)
                 {
                     if (dr.Read())
-                       
+
                     {
                         lidUsuario = dr.GetInt32(0);
                         lpassword = dr.GetString(1);
 
-                       
-                            lRet = true;
-                            // Asigno valor a propiedades de la clase.
-                            loginName = pnombre;
-                            idUsuario = lidUsuario;
 
-                            // Cargo los permisos
-                            
-                        
+                        lRet = true;
+                        // Asigno valor a propiedades de la clase.
+                        loginName = pnombre;
+                        idUsuario = lidUsuario;
 
-
+                        // Cargo los permisos
                     }
                 }
             }
             return lRet;
         }
-
 
         public static void LoadDataBanco(string sql)
         {

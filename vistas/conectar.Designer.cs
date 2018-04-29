@@ -33,11 +33,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(141, 67);
+            this.button1.Location = new System.Drawing.Point(86, 31);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(219, 74);
+            this.button1.Size = new System.Drawing.Size(168, 55);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Connectar";
+            this.button1.Text = "Test Connection";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 188);
+            this.ClientSize = new System.Drawing.Size(345, 121);
             this.Controls.Add(this.button1);
             this.Name = "conectar";
             this.Text = "conectar";
