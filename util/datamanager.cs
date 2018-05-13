@@ -172,15 +172,13 @@ namespace ProgramacionOO
             ConexionAbrir();
             if (ConexionAbrir())
             {
-                var dr = ConsultaLeer("SELECT * FROM USUARIOS WHERE USUARIOS.USUARIO='" + pnombre + "'");
+                OracleDataReader dr = ConsultaLeer("SELECT ID_USUARIO, USUARIO, CONTRASENA FROM USUARIOS WHERE USUARIOS.USUARIO='" + pnombre + "' AND USUARIOS.CONTRASENA='"+pclave+"'");
                 if (dr != null)
                 {
                     if (dr.Read())
-
                     {
-                        lidUsuario = dr.GetInt32(0);
-                        lpassword = dr.GetString(1);
-
+                         lidUsuario = dr.GetInt32(0);  
+                         lpassword = dr.GetString(2);
 
                         lRet = true;
                         // Asigno valor a propiedades de la clase.

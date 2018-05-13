@@ -1,0 +1,9 @@
+C:\Users\MAMF\Desktop\ProgramacionOO\Controler\obj\Debug\Controler.csproj.CoreCompileInputs.cache
+C:\Users\MAMF\Desktop\ProgramacionOO\Controler\bin\Debug\Controler.dll
+C:\Users\MAMF\Desktop\ProgramacionOO\Controler\bin\Debug\Controler.pdb
+C:\Users\MAMF\Desktop\ProgramacionOO\Controler\bin\Debug\Modelo.dll
+C:\Users\MAMF\Desktop\ProgramacionOO\Controler\bin\Debug\Modelo.pdb
+C:\Users\MAMF\Desktop\ProgramacionOO\Controler\obj\Debug\Controler.csprojResolveAssemblyReference.cache
+C:\Users\MAMF\Desktop\ProgramacionOO\Controler\obj\Debug\Controler.csproj.CopyComplete
+C:\Users\MAMF\Desktop\ProgramacionOO\Controler\obj\Debug\Controler.dll
+C:\Users\MAMF\Desktop\ProgramacionOO\Controler\obj\Debug\Controler.pdb

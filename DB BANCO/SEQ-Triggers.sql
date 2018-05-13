@@ -1,0 +1,120 @@
+--******************************************************************************************************************************
+CREATE OR REPLACE TRIGGER TG_USUARIOS
+
+BEFORE INSERT  --ANTES DE INSERTAR UN REGISTRO EN USUARIO POR REGISTRO
+ON USUARIOS 
+FOR EACH ROW
+
+BEGIN 
+
+ SELECT SEQ_USUARIOS.NEXTVAL --SELECIONAR LA SECUENCIA Y INTRODUCIR UN NUEVO VALOR AL ID
+ INTO :NEW.ID_USUARIO
+ FROM DUAL; --TABLA TEMPORAL DUAL
+ 
+END; 
+
+--******************************************************************************************************************************
+create or replace TRIGGER TG_BC_BANCOS
+
+BEFORE INSERT  --ANTES DE INSERTAR UN REGISTRO EN USUARIO POR REGISTRO
+ON BC_BANCOS 
+FOR EACH ROW
+
+BEGIN 
+
+ SELECT SEQ_BC_BANCOS.NEXTVAL --SELECIONAR LA SECUENCIA Y INTRODUCIR UN NUEVO VALOR AL ID
+ INTO :NEW.ID_BANCO
+ FROM DUAL; --TABLA TEMPORAL DUAL
+
+END;
+
+--******************************************************************************************************************************
+
+create or replace TRIGGER TG_BC_SUCURSALES
+
+BEFORE INSERT  --ANTES DE INSERTAR UN REGISTRO EN USUARIO POR REGISTRO
+ON BC_SUCURSALES
+FOR EACH ROW
+
+BEGIN 
+
+ SELECT SEQ_BC_SUCURSALES.NEXTVAL --SELECIONAR LA SECUENCIA Y INTRODUCIR UN NUEVO VALOR AL ID
+ INTO :NEW.ID_SUCURSAL
+ FROM DUAL; --TABLA TEMPORAL DUAL
+
+END;
+--******************************************************************************************************************************
+
+CREATE OR REPLACE TRIGGER TG_BC_CUENTAS
+
+BEFORE INSERT  --ANTES DE INSERTAR UN REGISTRO EN USUARIO POR REGISTRO
+ON BC_CUENTAS
+FOR EACH ROW
+
+BEGIN 
+
+ SELECT SEQ_BC_CUENTAS.NEXTVAL --SELECIONAR LA SECUENCIA Y INTRODUCIR UN NUEVO VALOR AL ID
+ INTO :NEW.ID_CUENTA
+ FROM DUAL; --TABLA TEMPORAL DUAL
+
+END;
+--******************************************************************************************************************************
+
+CREATE OR REPLACE TRIGGER TG_BC_CLIENTES
+
+BEFORE INSERT  --ANTES DE INSERTAR UN REGISTRO EN USUARIO POR REGISTRO
+ON BC_CLIENTES 
+FOR EACH ROW
+
+BEGIN 
+
+ SELECT SEQ_BC_CLIENTES.NEXTVAL --SELECIONAR LA SECUENCIA Y INTRODUCIR UN NUEVO VALOR AL ID
+ INTO :NEW.ID_CLIENTE
+ FROM DUAL; --TABLA TEMPORAL DUAL
+
+END;
+--******************************************************************************************************************************
+
+create or replace TRIGGER TG_BC_TIPO_DOC_BANCARIOS
+
+BEFORE INSERT  --ANTES DE INSERTAR UN REGISTRO EN USUARIO POR REGISTRO
+ON BC_TIPO_DOC_BANCARIOS 
+FOR EACH ROW
+
+BEGIN 
+
+ SELECT SEQ_TIPO_DOC_BANCARIOS.NEXTVAL --SELECIONAR LA SECUENCIA Y INTRODUCIR UN NUEVO VALOR AL ID
+ INTO :NEW.ID_TIPO_DOC_BANCARIO
+ FROM DUAL; --TABLA TEMPORAL DUAL
+
+END;
+--******************************************************************************************************************************
+
+CREATE OR REPLACE TRIGGER TG_BC_DOC_BANCARIOS
+
+BEFORE INSERT  --ANTES DE INSERTAR UN REGISTRO EN USUARIO POR REGISTRO
+ON BC_TIPO_DOC_BANCARIOS 
+FOR EACH ROW
+
+BEGIN 
+
+ SELECT SEQ_DOC_BANCARIOS.NEXTVAL --SELECIONAR LA SECUENCIA Y INTRODUCIR UN NUEVO VALOR AL ID
+ INTO :NEW.ID_TIPO_DOC_BANCARIO
+ FROM DUAL; --TABLA TEMPORAL DUAL
+
+END;
+--******************************************************************************************************************************
+CREATE OR REPLACE TRIGGER TG_BC_MOVIMIENTOS
+
+BEFORE INSERT  --ANTES DE INSERTAR UN REGISTRO EN USUARIO POR REGISTRO
+ON BC_MOVIMIENTOS 
+FOR EACH ROW
+
+BEGIN 
+
+ SELECT SEQ_BC_MOVIMIENTOS.NEXTVAL --SELECIONAR LA SECUENCIA Y INTRODUCIR UN NUEVO VALOR AL ID
+ INTO :NEW.ID_BC_MOVIMIENTOS
+ FROM DUAL; --TABLA TEMPORAL DUAL
+
+END;
+--******************************************************************************************************************************
