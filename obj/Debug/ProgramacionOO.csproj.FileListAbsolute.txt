@@ -23,11 +23,9 @@ E:\Proyectos\NET\ProgramacionOO\bin\Debug\Oracle.DataAccess.dll
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.conectar.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.ejemplo.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmBanco.resources
-E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.FrmBase.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmClientes.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmCuentas.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmdocbancarios.resources
-E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmHijo.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmLogin.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.frmMenu.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.Properties.Resources.resources

@@ -9,12 +9,12 @@ namespace ProgramacionOO.clases
 {
     class bc_clientes : Mantenimientos
     {
-        private int bc_Clienteid { get; set; }
-        private string bc_TipoDocumento { get; set; }
-        private string bc_NumeroDocumento { get; set; }
-        private string bc_Nombre { get; set; }
-        private string bc_estado { get; set; }
-        private int bc_numeroControlRecurrencia { get; set; }
+        public int bc_Clienteid { get; set; }
+        public string bc_TipoDocumento { get; set; }
+        public string bc_NumeroDocumento { get; set; }
+        public string bc_Nombre { get; set; }
+        public string bc_estado { get; set; }
+        public int bc_numeroControlRecurrencia { get; set; }
       //  private string Errormsg = "";
 
 
@@ -25,6 +25,8 @@ namespace ProgramacionOO.clases
             string pbc_estado,
             int pbc_numeroControlRecurrencia
             )
+
+       
         {
             this.bc_Clienteid = pbc_Clienteid;
             this.bc_TipoDocumento = pbc_TipoDocumento;
@@ -33,7 +35,10 @@ namespace ProgramacionOO.clases
             this.bc_estado = pbc_estado;
             this.bc_numeroControlRecurrencia = pbc_numeroControlRecurrencia;
         }
-
+        public bc_clientes()
+        {
+            Limpiar();
+        }
         public void Limpiar()
         {
             bc_Clienteid = 0;
@@ -66,12 +71,11 @@ namespace ProgramacionOO.clases
                 encontrado = true;
                 if (asignar)
                 {
-                    bc_Clienteid = Convert.ToInt16(dr["clienteid"]);
+                    bc_Clienteid = Convert.ToInt16(dr["ID_CLIENTE"]);
                     bc_TipoDocumento = dr["tipo_documento"].ToString();
-                    bc_NumeroDocumento = dr["numero_documento"].ToString();
+                    bc_NumeroDocumento = dr["num_documento"].ToString();
                     bc_Nombre = dr["nombre"].ToString();
                     bc_estado = dr["estado"].ToString();
-                    bc_numeroControlRecurrencia =Convert.ToInt16( dr["numcontrol_concurrencia"]);
 
                 }
             }
@@ -92,15 +96,14 @@ namespace ProgramacionOO.clases
 
 
 
-                OracleCommand cmd = new OracleCommand("Insert into bc_clientes(clienteid,tipo_documento,numero_documento,nombre,estado,numcontrol_concurrencia)" +
-                                                        " Values(:clienteid,:tipo_documento,:numero_documento,:nombre,:estado, : numcontrol_concurrencia)", datamanager.ConexionSQL);
+                OracleCommand cmd = new OracleCommand("Insert into bc_clientes(clienteid,tipo_documento,num_Documento ,nombre,estado,numcontrol_concurrencia)" +
+                                                        " Values(:clienteid,:tipo_documento,:num_documento,:nombre,:estado, : numcontrol_concurrencia)", datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("clienteid", bc_Clienteid);
                 cmd.Parameters.AddWithValue("tipo_documento", bc_TipoDocumento);
-                cmd.Parameters.AddWithValue("numero_documento", bc_NumeroDocumento);
+                cmd.Parameters.AddWithValue("num_Documento", bc_NumeroDocumento);
                 cmd.Parameters.AddWithValue("nombre", bc_Nombre);
                 cmd.Parameters.AddWithValue("estado", bc_estado);
-                cmd.Parameters.AddWithValue("numcontrol_concurrencia", bc_numeroControlRecurrencia);
 
                 datamanager.ConexionAbrir();
                 bc_Clienteid = (int)cmd.ExecuteNonQuery();
@@ -129,9 +132,12 @@ namespace ProgramacionOO.clases
 
         public bool BuscarUltimo()
         {
-            throw new NotImplementedException();
+            var dr = datamanager.ConsultaLeer(" Select id_cliente,Tipo_documento,Num_documento, Nombre,Estado" +
+                                             "  From BC_CLIENTES" +
+                                             "  Order by id_cliente desc");
+            return LeerDatos(dr, true);
         }
-
+     
         public bool BorrarDatos(int pbancoid)
         {
             throw new NotImplementedException();

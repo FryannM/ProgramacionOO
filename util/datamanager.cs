@@ -34,6 +34,7 @@ namespace ProgramacionOO
 
         public static string loginName { get; private set; }
         public static int idUsuario { get; private set; }
+        public static string Estado { get; set; }
 
 
         public static bool ConexionAbrir()
@@ -163,29 +164,34 @@ namespace ProgramacionOO
         }
 
 
-        public static bool ValidarUsuario(string pnombre, string pclave)
+        public static bool ValidarUsuario(string pnombre, string pclave /*string Estatus*/)
         {
             bool lRet = false;
             string lpassword = "";
             int lidUsuario = 0;
             string lEncriptPsw = md5(pnombre.Trim() + pclave.Trim());
-            ConexionAbrir();
+
             if (ConexionAbrir())
             {
-                OracleDataReader dr = ConsultaLeer("SELECT ID_USUARIO, USUARIO, CONTRASENA FROM USUARIOS WHERE USUARIOS.USUARIO='" + pnombre + "' AND USUARIOS.CONTRASENA='"+pclave+"'");
+                var dr = ConsultaLeer("SELECT USUARIO_ID,CONTRASENA FROM USUARIOS WHERE NOMBRE_USUARIO='" + pnombre + "'");
                 if (dr != null)
                 {
                     if (dr.Read())
                     {
-                         lidUsuario = dr.GetInt32(0);  
-                         lpassword = dr.GetString(2);
+                        lidUsuario = dr.GetInt32(1);
+                        lpassword = dr.GetString(1);
 
-                        lRet = true;
-                        // Asigno valor a propiedades de la clase.
-                        loginName = pnombre;
-                        idUsuario = lidUsuario;
 
-                        // Cargo los permisos
+                        if (lEncriptPsw.Equals(lpassword))
+                        {
+                            lRet = true;
+                            // Asigno valor a propiedades de la clase.
+                            loginName = pnombre;
+                            idUsuario = lidUsuario;
+
+                            // Cargo los permisos
+                           
+                        }
                     }
                 }
             }

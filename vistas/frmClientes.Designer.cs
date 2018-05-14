@@ -43,13 +43,14 @@
             this.cbtipoDoc = new System.Windows.Forms.ComboBox();
             this.lblnodoc = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.TxtidCliente = new System.Windows.Forms.TextBox();
+            this.lblCliente = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(283, 133);
+            this.btnEliminar.Location = new System.Drawing.Point(283, 170);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(49, 29);
             this.btnEliminar.TabIndex = 23;
@@ -58,16 +59,17 @@
             // btnGuardar
             // 
             this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(283, 98);
+            this.btnGuardar.Location = new System.Drawing.Point(283, 135);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(49, 29);
             this.btnGuardar.TabIndex = 22;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEditar
             // 
             this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
-            this.btnEditar.Location = new System.Drawing.Point(283, 69);
+            this.btnEditar.Location = new System.Drawing.Point(283, 106);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(49, 29);
             this.btnEditar.TabIndex = 21;
@@ -76,7 +78,7 @@
             // btnNuevo
             // 
             this.btnNuevo.Image = global::ProgramacionOO.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(283, 35);
+            this.btnNuevo.Location = new System.Drawing.Point(283, 72);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(49, 29);
             this.btnNuevo.TabIndex = 20;
@@ -87,7 +89,7 @@
             // 
             this.lblTipoDoc.AutoSize = true;
             this.lblTipoDoc.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoDoc.Location = new System.Drawing.Point(31, 62);
+            this.lblTipoDoc.Location = new System.Drawing.Point(31, 98);
             this.lblTipoDoc.Name = "lblTipoDoc";
             this.lblTipoDoc.Size = new System.Drawing.Size(54, 15);
             this.lblTipoDoc.TabIndex = 18;
@@ -97,7 +99,7 @@
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(31, 139);
+            this.lblEstado.Location = new System.Drawing.Point(31, 175);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(44, 15);
             this.lblEstado.TabIndex = 17;
@@ -105,7 +107,7 @@
             // 
             // txtnombre
             // 
-            this.txtnombre.Location = new System.Drawing.Point(95, 110);
+            this.txtnombre.Location = new System.Drawing.Point(95, 146);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(182, 20);
             this.txtnombre.TabIndex = 4;
@@ -114,7 +116,7 @@
             // 
             this.lblnombre.AutoSize = true;
             this.lblnombre.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombre.Location = new System.Drawing.Point(31, 110);
+            this.lblnombre.Location = new System.Drawing.Point(31, 146);
             this.lblnombre.Name = "lblnombre";
             this.lblnombre.Size = new System.Drawing.Size(49, 15);
             this.lblnombre.TabIndex = 15;
@@ -124,7 +126,7 @@
             // 
             this.lblcodigo.AutoSize = true;
             this.lblcodigo.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcodigo.Location = new System.Drawing.Point(31, 38);
+            this.lblcodigo.Location = new System.Drawing.Point(31, 51);
             this.lblcodigo.Name = "lblcodigo";
             this.lblcodigo.Size = new System.Drawing.Size(46, 15);
             this.lblcodigo.TabIndex = 14;
@@ -133,14 +135,14 @@
             // txtcodigo
             // 
             this.txtcodigo.Enabled = false;
-            this.txtcodigo.Location = new System.Drawing.Point(95, 39);
+            this.txtcodigo.Location = new System.Drawing.Point(95, 46);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(57, 20);
             this.txtcodigo.TabIndex = 1;
             // 
             // txtnodoc
             // 
-            this.txtnodoc.Location = new System.Drawing.Point(95, 84);
+            this.txtnodoc.Location = new System.Drawing.Point(95, 120);
             this.txtnodoc.Name = "txtnodoc";
             this.txtnodoc.Size = new System.Drawing.Size(182, 20);
             this.txtnodoc.TabIndex = 3;
@@ -148,7 +150,7 @@
             // cbtipoDoc
             // 
             this.cbtipoDoc.FormattingEnabled = true;
-            this.cbtipoDoc.Location = new System.Drawing.Point(95, 62);
+            this.cbtipoDoc.Location = new System.Drawing.Point(95, 98);
             this.cbtipoDoc.Name = "cbtipoDoc";
             this.cbtipoDoc.Size = new System.Drawing.Size(182, 21);
             this.cbtipoDoc.TabIndex = 2;
@@ -157,7 +159,7 @@
             // 
             this.lblnodoc.AutoSize = true;
             this.lblnodoc.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnodoc.Location = new System.Drawing.Point(31, 89);
+            this.lblnodoc.Location = new System.Drawing.Point(31, 125);
             this.lblnodoc.Name = "lblnodoc";
             this.lblnodoc.Size = new System.Drawing.Size(48, 15);
             this.lblnodoc.TabIndex = 25;
@@ -166,25 +168,36 @@
             // cbEstado
             // 
             this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(95, 139);
+            this.cbEstado.Location = new System.Drawing.Point(95, 175);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(182, 21);
             this.cbEstado.TabIndex = 5;
             // 
-            // listView1
+            // TxtidCliente
             // 
-            this.listView1.Location = new System.Drawing.Point(12, 182);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(398, 141);
-            this.listView1.TabIndex = 43;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.TxtidCliente.Enabled = false;
+            this.TxtidCliente.Location = new System.Drawing.Point(95, 72);
+            this.TxtidCliente.Name = "TxtidCliente";
+            this.TxtidCliente.Size = new System.Drawing.Size(182, 20);
+            this.TxtidCliente.TabIndex = 26;
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Location = new System.Drawing.Point(31, 72);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(60, 15);
+            this.lblCliente.TabIndex = 27;
+            this.lblCliente.Text = "Cliente ID";
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 335);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lblCliente);
+            this.Controls.Add(this.TxtidCliente);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.lblnodoc);
             this.Controls.Add(this.cbtipoDoc);
@@ -225,6 +238,7 @@
         private System.Windows.Forms.ComboBox cbtipoDoc;
         private System.Windows.Forms.Label lblnodoc;
         private System.Windows.Forms.ComboBox cbEstado;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.TextBox TxtidCliente;
+        private System.Windows.Forms.Label lblCliente;
     }
 }

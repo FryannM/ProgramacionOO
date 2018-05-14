@@ -11,8 +11,13 @@ namespace ProgramacionOO
 {
     public partial class frmMenu : Form
     {
-       public frmMenu()
+       public frmMenu(/*string nombre, string Estado*/)
         {
+
+           // llbNombre.Text = nombre;
+           // lblUsuario.Text = Estado;
+         
+
             InitializeComponent();
         }
         private void bancosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,7 +44,6 @@ namespace ProgramacionOO
             frm.MdiParent = this;
             frm.Show();
         }
-
         private void cuentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             vistas.frmCuentas frm = new vistas.frmCuentas();
@@ -48,6 +52,11 @@ namespace ProgramacionOO
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

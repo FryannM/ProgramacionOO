@@ -69,14 +69,14 @@ namespace ProgramacionOO.vistas
             if (txtid.Text == "0")
             {
 
-                  registro.ValidarCamposRequeridos();
+                 // registro.ValidarCamposRequeridos();
                   lret = registro.CrearDatos() > 0;
                 
 
             }
             else
             {
-                registro.ValidarCamposRequeridos();
+               // registro.ValidarCamposRequeridos();
                 lret = registro.ActualizarDatos();
                 lret = true;
             }
