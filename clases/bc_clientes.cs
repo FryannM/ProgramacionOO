@@ -13,7 +13,7 @@ namespace ProgramacionOO.clases
         public string bc_TipoDocumento { get; set; }
         public string bc_NumeroDocumento { get; set; }
         public string bc_Nombre { get; set; }
-        public string bc_estado { get; set; }
+        public string bc_Estado { get; set; }
         public int bc_numeroControlRecurrencia { get; set; }
       //  private string Errormsg = "";
 
@@ -22,7 +22,7 @@ namespace ProgramacionOO.clases
             string pbc_TipoDocumento,
             string pbc_NumeroDocumento,
             string pbc_Nombre,
-            string pbc_estado,
+            string pbc_Estado,
             int pbc_numeroControlRecurrencia
             )
 
@@ -32,7 +32,7 @@ namespace ProgramacionOO.clases
             this.bc_TipoDocumento = pbc_TipoDocumento;
             this.bc_NumeroDocumento = pbc_NumeroDocumento;
             this.bc_Nombre = pbc_Nombre;
-            this.bc_estado = pbc_estado;
+            this.bc_Estado = pbc_Estado;
             this.bc_numeroControlRecurrencia = pbc_numeroControlRecurrencia;
         }
         public bc_clientes()
@@ -45,7 +45,7 @@ namespace ProgramacionOO.clases
             bc_TipoDocumento = "";
             bc_NumeroDocumento = "";
             bc_Nombre = "";
-            bc_estado = "";
+            bc_Estado = "";
             bc_numeroControlRecurrencia = 0;
 
 
@@ -75,7 +75,7 @@ namespace ProgramacionOO.clases
                     bc_TipoDocumento = dr["tipo_documento"].ToString();
                     bc_NumeroDocumento = dr["num_documento"].ToString();
                     bc_Nombre = dr["nombre"].ToString();
-                    bc_estado = dr["estado"].ToString();
+                    bc_Estado = dr["estado"].ToString();
 
                 }
             }
@@ -96,14 +96,14 @@ namespace ProgramacionOO.clases
 
 
 
-                OracleCommand cmd = new OracleCommand("Insert into bc_clientes(clienteid,tipo_documento,num_Documento ,nombre,estado,numcontrol_concurrencia)" +
-                                                        " Values(:clienteid,:tipo_documento,:num_documento,:nombre,:estado, : numcontrol_concurrencia)", datamanager.ConexionSQL);
+                OracleCommand cmd = new OracleCommand("Insert into bc_clientes(id_cliente,tipo_documento,num_Documento ,nombre,estado)" +
+                                                        " Values(:id_cliente,:tipo_documento,:num_documento,:nombre,:estado)", datamanager.ConexionSQL);
 
-                cmd.Parameters.AddWithValue("clienteid", bc_Clienteid);
+                cmd.Parameters.AddWithValue("id_cliente", bc_Clienteid);
                 cmd.Parameters.AddWithValue("tipo_documento", bc_TipoDocumento);
                 cmd.Parameters.AddWithValue("num_Documento", bc_NumeroDocumento);
                 cmd.Parameters.AddWithValue("nombre", bc_Nombre);
-                cmd.Parameters.AddWithValue("estado", bc_estado);
+                cmd.Parameters.AddWithValue("estado", bc_Estado);
 
                 datamanager.ConexionAbrir();
                 bc_Clienteid = (int)cmd.ExecuteNonQuery();
@@ -114,10 +114,30 @@ namespace ProgramacionOO.clases
             return bc_Clienteid;
 
         }
-
         public bool ActualizarDatos()
         {
-            throw new NotImplementedException();
+            int lRet = 0;
+         
+            if (datamanager.ConexionAbrir())
+            {
+                OracleCommand cmd = new OracleCommand(" Update bc_clientes" +
+                                                     " Set id_cliente = :id_cliente," +
+                                                      " Tipo_documento = :Tipo_documento," +
+                                                      " Num_documento = :Num_documento," +
+                                                      " Nombre = :Nombre, " +
+                                                      " Estado = :Estado " +
+                                                      " Where id_cliente = :id_cliente ", datamanager.ConexionSQL);
+
+                cmd.Parameters.AddWithValue("id_cliente", bc_Clienteid);
+                cmd.Parameters.AddWithValue("Tipo_documento", bc_TipoDocumento);
+                cmd.Parameters.AddWithValue("Num_documento", bc_NumeroDocumento);
+                cmd.Parameters.AddWithValue("Nombre", bc_Nombre);
+                cmd.Parameters.AddWithValue("Estado", bc_Estado);
+                datamanager.ConexionAbrir();
+                cmd.ExecuteNonQuery();
+                datamanager.ConexionCerrar();
+            }
+            return lRet > 0;
         }
 
         public bool borrarDatos(int pbancoid)

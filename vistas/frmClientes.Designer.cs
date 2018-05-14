@@ -74,6 +74,7 @@
             this.btnEditar.Size = new System.Drawing.Size(49, 29);
             this.btnEditar.TabIndex = 21;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -150,6 +151,9 @@
             // cbtipoDoc
             // 
             this.cbtipoDoc.FormattingEnabled = true;
+            this.cbtipoDoc.Items.AddRange(new object[] {
+            "Cheque",
+            "Cash"});
             this.cbtipoDoc.Location = new System.Drawing.Point(95, 98);
             this.cbtipoDoc.Name = "cbtipoDoc";
             this.cbtipoDoc.Size = new System.Drawing.Size(182, 21);
@@ -168,6 +172,9 @@
             // cbEstado
             // 
             this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Items.AddRange(new object[] {
+            "I",
+            "A"});
             this.cbEstado.Location = new System.Drawing.Point(95, 175);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(182, 21);

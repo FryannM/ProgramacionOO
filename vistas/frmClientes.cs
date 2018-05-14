@@ -35,7 +35,7 @@ namespace ProgramacionOO.vistas
             cbtipoDoc.Text = registro.bc_TipoDocumento;
             txtnodoc.Text = registro.bc_NumeroDocumento;
             txtnombre.Text = registro.bc_Nombre;
-            cbEstado.Text = registro.bc_estado;
+            cbEstado.Text = registro.bc_Estado;
 
         }
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -47,13 +47,19 @@ namespace ProgramacionOO.vistas
             Disable(result);
             TxtidCliente.Text = "0";
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            bool result = false;
+            Disable(result);
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             registro.bc_Clienteid = Convert.ToInt16(TxtidCliente.Text);
             registro.bc_TipoDocumento = cbtipoDoc.Text;
             registro.bc_NumeroDocumento = txtnodoc.Text;
             registro.bc_Nombre = txtnombre.Text;
-            registro.bc_estado = cbEstado.Text;
+            registro.bc_Estado = cbEstado.Text;
 
             bool lret;
             if (TxtidCliente.Text == "0")
@@ -100,5 +106,7 @@ namespace ProgramacionOO.vistas
             }
             return result;
         }
+
+        
     }
 }

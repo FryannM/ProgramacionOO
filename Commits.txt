@@ -1,0 +1,131 @@
+commit d057085150bb0e0918394573232ad3f51a44287c
+Author: Fryann <fryann14@hotmail.com>
+Date:   Mon May 14 10:04:52 2018 -0400
+
+    Mantenimiento frmClientes
+
+commit 32ea2a7473b02667e219fee74c1a035e85cbc02b
+Author: Miguel Angel Mendez <sr.mendezfurcal@hotmail.com>
+Date:   Sun May 13 02:06:52 2018 -0400
+
+    Se verificaron las consultas a base de datos que realiza el mtoto validacionDeUsuario y se agrego de manera independiente los archivos (Query) para la DB (CARPETA DB BANCO).
+
+commit 20e56dfee697fd21e4fcdcac1dee97153bef3884
+Author: Miguel Angel Mendez <sr.mendezfurcal@hotmail.com>
+Date:   Sun Apr 29 16:22:19 2018 -0400
+
+    Cambio de nombres a los campos de los metodos de consultas,esto para adaptarlos a la nueva base de datos, la misma subida con este commit.
+
+commit fda323d438393155274a2a5e0da70b9f20105ef3
+Author: Miguel Angel Mendez <sr.mendezfurcal@hotmail.com>
+Date:   Sun Apr 29 13:09:52 2018 -0400
+
+    Se eliminaron dos formularios que no estaban en uso, FrBase  y FrHijo esto solo para probar la conexion al repositorio
+
+commit f4772cdb82338af33d9882097b5b0297a868240b
+Author: Miguel Angel Mendez <sr.mendezfurcal@hotmail.com>
+Date:   Sun Apr 29 02:34:58 2018 -0400
+
+    Iniciando colaboracion
+
+commit 9b7f4d14048fd58b8e70aaefd5cd1e3547480005
+Author: Fryann <fryann14@hotmail.com>
+Date:   Thu Apr 26 18:24:36 2018 -0400
+
+    Validaciones de frm banco de caracteres
+
+commit 08c34110ad60b7dbeb51eda099f5c56e7b6dc243
+Author: Fryann <fryann14@hotmail.com>
+Date:   Thu Apr 26 11:24:19 2018 -0400
+
+    Implementando Data Anotation Para validaciones
+
+commit 6e432ea2ba0ad276a7f0d6b50329f7ebf1c496e7
+Author: Fryann <fryann14@hotmail.com>
+Date:   Sat Apr 21 13:14:27 2018 -0400
+
+    ListView Agregado
+
+commit 32e3bfbde560c15bf1f34e8fe56b4be046e28ed3
+Author: Fryann <fryann14@hotmail.com>
+Date:   Sat Apr 21 12:57:46 2018 -0400
+
+    Interface Agregada
+
+commit 4d99c59636eab4487a06272a54a79e1b7866738c
+Author: Fryann <fryann14@hotmail.com>
+Date:   Sat Apr 21 01:29:28 2018 -0400
+
+    Formularios lock
+
+commit 58bc4834660351847a5108a6dc4897baf96925b7
+Author: Fryann <fryann14@hotmail.com>
+Date:   Sat Apr 21 01:23:45 2018 -0400
+
+    Formulario bc_Banco CRUD Terminado
+
+commit 4dab915814105b286211c5443d4f563eb49d1f26
+Author: Fryann <fryann14@hotmail.com>
+Date:   Sat Apr 21 00:50:40 2018 -0400
+
+    Formulario bc_Banco Guarda y Actualiza
+
+commit c22f9e22aa88c6d0e82ed265e11e76874428ce73
+Author: Fryann <fryann14@hotmail.com>
+Date:   Fri Apr 20 23:07:04 2018 -0400
+
+    Formulario frmLogin Bug Fix it
+
+commit 36735562d2279384c38f17124b439966354410be
+Author: Fryann <fryann14@hotmail.com>
+Date:   Fri Apr 20 19:20:47 2018 -0400
+
+    Formulario bc_bancos Guardando!
+
+commit c91504e8b2a2fee2cff363e00850a66edc43c7bf
+Author: Fryann <fryann14@hotmail.com>
+Date:   Fri Apr 20 16:36:39 2018 -0400
+
+    Implementando mantenimientos frm bc_bancos
+
+commit d0869c8f259ae49e62d149f8c293345183c47f2c
+Author: Fryann <fryann14@hotmail.com>
+Date:   Wed Apr 18 07:53:28 2018 -0400
+
+    Conexion LISTA!
+
+commit 777352b19c9d2e091346f69dacd3f962af65d689
+Author: Fryann <fryann14@hotmail.com>
+Date:   Wed Apr 18 00:19:26 2018 -0400
+
+    Conexion Oracle 11g Realizada
+
+commit 92b6b9b58c4ed073dc63d02dd39592c7755d923f
+Author: Fryann <fryann14@hotmail.com>
+Date:   Tue Apr 17 18:35:29 2018 -0400
+
+    Agregando frmCuentas
+
+commit 7a803b9af59cbc645616e1dec707f68bb8573bce
+Author: Fryann <fryann14@hotmail.com>
+Date:   Tue Apr 17 16:53:32 2018 -0400
+
+    Agregando iconos a los btns de los mantenimientos
+
+commit e1e5d52cbb305ef19304e69fe50ef8d168cbfd00
+Author: Fryann <fryann14@hotmail.com>
+Date:   Tue Apr 17 16:38:27 2018 -0400
+
+    construccion de formularios
+
+commit a63b5fdb8eba54363a8da22630e38eee0b96605e
+Author: Fryann <fryann14@hotmail.com>
+Date:   Tue Apr 17 15:53:28 2018 -0400
+
+    Agregando Resources
+
+commit b355d3b947b6eba3a84c107f728f36509ca500ca
+Author: Fryann <fryann14@hotmail.com>
+Date:   Mon Apr 16 23:20:06 2018 -0400
+
+    Initial Commit
