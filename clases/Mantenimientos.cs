@@ -19,6 +19,6 @@ namespace ProgramacionOO.clases
          bool BorrarDatos(int pbancoid);
          bool Buscar(String Param, bool asignar);
          bool Buscar(int Param, bool asignar);
-
+        
     }
 }

@@ -51,6 +51,11 @@ namespace ProgramacionOO
             frm.Show();
         }
 
-        
+        private void titularesCuentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vistas.frmTitularesCuentas frm = new vistas.frmTitularesCuentas();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

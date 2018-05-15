@@ -54,3 +54,4 @@ C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.csproj.CoreCompile
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.csproj.CopyComplete
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.exe
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.pdb
+E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmTitularesCuentas.resources

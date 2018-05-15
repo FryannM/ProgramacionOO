@@ -10,17 +10,20 @@ using System.Windows.Forms;
 
 namespace ProgramacionOO.vistas
 {
-    public partial class frmClientes : Form
+    public partial class frmTitularesCuentas : Form
     {
-        private clases.bc_clientes registro { get; set; }
 
-        public frmClientes()
+        private clases.bc_Titulares_Cuentas registro { get; set; }
+
+        public frmTitularesCuentas()
         {
             InitializeComponent();
         }
-        private void frmClientes_Load(object sender, EventArgs e)
+
+        private void frmTitularesCuentas_Load(object sender, EventArgs e)
         {
-            registro = new clases.bc_clientes();
+            registro = new clases.bc_Titulares_Cuentas();
+
 
             registro.BuscarUltimo();
             Mostrar();
@@ -28,24 +31,45 @@ namespace ProgramacionOO.vistas
             bool result = true;
             Disable(result);
         }
+
         private void Mostrar()
         {
 
-            TxtidCliente.Text = Convert.ToInt16(registro.bc_Clienteid).ToString();
-            cbtipoDoc.Text = registro.bc_TipoDocumento;
-            txtnodoc.Text = registro.bc_NumeroDocumento;
-            txtnombre.Text = registro.bc_Nombre;
-            cbEstado.Text = registro.bc_Estado;
+            txtTitularCuenta.Text = Convert.ToInt16(registro.bc_Titular_Cuentaid).ToString();
+            txtCuenta.Text = Convert.ToInt16(registro.bc_Cuenta_id).ToString();
+            TxtidCliente.Text = Convert.ToInt16(registro.bc_Cliente_id).ToString();
 
         }
+        private bool Disable(bool result)
+        {
+            if (result == true)
+            {
+                txtTitularCuenta.Enabled = false;
+                txtCuenta.Enabled = false;
+                TxtidCliente.Enabled = false;
+
+
+            }
+            else
+            {
+                //txtTitularCuenta.Enabled = true;
+                txtCuenta.Enabled = true;
+                TxtidCliente.Enabled = true;
+                btnGuardar.Enabled = true;
+                btnEliminar.Enabled = true;
+            }
+            return result;
+        }
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            txtTitularCuenta.Clear();
+            txtCuenta.Clear();
             TxtidCliente.Clear();
-            txtnombre.Clear();
-            txtnodoc.Clear();
+
             bool result = false;
             Disable(result);
-            TxtidCliente.Text = "0";
+            txtTitularCuenta.Text = "0";
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -53,13 +77,13 @@ namespace ProgramacionOO.vistas
             bool result = false;
             Disable(result);
         }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            registro.bc_Clienteid = Convert.ToInt16(TxtidCliente.Text);
-            registro.bc_TipoDocumento = cbtipoDoc.Text;
-            registro.bc_NumeroDocumento = txtnodoc.Text;
-            registro.bc_Nombre = txtnombre.Text;
-            registro.bc_Estado = cbEstado.Text;
+            registro.bc_Titular_Cuentaid = Convert.ToInt16(txtTitularCuenta.Text);
+            registro.bc_Cuenta_id = Convert.ToInt16(txtCuenta.Text);
+            registro.bc_Cliente_id = Convert.ToInt16(TxtidCliente.Text);
+
 
             bool lret;
             if (TxtidCliente.Text == "0")
@@ -81,30 +105,6 @@ namespace ProgramacionOO.vistas
             else
                 MessageBox.Show(clases.Exepciones.ExepcionGuardar, "Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        private bool Disable(bool result)
-        {
-            if (result == true)
-            {
-                txtnombre.Enabled = false;
-                txtnodoc.Enabled = false;
-                cbtipoDoc.Enabled = false;
-                cbEstado.Enabled = false;
-                btnGuardar.Enabled = false;
-                btnEliminar.Enabled = false;
-
-            }
-            else
-            {
-                txtnombre.Enabled = true;
-                txtnodoc.Enabled = true;
-                cbtipoDoc.Enabled = true;
-                cbEstado.Enabled = true;
-                btnGuardar.Enabled = true;
-                btnEliminar.Enabled = true;
-            }
-            return result;
-        }
-
-        
     }
-}
+    }
+

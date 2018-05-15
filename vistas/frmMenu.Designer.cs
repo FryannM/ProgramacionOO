@@ -38,8 +38,9 @@
             this.sucursalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.titularesCuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@
             this.bancosToolStripMenuItem,
             this.clienteToolStripMenuItem,
             this.cuentasToolStripMenuItem,
+            this.titularesCuentasToolStripMenuItem,
             this.docbancariosToolStripMenuItem,
             this.sucursalesToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
@@ -73,7 +75,7 @@
             // 
             this.bancosToolStripMenuItem.Image = global::ProgramacionOO.Properties.Resources.bank1;
             this.bancosToolStripMenuItem.Name = "bancosToolStripMenuItem";
-            this.bancosToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.bancosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bancosToolStripMenuItem.Text = "Bancos";
             this.bancosToolStripMenuItem.Click += new System.EventHandler(this.bancosToolStripMenuItem_Click);
             // 
@@ -81,7 +83,7 @@
             // 
             this.clienteToolStripMenuItem.Image = global::ProgramacionOO.Properties.Resources.clients;
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem.Text = "Clientes";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
@@ -89,7 +91,7 @@
             // 
             this.cuentasToolStripMenuItem.Image = global::ProgramacionOO.Properties.Resources.account;
             this.cuentasToolStripMenuItem.Name = "cuentasToolStripMenuItem";
-            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cuentasToolStripMenuItem.Text = "Cuentas";
             this.cuentasToolStripMenuItem.Click += new System.EventHandler(this.cuentasToolStripMenuItem_Click);
             // 
@@ -97,14 +99,14 @@
             // 
             this.docbancariosToolStripMenuItem.Image = global::ProgramacionOO.Properties.Resources.bankdocuments;
             this.docbancariosToolStripMenuItem.Name = "docbancariosToolStripMenuItem";
-            this.docbancariosToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.docbancariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.docbancariosToolStripMenuItem.Text = "Doc-bancarios";
             // 
             // sucursalesToolStripMenuItem
             // 
             this.sucursalesToolStripMenuItem.Image = global::ProgramacionOO.Properties.Resources.oficina;
             this.sucursalesToolStripMenuItem.Name = "sucursalesToolStripMenuItem";
-            this.sucursalesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.sucursalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sucursalesToolStripMenuItem.Text = "Sucursales";
             // 
             // herramientasToolStripMenuItem
@@ -119,6 +121,12 @@
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "&Ayuda";
             // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.consultasToolStripMenuItem.Text = "Consultas&";
+            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
@@ -126,17 +134,18 @@
             this.salirToolStripMenuItem.Text = "S&alir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // consultasToolStripMenuItem
+            // titularesCuentasToolStripMenuItem
             // 
-            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.consultasToolStripMenuItem.Text = "Consultas&";
+            this.titularesCuentasToolStripMenuItem.Image = global::ProgramacionOO.Properties.Resources.TitularesCuentas;
+            this.titularesCuentasToolStripMenuItem.Name = "titularesCuentasToolStripMenuItem";
+            this.titularesCuentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.titularesCuentasToolStripMenuItem.Text = "Titulares Cuentas";
+            this.titularesCuentasToolStripMenuItem.Click += new System.EventHandler(this.titularesCuentasToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProgramacionOO.Properties.Resources.Logo2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(866, 473);
             this.Controls.Add(this.menuStrip1);
@@ -169,6 +178,7 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem titularesCuentasToolStripMenuItem;
     }
 }
 
