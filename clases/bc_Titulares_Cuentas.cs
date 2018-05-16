@@ -138,7 +138,26 @@ namespace ProgramacionOO.clases
 
         public bool ActualizarDatos()
         {
-            throw new NotImplementedException();
+            int lRet = 0;
+
+            if (datamanager.ConexionAbrir())
+            {
+                OracleCommand cmd = new OracleCommand(" Update bc_titulares_cuentas" +
+                                                     " Set id_titular_cuenta = :id_titular_cuenta," +
+                                                      " id_cuenta = :id_cliente," +
+                                                      " id_cliente = :id_cliente," +
+
+                                                      " Where id_titular_cuenta = :id_cliente ", datamanager.ConexionSQL);
+
+                cmd.Parameters.AddWithValue("id_titular_cuenta", bc_Titular_Cuentaid);
+                cmd.Parameters.AddWithValue("id_cuenta", bc_Cuenta_id);
+                cmd.Parameters.AddWithValue("id_cliente", bc_Cliente_id);
+               
+                datamanager.ConexionAbrir();
+                cmd.ExecuteNonQuery();
+                datamanager.ConexionCerrar();
+            }
+            return lRet > 0;
         }
 
         public bool BorrarDatos(int pbancoid)

@@ -44,7 +44,7 @@
             // TxtidCliente
             // 
             this.TxtidCliente.Enabled = false;
-            this.TxtidCliente.Location = new System.Drawing.Point(73, 111);
+            this.TxtidCliente.Location = new System.Drawing.Point(61, 75);
             this.TxtidCliente.Name = "TxtidCliente";
             this.TxtidCliente.Size = new System.Drawing.Size(182, 20);
             this.TxtidCliente.TabIndex = 27;
@@ -53,7 +53,7 @@
             // 
             this.lblidCliente.AutoSize = true;
             this.lblidCliente.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblidCliente.Location = new System.Drawing.Point(14, 111);
+            this.lblidCliente.Location = new System.Drawing.Point(14, 74);
             this.lblidCliente.Name = "lblidCliente";
             this.lblidCliente.Size = new System.Drawing.Size(44, 15);
             this.lblidCliente.TabIndex = 28;
@@ -62,16 +62,17 @@
             // txtTitularCuenta
             // 
             this.txtTitularCuenta.Enabled = false;
-            this.txtTitularCuenta.Location = new System.Drawing.Point(73, 37);
+            this.txtTitularCuenta.Location = new System.Drawing.Point(73, 4);
             this.txtTitularCuenta.Name = "txtTitularCuenta";
-            this.txtTitularCuenta.Size = new System.Drawing.Size(182, 20);
+            this.txtTitularCuenta.Size = new System.Drawing.Size(69, 20);
             this.txtTitularCuenta.TabIndex = 29;
+            this.txtTitularCuenta.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 79);
+            this.label1.Location = new System.Drawing.Point(14, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 15);
             this.label1.TabIndex = 30;
@@ -80,7 +81,7 @@
             // txtCuenta
             // 
             this.txtCuenta.Enabled = false;
-            this.txtCuenta.Location = new System.Drawing.Point(73, 79);
+            this.txtCuenta.Location = new System.Drawing.Point(61, 49);
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Size = new System.Drawing.Size(182, 20);
             this.txtCuenta.TabIndex = 31;
@@ -89,11 +90,12 @@
             // 
             this.lblTitularCuenta.AutoSize = true;
             this.lblTitularCuenta.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitularCuenta.Location = new System.Drawing.Point(14, 39);
+            this.lblTitularCuenta.Location = new System.Drawing.Point(25, 9);
             this.lblTitularCuenta.Name = "lblTitularCuenta";
             this.lblTitularCuenta.Size = new System.Drawing.Size(42, 15);
             this.lblTitularCuenta.TabIndex = 32;
             this.lblTitularCuenta.Text = "Titular";
+            this.lblTitularCuenta.Visible = false;
             // 
             // btnEliminar
             // 

@@ -146,56 +146,38 @@ namespace ProgramacionOO
             }
             return (lret > 0);
         }
-        public static string md5(string Value)
-        {
-            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
-            byte[] data = System.Text.Encoding.ASCII.GetBytes(Value);
-            data = x.ComputeHash(data);
-            string ret = "";
-            for (int i = 0; i < data.Length; i++)
-                ret += data[i].ToString("x2").ToLower();
-
-            // Invertir el md5
-            String ret2 = "";
-            for (int i = ret.Length - 1; i >= 0; i--)
-                ret2 = ret2 + ret.Substring(i, 1);
-
-            return ret2;
-        }
+      
 
 
         public static bool ValidarUsuario(string pnombre, string pclave /*string Estatus*/)
         {
-            bool lRet = false;
+            bool retorno = false;
             string lpassword = "";
             int lidUsuario = 0;
-            string lEncriptPsw = md5(pnombre.Trim() + pclave.Trim());
+           
 
             if (ConexionAbrir())
             {
-                var dr = ConsultaLeer("SELECT USUARIO_ID,CONTRASENA FROM USUARIOS WHERE NOMBRE_USUARIO='" + pnombre + "'");
+                var dr = ConsultaLeer("Select Usuario_id,Contrasena From Usuarios Where Nombre_Usuario='" + pnombre + "'");
                 if (dr != null)
                 {
                     if (dr.Read())
                     {
-                        lidUsuario = dr.GetInt32(1);
+                        lidUsuario = dr.GetInt32(0);
                         lpassword = dr.GetString(1);
 
 
-                        if (lEncriptPsw.Equals(lpassword))
-                        {
-                            lRet = true;
+                        retorno = true;
                             // Asigno valor a propiedades de la clase.
                             loginName = pnombre;
                             idUsuario = lidUsuario;
 
                             // Cargo los permisos
-                           
-                        }
+                        
                     }
                 }
             }
-            return lRet;
+            return retorno;
         }
 
         public static void LoadDataBanco(string sql)

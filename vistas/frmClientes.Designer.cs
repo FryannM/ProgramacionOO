@@ -94,7 +94,7 @@
             this.cbtipoDoc.Items.AddRange(new object[] {
             "Cheque",
             "Cash"});
-            this.cbtipoDoc.Location = new System.Drawing.Point(94, 70);
+            this.cbtipoDoc.Location = new System.Drawing.Point(94, 67);
             this.cbtipoDoc.Name = "cbtipoDoc";
             this.cbtipoDoc.Size = new System.Drawing.Size(182, 21);
             this.cbtipoDoc.TabIndex = 2;
@@ -123,7 +123,7 @@
             // TxtidCliente
             // 
             this.TxtidCliente.Enabled = false;
-            this.TxtidCliente.Location = new System.Drawing.Point(94, 71);
+            this.TxtidCliente.Location = new System.Drawing.Point(94, 68);
             this.TxtidCliente.Name = "TxtidCliente";
             this.TxtidCliente.Size = new System.Drawing.Size(87, 20);
             this.TxtidCliente.TabIndex = 26;

@@ -16,6 +16,7 @@ namespace ProgramacionOO.vistas
     public partial class frmLogin : Form
     {
 
+        frmMenu frm = new frmMenu();
 
         int intentos = 0;
 
@@ -33,7 +34,6 @@ namespace ProgramacionOO.vistas
             if (datamanager.ValidarUsuario(txtUser.Text, txtpassword.Text))
             {
              
-                frmMenu frm = new frmMenu();
                 frm.Show();
                 this.Hide();
             }
