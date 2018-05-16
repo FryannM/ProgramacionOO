@@ -62,20 +62,20 @@
             // lblcodigo
             // 
             this.lblcodigo.AutoSize = true;
-            this.lblcodigo.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcodigo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcodigo.Location = new System.Drawing.Point(23, 57);
             this.lblcodigo.Name = "lblcodigo";
-            this.lblcodigo.Size = new System.Drawing.Size(46, 15);
+            this.lblcodigo.Size = new System.Drawing.Size(54, 19);
             this.lblcodigo.TabIndex = 2;
             this.lblcodigo.Text = "Código";
             // 
             // lblnombre
             // 
             this.lblnombre.AutoSize = true;
-            this.lblnombre.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnombre.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnombre.Location = new System.Drawing.Point(23, 107);
             this.lblnombre.Name = "lblnombre";
-            this.lblnombre.Size = new System.Drawing.Size(49, 15);
+            this.lblnombre.Size = new System.Drawing.Size(60, 19);
             this.lblnombre.TabIndex = 3;
             this.lblnombre.Text = "Nombre";
             // 
@@ -89,26 +89,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(23, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 15);
+            this.label1.Size = new System.Drawing.Size(67, 19);
             this.label1.TabIndex = 5;
             this.label1.Text = "Dirección";
             // 
             // lblRnc
             // 
             this.lblRnc.AutoSize = true;
-            this.lblRnc.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRnc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRnc.Location = new System.Drawing.Point(23, 81);
             this.lblRnc.Name = "lblRnc";
-            this.lblRnc.Size = new System.Drawing.Size(28, 15);
+            this.lblRnc.Size = new System.Drawing.Size(33, 19);
             this.lblRnc.TabIndex = 6;
             this.lblRnc.Text = "Rnc";
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(87, 136);
+            this.txtDireccion.Location = new System.Drawing.Point(87, 133);
             this.txtDireccion.MaxLength = 20;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(180, 20);
@@ -117,9 +117,9 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(317, 127);
+            this.btnEliminar.Location = new System.Drawing.Point(317, 153);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(49, 29);
+            this.btnEliminar.Size = new System.Drawing.Size(59, 44);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -127,9 +127,9 @@
             // btnGuardar
             // 
             this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(317, 92);
+            this.btnGuardar.Location = new System.Drawing.Point(317, 106);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(49, 29);
+            this.btnGuardar.Size = new System.Drawing.Size(59, 44);
             this.btnGuardar.TabIndex = 10;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -137,9 +137,9 @@
             // btnEditar
             // 
             this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
-            this.btnEditar.Location = new System.Drawing.Point(317, 57);
+            this.btnEditar.Location = new System.Drawing.Point(317, 59);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(49, 29);
+            this.btnEditar.Size = new System.Drawing.Size(59, 44);
             this.btnEditar.TabIndex = 9;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -147,9 +147,9 @@
             // btnNuevo
             // 
             this.btnNuevo.Image = global::ProgramacionOO.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(317, 27);
+            this.btnNuevo.Location = new System.Drawing.Point(317, 12);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(49, 29);
+            this.btnNuevo.Size = new System.Drawing.Size(59, 44);
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -157,10 +157,10 @@
             // lblcodigoBanco
             // 
             this.lblcodigoBanco.AutoSize = true;
-            this.lblcodigoBanco.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcodigoBanco.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcodigoBanco.Location = new System.Drawing.Point(23, 34);
             this.lblcodigoBanco.Name = "lblcodigoBanco";
-            this.lblcodigoBanco.Size = new System.Drawing.Size(51, 15);
+            this.lblcodigoBanco.Size = new System.Drawing.Size(59, 19);
             this.lblcodigoBanco.TabIndex = 13;
             this.lblcodigoBanco.Text = "Bancoid";
             this.lblcodigoBanco.Visible = false;
@@ -179,7 +179,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(427, 210);
+            this.ClientSize = new System.Drawing.Size(437, 237);
             this.Controls.Add(this.lblcodigoBanco);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.btnEliminar);

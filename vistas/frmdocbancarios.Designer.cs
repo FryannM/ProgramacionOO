@@ -45,13 +45,12 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lblTipobanco = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // cbEstado
             // 
             this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(128, 168);
+            this.cbEstado.Location = new System.Drawing.Point(147, 165);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(182, 21);
             this.cbEstado.TabIndex = 30;
@@ -59,17 +58,17 @@
             // lblcuenta
             // 
             this.lblcuenta.AutoSize = true;
-            this.lblcuenta.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcuenta.Location = new System.Drawing.Point(24, 116);
+            this.lblcuenta.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcuenta.Location = new System.Drawing.Point(23, 109);
             this.lblcuenta.Name = "lblcuenta";
-            this.lblcuenta.Size = new System.Drawing.Size(62, 15);
+            this.lblcuenta.Size = new System.Drawing.Size(72, 19);
             this.lblcuenta.TabIndex = 39;
             this.lblcuenta.Text = "No.cuenta";
             // 
             // cbtipodocBancario
             // 
             this.cbtipodocBancario.FormattingEnabled = true;
-            this.cbtipodocBancario.Location = new System.Drawing.Point(128, 55);
+            this.cbtipodocBancario.Location = new System.Drawing.Point(147, 56);
             this.cbtipodocBancario.Name = "cbtipodocBancario";
             this.cbtipodocBancario.Size = new System.Drawing.Size(182, 21);
             this.cbtipodocBancario.TabIndex = 27;
@@ -77,26 +76,26 @@
             // lblbanco
             // 
             this.lblbanco.AutoSize = true;
-            this.lblbanco.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbanco.Location = new System.Drawing.Point(23, 84);
+            this.lblbanco.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbanco.Location = new System.Drawing.Point(23, 82);
             this.lblbanco.Name = "lblbanco";
-            this.lblbanco.Size = new System.Drawing.Size(41, 15);
+            this.lblbanco.Size = new System.Drawing.Size(48, 19);
             this.lblbanco.TabIndex = 34;
             this.lblbanco.Text = "Banco";
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(23, 166);
+            this.lblEstado.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(23, 163);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(44, 15);
+            this.lblEstado.Size = new System.Drawing.Size(51, 19);
             this.lblEstado.TabIndex = 33;
             this.lblEstado.Text = "Estado";
             // 
             // txtCuenta
             // 
-            this.txtCuenta.Location = new System.Drawing.Point(128, 116);
+            this.txtCuenta.Location = new System.Drawing.Point(147, 111);
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Size = new System.Drawing.Size(182, 20);
             this.txtCuenta.TabIndex = 29;
@@ -104,26 +103,26 @@
             // lblcliente
             // 
             this.lblcliente.AutoSize = true;
-            this.lblcliente.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcliente.Location = new System.Drawing.Point(23, 140);
+            this.lblcliente.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcliente.Location = new System.Drawing.Point(23, 136);
             this.lblcliente.Name = "lblcliente";
-            this.lblcliente.Size = new System.Drawing.Size(44, 15);
+            this.lblcliente.Size = new System.Drawing.Size(51, 19);
             this.lblcliente.TabIndex = 32;
             this.lblcliente.Text = "Cliente";
             // 
             // lblcodigo
             // 
             this.lblcodigo.AutoSize = true;
-            this.lblcodigo.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcodigo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcodigo.Location = new System.Drawing.Point(23, 28);
             this.lblcodigo.Name = "lblcodigo";
-            this.lblcodigo.Size = new System.Drawing.Size(46, 15);
+            this.lblcodigo.Size = new System.Drawing.Size(54, 19);
             this.lblcodigo.TabIndex = 31;
             this.lblcodigo.Text = "Código";
             // 
             // txtnodoc
             // 
-            this.txtnodoc.Location = new System.Drawing.Point(128, 88);
+            this.txtnodoc.Location = new System.Drawing.Point(147, 84);
             this.txtnodoc.Name = "txtnodoc";
             this.txtnodoc.Size = new System.Drawing.Size(182, 20);
             this.txtnodoc.TabIndex = 28;
@@ -131,7 +130,7 @@
             // txtcodigo
             // 
             this.txtcodigo.Enabled = false;
-            this.txtcodigo.Location = new System.Drawing.Point(128, 29);
+            this.txtcodigo.Location = new System.Drawing.Point(147, 29);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(57, 20);
             this.txtcodigo.TabIndex = 26;
@@ -139,70 +138,61 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(316, 160);
+            this.btnEliminar.Location = new System.Drawing.Point(351, 165);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(49, 29);
+            this.btnEliminar.Size = new System.Drawing.Size(59, 44);
             this.btnEliminar.TabIndex = 38;
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
             // 
             this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(316, 123);
+            this.btnGuardar.Location = new System.Drawing.Point(351, 114);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(49, 29);
+            this.btnGuardar.Size = new System.Drawing.Size(59, 44);
             this.btnGuardar.TabIndex = 37;
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // btnEditar
             // 
             this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
-            this.btnEditar.Location = new System.Drawing.Point(316, 88);
+            this.btnEditar.Location = new System.Drawing.Point(351, 63);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(49, 29);
+            this.btnEditar.Size = new System.Drawing.Size(59, 44);
             this.btnEditar.TabIndex = 36;
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
             // btnNuevo
             // 
             this.btnNuevo.Image = global::ProgramacionOO.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(316, 50);
+            this.btnNuevo.Location = new System.Drawing.Point(351, 12);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(49, 29);
+            this.btnNuevo.Size = new System.Drawing.Size(59, 44);
             this.btnNuevo.TabIndex = 35;
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
             // lblTipobanco
             // 
             this.lblTipobanco.AutoSize = true;
-            this.lblTipobanco.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipobanco.Location = new System.Drawing.Point(23, 57);
+            this.lblTipobanco.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipobanco.Location = new System.Drawing.Point(23, 55);
             this.lblTipobanco.Name = "lblTipobanco";
-            this.lblTipobanco.Size = new System.Drawing.Size(104, 15);
+            this.lblTipobanco.Size = new System.Drawing.Size(119, 19);
             this.lblTipobanco.TabIndex = 40;
             this.lblTipobanco.Text = "Tipo doc.bancario";
             // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(128, 142);
+            this.txtCliente.Location = new System.Drawing.Point(147, 138);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(182, 20);
             this.txtCliente.TabIndex = 41;
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(12, 195);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(398, 141);
-            this.listView1.TabIndex = 42;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // frmdocbancarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 355);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(437, 245);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.lblTipobanco);
             this.Controls.Add(this.cbEstado);
@@ -246,6 +236,5 @@
         private System.Windows.Forms.TextBox txtcodigo;
         private System.Windows.Forms.Label lblTipobanco;
         private System.Windows.Forms.TextBox txtCliente;
-        private System.Windows.Forms.ListView listView1;
     }
 }

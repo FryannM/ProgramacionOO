@@ -47,20 +47,20 @@
             // lblTipoDoc
             // 
             this.lblTipoDoc.AutoSize = true;
-            this.lblTipoDoc.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoDoc.Location = new System.Drawing.Point(34, 70);
+            this.lblTipoDoc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoDoc.Location = new System.Drawing.Point(26, 69);
             this.lblTipoDoc.Name = "lblTipoDoc";
-            this.lblTipoDoc.Size = new System.Drawing.Size(54, 15);
+            this.lblTipoDoc.Size = new System.Drawing.Size(62, 19);
             this.lblTipoDoc.TabIndex = 18;
             this.lblTipoDoc.Text = "TipoDoc";
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(34, 147);
+            this.lblEstado.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(26, 146);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(44, 15);
+            this.lblEstado.Size = new System.Drawing.Size(51, 19);
             this.lblEstado.TabIndex = 17;
             this.lblEstado.Text = "Estado";
             // 
@@ -74,10 +74,10 @@
             // lblnombre
             // 
             this.lblnombre.AutoSize = true;
-            this.lblnombre.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombre.Location = new System.Drawing.Point(34, 118);
+            this.lblnombre.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnombre.Location = new System.Drawing.Point(26, 117);
             this.lblnombre.Name = "lblnombre";
-            this.lblnombre.Size = new System.Drawing.Size(49, 15);
+            this.lblnombre.Size = new System.Drawing.Size(60, 19);
             this.lblnombre.TabIndex = 15;
             this.lblnombre.Text = "Nombre";
             // 
@@ -94,7 +94,7 @@
             this.cbtipoDoc.Items.AddRange(new object[] {
             "Cheque",
             "Cash"});
-            this.cbtipoDoc.Location = new System.Drawing.Point(94, 67);
+            this.cbtipoDoc.Location = new System.Drawing.Point(95, 67);
             this.cbtipoDoc.Name = "cbtipoDoc";
             this.cbtipoDoc.Size = new System.Drawing.Size(182, 21);
             this.cbtipoDoc.TabIndex = 2;
@@ -102,10 +102,10 @@
             // lblnodoc
             // 
             this.lblnodoc.AutoSize = true;
-            this.lblnodoc.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnodoc.Location = new System.Drawing.Point(34, 97);
+            this.lblnodoc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnodoc.Location = new System.Drawing.Point(26, 96);
             this.lblnodoc.Name = "lblnodoc";
-            this.lblnodoc.Size = new System.Drawing.Size(48, 15);
+            this.lblnodoc.Size = new System.Drawing.Size(59, 19);
             this.lblnodoc.TabIndex = 25;
             this.lblnodoc.Text = "No.Doc";
             // 
@@ -123,7 +123,7 @@
             // TxtidCliente
             // 
             this.TxtidCliente.Enabled = false;
-            this.TxtidCliente.Location = new System.Drawing.Point(94, 68);
+            this.TxtidCliente.Location = new System.Drawing.Point(143, 68);
             this.TxtidCliente.Name = "TxtidCliente";
             this.TxtidCliente.Size = new System.Drawing.Size(87, 20);
             this.TxtidCliente.TabIndex = 26;
@@ -132,7 +132,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(283, 203);
+            this.btnEliminar.Location = new System.Drawing.Point(323, 177);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(59, 44);
             this.btnEliminar.TabIndex = 23;
@@ -141,7 +141,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(283, 153);
+            this.btnGuardar.Location = new System.Drawing.Point(323, 129);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(59, 44);
             this.btnGuardar.TabIndex = 22;
@@ -151,7 +151,7 @@
             // btnEditar
             // 
             this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
-            this.btnEditar.Location = new System.Drawing.Point(283, 103);
+            this.btnEditar.Location = new System.Drawing.Point(323, 81);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(59, 44);
             this.btnEditar.TabIndex = 21;
@@ -161,7 +161,7 @@
             // btnNuevo
             // 
             this.btnNuevo.Image = global::ProgramacionOO.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(283, 58);
+            this.btnNuevo.Location = new System.Drawing.Point(323, 33);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(59, 44);
             this.btnNuevo.TabIndex = 20;

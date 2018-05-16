@@ -20,8 +20,6 @@ E:\Proyectos\NET\ProgramacionOO\bin\Debug\ProgramacionOO.exe.config
 E:\Proyectos\NET\ProgramacionOO\bin\Debug\ProgramacionOO.exe
 E:\Proyectos\NET\ProgramacionOO\bin\Debug\ProgramacionOO.pdb
 E:\Proyectos\NET\ProgramacionOO\bin\Debug\Oracle.DataAccess.dll
-E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.conectar.resources
-E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.ejemplo.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmBanco.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmClientes.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmCuentas.resources
@@ -55,3 +53,5 @@ C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.csproj.CopyComplet
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.exe
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.pdb
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmTitularesCuentas.resources
+E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmTipoDocBancarios.resources
+E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerCuentas.resources

@@ -51,22 +51,12 @@
   <ItemGroup>
     <Compile Include="clases\bc_bancos.cs" />
     <Compile Include="clases\bc_clientes.cs" />
+    <Compile Include="clases\bc_cuentas.cs" />
+    <Compile Include="clases\bc_tipo_doc_bancarios.cs" />
     <Compile Include="clases\bc_Titulares_Cuentas.cs" />
     <Compile Include="clases\Exepciones.cs" />
     <Compile Include="clases\Mantenimientos.cs" />
     <Compile Include="util\datamanager.cs" />
-    <Compile Include="vistas\conectar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vistas\conectar.Designer.cs">
-      <DependentUpon>conectar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="vistas\ejemplo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vistas\ejemplo.Designer.cs">
-      <DependentUpon>ejemplo.cs</DependentUpon>
-    </Compile>
     <Compile Include="vistas\frmBanco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,7 +72,7 @@
     <Compile Include="vistas\frmCuentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistas\frmCuentas.Designer.cs">
+    <Compile Include="vistas\frmCuentas.designer.cs">
       <DependentUpon>frmCuentas.cs</DependentUpon>
     </Compile>
     <Compile Include="vistas\frmdocbancarios.cs">
@@ -105,18 +95,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vistas\frmTipoDocBancarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistas\frmTipoDocBancarios.designer.cs">
+      <DependentUpon>frmTipoDocBancarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="vistas\frmTitularesCuentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="vistas\frmTitularesCuentas.Designer.cs">
       <DependentUpon>frmTitularesCuentas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="vistas\conectar.resx">
-      <DependentUpon>conectar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="vistas\ejemplo.resx">
-      <DependentUpon>ejemplo.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="vistas\frmVerCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistas\frmVerCuentas.designer.cs">
+      <DependentUpon>frmVerCuentas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="vistas\frmBanco.resx">
       <DependentUpon>frmBanco.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,8 +141,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="vistas\frmTipoDocBancarios.resx">
+      <DependentUpon>frmTipoDocBancarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vistas\frmTitularesCuentas.resx">
       <DependentUpon>frmTitularesCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vistas\frmVerCuentas.resx">
+      <DependentUpon>frmVerCuentas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

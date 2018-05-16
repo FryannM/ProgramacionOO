@@ -34,13 +34,13 @@
             this.bancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.titularesCuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docbancariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sucursalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.titularesCuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,12 +95,21 @@
             this.cuentasToolStripMenuItem.Text = "Cuentas";
             this.cuentasToolStripMenuItem.Click += new System.EventHandler(this.cuentasToolStripMenuItem_Click);
             // 
+            // titularesCuentasToolStripMenuItem
+            // 
+            this.titularesCuentasToolStripMenuItem.Image = global::ProgramacionOO.Properties.Resources.TitularesCuentas;
+            this.titularesCuentasToolStripMenuItem.Name = "titularesCuentasToolStripMenuItem";
+            this.titularesCuentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.titularesCuentasToolStripMenuItem.Text = "Titulares Cuentas";
+            this.titularesCuentasToolStripMenuItem.Click += new System.EventHandler(this.titularesCuentasToolStripMenuItem_Click);
+            // 
             // docbancariosToolStripMenuItem
             // 
             this.docbancariosToolStripMenuItem.Image = global::ProgramacionOO.Properties.Resources.bankdocuments;
             this.docbancariosToolStripMenuItem.Name = "docbancariosToolStripMenuItem";
             this.docbancariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.docbancariosToolStripMenuItem.Text = "Doc-bancarios";
+            this.docbancariosToolStripMenuItem.Click += new System.EventHandler(this.docbancariosToolStripMenuItem_Click);
             // 
             // sucursalesToolStripMenuItem
             // 
@@ -133,14 +142,6 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "S&alir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // titularesCuentasToolStripMenuItem
-            // 
-            this.titularesCuentasToolStripMenuItem.Image = global::ProgramacionOO.Properties.Resources.TitularesCuentas;
-            this.titularesCuentasToolStripMenuItem.Name = "titularesCuentasToolStripMenuItem";
-            this.titularesCuentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.titularesCuentasToolStripMenuItem.Text = "Titulares Cuentas";
-            this.titularesCuentasToolStripMenuItem.Click += new System.EventHandler(this.titularesCuentasToolStripMenuItem_Click);
             // 
             // frmMenu
             // 

@@ -57,5 +57,12 @@ namespace ProgramacionOO
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void docbancariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vistas.frmTipoDocBancarios frm = new vistas.frmTipoDocBancarios();
+            frm.MdiParent = this;
+            frm.Show();
+        } 
     }
 }

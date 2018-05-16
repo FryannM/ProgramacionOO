@@ -1,0 +1,131 @@
+﻿namespace ProgramacionOO.vistas
+{
+    partial class frmVerCuentas
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.dg_VerCuentas = new System.Windows.Forms.DataGridView();
+            this.lbl_filtrarPor = new System.Windows.Forms.Label();
+            this.cbox_filtarPor = new System.Windows.Forms.ComboBox();
+            this.lbl_Buscar = new System.Windows.Forms.Label();
+            this.tbox_buscar = new System.Windows.Forms.TextBox();
+            this.bt_Salir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_VerCuentas)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dg_VerCuentas
+            // 
+            this.dg_VerCuentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dg_VerCuentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dg_VerCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_VerCuentas.Location = new System.Drawing.Point(12, 48);
+            this.dg_VerCuentas.Name = "dg_VerCuentas";
+            this.dg_VerCuentas.Size = new System.Drawing.Size(590, 390);
+            this.dg_VerCuentas.TabIndex = 0;
+            // 
+            // lbl_filtrarPor
+            // 
+            this.lbl_filtrarPor.AutoSize = true;
+            this.lbl_filtrarPor.Location = new System.Drawing.Point(13, 18);
+            this.lbl_filtrarPor.Name = "lbl_filtrarPor";
+            this.lbl_filtrarPor.Size = new System.Drawing.Size(53, 13);
+            this.lbl_filtrarPor.TabIndex = 2;
+            this.lbl_filtrarPor.Text = "Filtrar por:";
+            // 
+            // cbox_filtarPor
+            // 
+            this.cbox_filtarPor.FormattingEnabled = true;
+            this.cbox_filtarPor.Items.AddRange(new object[] {
+            "Codigo",
+            "Estado",
+            "Balance_DB",
+            "Balance_CR"});
+            this.cbox_filtarPor.Location = new System.Drawing.Point(69, 15);
+            this.cbox_filtarPor.Name = "cbox_filtarPor";
+            this.cbox_filtarPor.Size = new System.Drawing.Size(144, 21);
+            this.cbox_filtarPor.TabIndex = 3;
+            // 
+            // lbl_Buscar
+            // 
+            this.lbl_Buscar.AutoSize = true;
+            this.lbl_Buscar.Location = new System.Drawing.Point(239, 22);
+            this.lbl_Buscar.Name = "lbl_Buscar";
+            this.lbl_Buscar.Size = new System.Drawing.Size(43, 13);
+            this.lbl_Buscar.TabIndex = 5;
+            this.lbl_Buscar.Text = "Buscar:";
+            // 
+            // tbox_buscar
+            // 
+            this.tbox_buscar.Location = new System.Drawing.Point(286, 17);
+            this.tbox_buscar.Name = "tbox_buscar";
+            this.tbox_buscar.Size = new System.Drawing.Size(160, 20);
+            this.tbox_buscar.TabIndex = 6;
+            this.tbox_buscar.TextChanged += new System.EventHandler(this.tbox_buscar_TextChanged);
+            // 
+            // bt_Salir
+            // 
+            this.bt_Salir.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.bt_Salir.Location = new System.Drawing.Point(527, 17);
+            this.bt_Salir.Name = "bt_Salir";
+            this.bt_Salir.Size = new System.Drawing.Size(75, 23);
+            this.bt_Salir.TabIndex = 7;
+            this.bt_Salir.Text = "Salir";
+            this.bt_Salir.UseVisualStyleBackColor = true;
+            this.bt_Salir.Click += new System.EventHandler(this.bt_Salir_Click);
+            // 
+            // frmVerCuentas
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(619, 450);
+            this.Controls.Add(this.bt_Salir);
+            this.Controls.Add(this.tbox_buscar);
+            this.Controls.Add(this.lbl_Buscar);
+            this.Controls.Add(this.cbox_filtarPor);
+            this.Controls.Add(this.lbl_filtrarPor);
+            this.Controls.Add(this.dg_VerCuentas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmVerCuentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "frmVerCuentas";
+            this.Load += new System.EventHandler(this.frmVerCuentas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_VerCuentas)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.DataGridView dg_VerCuentas;
+        private System.Windows.Forms.Label lbl_filtrarPor;
+        private System.Windows.Forms.ComboBox cbox_filtarPor;
+        private System.Windows.Forms.Label lbl_Buscar;
+        private System.Windows.Forms.TextBox tbox_buscar;
+        private System.Windows.Forms.Button bt_Salir;
+    }
+}

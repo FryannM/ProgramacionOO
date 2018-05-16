@@ -100,18 +100,18 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(278, 126);
+            this.btnEliminar.Location = new System.Drawing.Point(278, 111);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(57, 47);
+            this.btnEliminar.Size = new System.Drawing.Size(59, 44);
             this.btnEliminar.TabIndex = 36;
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
             // 
             this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(278, 126);
+            this.btnGuardar.Location = new System.Drawing.Point(278, 111);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(57, 46);
+            this.btnGuardar.Size = new System.Drawing.Size(59, 44);
             this.btnGuardar.TabIndex = 35;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -119,9 +119,9 @@
             // btnEditar
             // 
             this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
-            this.btnEditar.Location = new System.Drawing.Point(278, 74);
+            this.btnEditar.Location = new System.Drawing.Point(278, 67);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(57, 46);
+            this.btnEditar.Size = new System.Drawing.Size(59, 44);
             this.btnEditar.TabIndex = 34;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -131,7 +131,7 @@
             this.btnNuevo.Image = global::ProgramacionOO.Properties.Resources.agregar;
             this.btnNuevo.Location = new System.Drawing.Point(278, 23);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(57, 46);
+            this.btnNuevo.Size = new System.Drawing.Size(59, 44);
             this.btnNuevo.TabIndex = 33;
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
