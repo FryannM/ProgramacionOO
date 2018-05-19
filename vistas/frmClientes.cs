@@ -105,6 +105,10 @@ namespace ProgramacionOO.vistas
             return result;
         }
 
-        
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

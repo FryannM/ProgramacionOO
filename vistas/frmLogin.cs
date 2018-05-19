@@ -9,33 +9,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
-
+using System.Windows.Forms;
 
 namespace ProgramacionOO.vistas
 {
     public partial class frmLogin : Form
     {
 
-        frmMenu frm = new frmMenu();
 
         int intentos = 0;
 
         public frmLogin()
         {
             InitializeComponent();
-            
         }
 
         private void btnEntry_Click(object sender, EventArgs e)
         {
             intentos += 1;
-           
 
             if (datamanager.ValidarUsuario(txtUser.Text, txtpassword.Text))
             {
-             
+
+                frmMenu frm = new frmMenu();
                 frm.Show();
                 this.Hide();
+
             }
             else
             {
@@ -47,11 +46,13 @@ namespace ProgramacionOO.vistas
                     this.Hide();
                 }
             }
+
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
         private void frmLogin_Load(object sender, EventArgs e)
         {
 

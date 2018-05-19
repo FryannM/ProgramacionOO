@@ -37,6 +37,7 @@
             this.titularesCuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docbancariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sucursalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDocBancariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,11 +63,12 @@
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bancosToolStripMenuItem,
-            this.clienteToolStripMenuItem,
+            this.sucursalesToolStripMenuItem,
             this.cuentasToolStripMenuItem,
+            this.clienteToolStripMenuItem,
             this.titularesCuentasToolStripMenuItem,
-            this.docbancariosToolStripMenuItem,
-            this.sucursalesToolStripMenuItem});
+            this.tipoDocBancariosToolStripMenuItem,
+            this.docbancariosToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.archivoToolStripMenuItem.Text = "&Menu";
@@ -117,6 +119,14 @@
             this.sucursalesToolStripMenuItem.Name = "sucursalesToolStripMenuItem";
             this.sucursalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sucursalesToolStripMenuItem.Text = "Sucursales";
+            // 
+            // tipoDocBancariosToolStripMenuItem
+            // 
+            this.tipoDocBancariosToolStripMenuItem.Image = global::ProgramacionOO.Properties.Resources.edit;
+            this.tipoDocBancariosToolStripMenuItem.Name = "tipoDocBancariosToolStripMenuItem";
+            this.tipoDocBancariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoDocBancariosToolStripMenuItem.Text = "Tipo-Doc bancarios";
+            this.tipoDocBancariosToolStripMenuItem.Click += new System.EventHandler(this.tipoDocBancariosToolStripMenuItem_Click);
             // 
             // herramientasToolStripMenuItem
             // 
@@ -180,6 +190,7 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem titularesCuentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoDocBancariosToolStripMenuItem;
     }
 }
 

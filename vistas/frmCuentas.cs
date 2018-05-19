@@ -52,7 +52,7 @@ namespace ProgramacionOO.vistas
             }
             else
             {
-                txtcodigo.Enabled = true;
+               
                 cbEstado.Enabled = true;
                 txt_mskDebito.Enabled = true;
                 txt_mskCredito.Enabled = true;
@@ -68,6 +68,7 @@ namespace ProgramacionOO.vistas
             txtcodigo.Clear();
             txt_mskCredito.Clear();
             txt_mskDebito.Clear();
+            txtcodigo.Enabled = true;
             bool result = false;
             Disable(result);
             
@@ -75,12 +76,9 @@ namespace ProgramacionOO.vistas
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            bool result = false;
+            Disable(result);
             txtcodigo.Enabled = false;
-            cbEstado.Enabled = true;
-            txt_mskDebito.Enabled = true;
-            txt_mskCredito.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnGuardar.Enabled = true;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -97,17 +95,9 @@ namespace ProgramacionOO.vistas
             }
             else
             {
-                try
-                {
-                    MessageBox.Show(datamanager.MensajeGuardar, "Registro Actualizado", MessageBoxButtons.OK);
-                    lret = registro.ActualizarDatos();
-                    
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-              
+
+                lret = registro.ActualizarDatos();
+
             }
             if (lret)
             {

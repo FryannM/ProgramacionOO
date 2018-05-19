@@ -26,7 +26,6 @@ namespace ProgramacionOO
         {
             get
             {
-
                 return ConfigurationManager.ConnectionStrings["DbOracle"].ConnectionString;
             }
             private set { }
@@ -34,7 +33,6 @@ namespace ProgramacionOO
 
         public static string loginName { get; private set; }
         public static int idUsuario { get; private set; }
-        public static string Estado { get; set; }
 
 
         public static bool ConexionAbrir()
@@ -146,38 +144,51 @@ namespace ProgramacionOO
             }
             return (lret > 0);
         }
-      
-
-
-        public static bool ValidarUsuario(string pnombre, string pclave /*string Estatus*/)
+        public static string md5(string Value)
         {
-            bool retorno = false;
+            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(Value);
+            data = x.ComputeHash(data);
+            string ret = "";
+            for (int i = 0; i < data.Length; i++)
+                ret += data[i].ToString("x2").ToLower();
+
+            // Invertir el md5
+            String ret2 = "";
+            for (int i = ret.Length - 1; i >= 0; i--)
+                ret2 = ret2 + ret.Substring(i, 1);
+
+            return ret2;
+        }
+
+
+        public static bool ValidarUsuario(string pnombre, string pclave)
+        {
+            bool lRet = false;
             string lpassword = "";
             int lidUsuario = 0;
-           
-
+            string lEncriptPsw = md5(pnombre.Trim() + pclave.Trim());
+            ConexionAbrir();
             if (ConexionAbrir())
             {
-                var dr = ConsultaLeer("Select Usuario_id,Contrasena From Usuarios Where Nombre_Usuario='" + pnombre + "'");
+                OracleDataReader dr = ConsultaLeer("SELECT ID_USUARIO, USUARIO, CONTRASENA FROM USUARIOS WHERE USUARIOS.USUARIO='" + pnombre + "' AND USUARIOS.CONTRASENA='"+pclave+"'");
                 if (dr != null)
                 {
                     if (dr.Read())
                     {
-                        lidUsuario = dr.GetInt32(0);
-                        lpassword = dr.GetString(1);
+                         lidUsuario = dr.GetInt32(0);  
+                         lpassword = dr.GetString(2);
 
+                        lRet = true;
+                        // Asigno valor a propiedades de la clase.
+                        loginName = pnombre;
+                        idUsuario = lidUsuario;
 
-                        retorno = true;
-                            // Asigno valor a propiedades de la clase.
-                            loginName = pnombre;
-                            idUsuario = lidUsuario;
-
-                            // Cargo los permisos
-                        
+                        // Cargo los permisos
                     }
                 }
             }
-            return retorno;
+            return lRet;
         }
 
         public static void LoadDataBanco(string sql)
@@ -214,6 +225,7 @@ namespace ProgramacionOO
         public static string ErrorSys = ("Favor Comunicarse con el Fryann Martinez ");
         public static string MensajeGuardar=("Información del Banco fue almacenada.");
         public static string MensajeEliminar = ("Seguro que quieres eliminar este Resgistro?");
+        public static string MensajeActualizar = ("Su registro se ha actualizado");
         public static string ConfirmacionEliminar = ("Datos Elimnados Correctamente");
     }
 

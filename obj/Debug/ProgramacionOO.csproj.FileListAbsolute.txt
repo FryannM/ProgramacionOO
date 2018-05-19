@@ -33,13 +33,10 @@ E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.csproj.CopyComplete
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.exe
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.pdb
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.csprojResolveAssemblyReference.cache
-C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.csprojResolveAssemblyReference.cache
 C:\Users\MAMF\Desktop\ProgramacionOO\bin\Debug\ProgramacionOO.exe.config
 C:\Users\MAMF\Desktop\ProgramacionOO\bin\Debug\ProgramacionOO.exe
 C:\Users\MAMF\Desktop\ProgramacionOO\bin\Debug\ProgramacionOO.pdb
 C:\Users\MAMF\Desktop\ProgramacionOO\bin\Debug\Oracle.DataAccess.dll
-C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.conectar.resources
-C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.ejemplo.resources
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmBanco.resources
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmClientes.resources
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmCuentas.resources
@@ -55,3 +52,7 @@ C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.pdb
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmTitularesCuentas.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmTipoDocBancarios.resources
 E:\Proyectos\NET\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerCuentas.resources
+C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmTipoDocBancarios.resources
+C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmTitularesCuentas.resources
+C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerCuentas.resources
+C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.csprojResolveAssemblyReference.cache

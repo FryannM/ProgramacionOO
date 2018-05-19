@@ -44,15 +44,16 @@
             this.dg_VerCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_VerCuentas.Location = new System.Drawing.Point(12, 48);
             this.dg_VerCuentas.Name = "dg_VerCuentas";
-            this.dg_VerCuentas.Size = new System.Drawing.Size(590, 390);
+            this.dg_VerCuentas.Size = new System.Drawing.Size(551, 390);
             this.dg_VerCuentas.TabIndex = 0;
             // 
             // lbl_filtrarPor
             // 
             this.lbl_filtrarPor.AutoSize = true;
-            this.lbl_filtrarPor.Location = new System.Drawing.Point(13, 18);
+            this.lbl_filtrarPor.Font = new System.Drawing.Font("Lucida Bright", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_filtrarPor.Location = new System.Drawing.Point(9, 21);
             this.lbl_filtrarPor.Name = "lbl_filtrarPor";
-            this.lbl_filtrarPor.Size = new System.Drawing.Size(53, 13);
+            this.lbl_filtrarPor.Size = new System.Drawing.Size(85, 17);
             this.lbl_filtrarPor.TabIndex = 2;
             this.lbl_filtrarPor.Text = "Filtrar por:";
             // 
@@ -64,7 +65,7 @@
             "Estado",
             "Balance_DB",
             "Balance_CR"});
-            this.cbox_filtarPor.Location = new System.Drawing.Point(69, 15);
+            this.cbox_filtarPor.Location = new System.Drawing.Point(96, 19);
             this.cbox_filtarPor.Name = "cbox_filtarPor";
             this.cbox_filtarPor.Size = new System.Drawing.Size(144, 21);
             this.cbox_filtarPor.TabIndex = 3;
@@ -72,26 +73,27 @@
             // lbl_Buscar
             // 
             this.lbl_Buscar.AutoSize = true;
-            this.lbl_Buscar.Location = new System.Drawing.Point(239, 22);
+            this.lbl_Buscar.Font = new System.Drawing.Font("Lucida Bright", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Buscar.Location = new System.Drawing.Point(251, 21);
             this.lbl_Buscar.Name = "lbl_Buscar";
-            this.lbl_Buscar.Size = new System.Drawing.Size(43, 13);
+            this.lbl_Buscar.Size = new System.Drawing.Size(61, 17);
             this.lbl_Buscar.TabIndex = 5;
             this.lbl_Buscar.Text = "Buscar:";
             // 
             // tbox_buscar
             // 
-            this.tbox_buscar.Location = new System.Drawing.Point(286, 17);
+            this.tbox_buscar.Location = new System.Drawing.Point(318, 20);
             this.tbox_buscar.Name = "tbox_buscar";
-            this.tbox_buscar.Size = new System.Drawing.Size(160, 20);
+            this.tbox_buscar.Size = new System.Drawing.Size(164, 20);
             this.tbox_buscar.TabIndex = 6;
             this.tbox_buscar.TextChanged += new System.EventHandler(this.tbox_buscar_TextChanged);
             // 
             // bt_Salir
             // 
             this.bt_Salir.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bt_Salir.Location = new System.Drawing.Point(527, 17);
+            this.bt_Salir.Location = new System.Drawing.Point(488, 12);
             this.bt_Salir.Name = "bt_Salir";
-            this.bt_Salir.Size = new System.Drawing.Size(75, 23);
+            this.bt_Salir.Size = new System.Drawing.Size(75, 30);
             this.bt_Salir.TabIndex = 7;
             this.bt_Salir.Text = "Salir";
             this.bt_Salir.UseVisualStyleBackColor = true;
@@ -101,17 +103,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 450);
+            this.ClientSize = new System.Drawing.Size(571, 450);
             this.Controls.Add(this.bt_Salir);
             this.Controls.Add(this.tbox_buscar);
             this.Controls.Add(this.lbl_Buscar);
             this.Controls.Add(this.cbox_filtarPor);
             this.Controls.Add(this.lbl_filtrarPor);
             this.Controls.Add(this.dg_VerCuentas);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmVerCuentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmVerCuentas";
+            this.Text = "VER CUENTAS";
             this.Load += new System.EventHandler(this.frmVerCuentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_VerCuentas)).EndInit();
             this.ResumeLayout(false);

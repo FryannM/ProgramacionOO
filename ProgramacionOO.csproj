@@ -52,6 +52,7 @@
     <Compile Include="clases\bc_bancos.cs" />
     <Compile Include="clases\bc_clientes.cs" />
     <Compile Include="clases\bc_cuentas.cs" />
+    <Compile Include="clases\bc_doc_Bancarios.cs" />
     <Compile Include="clases\bc_tipo_doc_bancarios.cs" />
     <Compile Include="clases\bc_Titulares_Cuentas.cs" />
     <Compile Include="clases\Exepciones.cs" />

@@ -105,10 +105,10 @@ namespace ProgramacionOO.clases
             {
 
                    OracleCommand cmd = new OracleCommand("Insert into bc_bancos" +
-                    "(Bancoid,Codigo,Nombre,Direccion,Rnc)" +
-                    " Values(:Bancoid,:Codigo,:Nombre,:Direccion,:Rnc)", datamanager.ConexionSQL);
+                    "(id_banco,Codigo,Nombre,Direccion,Rnc)" +
+                    " Values(:id_banco,:Codigo,:Nombre,:Direccion,:Rnc)", datamanager.ConexionSQL);
 
-                cmd.Parameters.AddWithValue("Bancoid", bc_bancoid);
+                cmd.Parameters.AddWithValue("id_banco", bc_bancoid);
                 cmd.Parameters.AddWithValue("Codigo", bc_bancoCodigo);
                 cmd.Parameters.AddWithValue("Nombre", bc_bancoNombre);
                 cmd.Parameters.AddWithValue("Direccion", bc_bancoDireccion);
@@ -130,7 +130,7 @@ namespace ProgramacionOO.clases
                 encontrado = true;
                 if (asignar)
                 {
-                    bc_bancoid = Convert.ToInt16(dr["Bancoid"]);
+                    bc_bancoid = Convert.ToInt16(dr["id_banco"]);
                     bc_bancoCodigo = dr["Codigo"].ToString();
                     bc_bancoNombre = dr["Nombre"].ToString();
                     bc_bancoDireccion = dr["Direccion"].ToString();
@@ -147,7 +147,7 @@ namespace ProgramacionOO.clases
 
         public  bool Buscar(String pNombre, bool asignar)
         {
-            var dr = datamanager.ConsultaLeer("select Bancoid, codigo,Nombre,Direccion,Rnc" +
+            var dr = datamanager.ConsultaLeer("select id_banco, codigo,Nombre,Direccion,Rnc" +
                                                " from bc_bancos" +
                                                " where Nombre = '" + pNombre + "'");
             return LeerDatos(dr, asignar);
@@ -156,9 +156,9 @@ namespace ProgramacionOO.clases
 
         public  bool Buscar(int Bancoid, bool asignar)
         {
-            var dr = datamanager.ConsultaLeer("select Bancoid,Codigo, nombre,Direccion,Rnc" +
+            var dr = datamanager.ConsultaLeer("select id_banco,Codigo, nombre,Direccion,Rnc" +
                                                " from bc_bancos" +
-                                               " where Bancoid = " + Bancoid.ToString());
+                                               " where id_banco = " + Bancoid.ToString());
 
             return LeerDatos(dr, asignar);
         }
@@ -166,9 +166,9 @@ namespace ProgramacionOO.clases
          public    bool BuscarUltimo()
 
         {
-            var dr = datamanager.ConsultaLeer(" Select Bancoid,Codigo, Nombre,Direccion,Rnc" +
+            var dr = datamanager.ConsultaLeer(" Select id_banco,Codigo, Nombre,Direccion,Rnc" +
                                               " From bc_bancos" +
-                                              " Order by Bancoid desc ");
+                                              " Order by id_banco desc ");
             return LeerDatos(dr, true);
         }
 
@@ -179,14 +179,14 @@ namespace ProgramacionOO.clases
             if (datamanager.ConexionAbrir())
             {
                 OracleCommand cmd = new OracleCommand(" Update bc_bancos" +
-                                                     " Set Bancoid = :Bancoid," +
+                                                     " Set id_banco = :id_banco," +
                                                       " Codigo = :Codigo," +
                                                       " Nombre = :Nombre," +
                                                       " Direccion = :Direccion, " +
                                                       " Rnc = :Rnc " +
-                                                      " Where Bancoid = :Bancoid ", datamanager.ConexionSQL);
+                                                      " Where id_banco = :id_banco ", datamanager.ConexionSQL);
 
-                cmd.Parameters.AddWithValue("Bancoid", bc_bancoid);
+                cmd.Parameters.AddWithValue("id_banco", bc_bancoid);
                 cmd.Parameters.AddWithValue("Codigo", bc_bancoCodigo);
                 cmd.Parameters.AddWithValue("Nombre", bc_bancoNombre);
                 cmd.Parameters.AddWithValue("Direccion", bc_bancoDireccion);
@@ -201,7 +201,7 @@ namespace ProgramacionOO.clases
         {
             bool lret = datamanager.ConsultaNodata("delete " +
                                                " from bc_bancos" +
-                                               " where Bancoid = " + pbancoid.ToString());
+                                               " where id_banco = " + pbancoid.ToString());
             if (lret) Limpiar();
             return lret;
         }       
