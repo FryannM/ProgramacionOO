@@ -67,8 +67,16 @@ namespace ProgramacionOO
 
         private void tipoDocBancariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            vistas.frmTipoDocBancarios nuevaVentana = new vistas.frmTipoDocBancarios();
-            nuevaVentana.Show();
+            vistas.frmTipoDocBancarios frm = new vistas.frmTipoDocBancarios();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void sucursalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vistas.frmSucursal frm = new vistas.frmSucursal();
+            frm.MdiParent = this;
+            frm.Show();      
         }
     }
 }
