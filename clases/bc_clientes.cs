@@ -72,7 +72,7 @@ namespace ProgramacionOO.clases
                 if (asignar)
                 {
                     bc_Clienteid = Convert.ToInt16(dr["ID_CLIENTE"]);
-                    bc_TipoDocumento = dr["tipo_documento"].ToString();
+                    bc_TipoDocumento = dr["id_tipo_doc_bancario"].ToString();
                     bc_NumeroDocumento = dr["num_documento"].ToString();
                     bc_Nombre = dr["nombre"].ToString();
                     bc_Estado = dr["estado"].ToString();
@@ -96,11 +96,11 @@ namespace ProgramacionOO.clases
 
 
 
-                OracleCommand cmd = new OracleCommand("Insert into bc_clientes(id_cliente,tipo_documento,num_Documento ,nombre,estado)" +
-                                                        " Values(:id_cliente,:tipo_documento,:num_documento,:nombre,:estado)", datamanager.ConexionSQL);
+                OracleCommand cmd = new OracleCommand("Insert into bc_clientes(id_cliente,id_tipo_doc_bancario,num_Documento ,nombre,estado)" +
+                                                        " Values(:id_cliente,:id_tipo_doc_bancario,:num_documento,:nombre,:estado)", datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_cliente", bc_Clienteid);
-                cmd.Parameters.AddWithValue("tipo_documento", bc_TipoDocumento);
+                cmd.Parameters.AddWithValue("id_tipo_doc_bancario", bc_TipoDocumento);
                 cmd.Parameters.AddWithValue("num_Documento", bc_NumeroDocumento);
                 cmd.Parameters.AddWithValue("nombre", bc_Nombre);
                 cmd.Parameters.AddWithValue("estado", bc_Estado);
@@ -122,14 +122,14 @@ namespace ProgramacionOO.clases
             {
                 OracleCommand cmd = new OracleCommand(" Update bc_clientes" +
                                                      " Set id_cliente = :id_cliente," +
-                                                      " Tipo_documento = :Tipo_documento," +
+                                                      " id_tipo_doc_bancario = :id_tipo_doc_bancario," +
                                                       " Num_documento = :Num_documento," +
                                                       " Nombre = :Nombre, " +
                                                       " Estado = :Estado " +
                                                       " Where id_cliente = :id_cliente ", datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_cliente", bc_Clienteid);
-                cmd.Parameters.AddWithValue("Tipo_documento", bc_TipoDocumento);
+                cmd.Parameters.AddWithValue("id_tipo_doc_bancario", bc_TipoDocumento);
                 cmd.Parameters.AddWithValue("Num_documento", bc_NumeroDocumento);
                 cmd.Parameters.AddWithValue("Nombre", bc_Nombre);
                 cmd.Parameters.AddWithValue("Estado", bc_Estado);
@@ -152,7 +152,7 @@ namespace ProgramacionOO.clases
 
         public bool BuscarUltimo()
         {
-            var dr = datamanager.ConsultaLeer(" Select id_cliente,Tipo_documento,Num_documento, Nombre,Estado" +
+            var dr = datamanager.ConsultaLeer(" Select id_cliente,id_tipo_doc_bancario,Num_documento, Nombre,Estado" +
                                              "  From BC_CLIENTES" +
                                              "  Order by id_cliente desc");
             return LeerDatos(dr, true);
