@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
             this.label1 = new System.Windows.Forms.Label();
             this.gboxClienteTex = new System.Windows.Forms.GroupBox();
+            this.lb_descripcion = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.lblnodoc = new System.Windows.Forms.Label();
             this.cbtipoDoc = new System.Windows.Forms.ComboBox();
@@ -48,8 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lb_descripcion = new System.Windows.Forms.Label();
             this.gboxClienteTex.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +65,6 @@
             // gboxClienteTex
             // 
             this.gboxClienteTex.Controls.Add(this.lb_descripcion);
-            this.gboxClienteTex.Controls.Add(this.label7);
             this.gboxClienteTex.Controls.Add(this.cbEstado);
             this.gboxClienteTex.Controls.Add(this.lblnodoc);
             this.gboxClienteTex.Controls.Add(this.cbtipoDoc);
@@ -81,6 +79,14 @@
             this.gboxClienteTex.TabIndex = 32;
             this.gboxClienteTex.TabStop = false;
             this.gboxClienteTex.Text = "Clientes";
+            // 
+            // lb_descripcion
+            // 
+            this.lb_descripcion.AutoSize = true;
+            this.lb_descripcion.Location = new System.Drawing.Point(243, 59);
+            this.lb_descripcion.Name = "lb_descripcion";
+            this.lb_descripcion.Size = new System.Drawing.Size(0, 13);
+            this.lb_descripcion.TabIndex = 38;
             // 
             // cbEstado
             // 
@@ -138,9 +144,11 @@
             // txtnombre
             // 
             this.txtnombre.Location = new System.Drawing.Point(113, 114);
+            this.txtnombre.MaxLength = 25;
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(247, 20);
             this.txtnombre.TabIndex = 30;
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombre_KeyPress);
             // 
             // lblnombre
             // 
@@ -155,9 +163,11 @@
             // txtnodoc
             // 
             this.txtnodoc.Location = new System.Drawing.Point(178, 78);
+            this.txtnodoc.MaxLength = 12;
             this.txtnodoc.Name = "txtnodoc";
             this.txtnodoc.Size = new System.Drawing.Size(182, 20);
             this.txtnodoc.TabIndex = 29;
+            this.txtnodoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnodoc_KeyPress);
             // 
             // TxtidCliente
             // 
@@ -205,7 +215,6 @@
             this.btnEliminar.Size = new System.Drawing.Size(59, 44);
             this.btnEliminar.TabIndex = 23;
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label2
             // 
@@ -246,23 +255,6 @@
             this.label5.Size = new System.Drawing.Size(70, 20);
             this.label5.TabIndex = 31;
             this.label5.Text = "Eliminar";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(178, 59);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 13);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "Descripción:";
-            // 
-            // lb_descripcion
-            // 
-            this.lb_descripcion.AutoSize = true;
-            this.lb_descripcion.Location = new System.Drawing.Point(243, 59);
-            this.lb_descripcion.Name = "lb_descripcion";
-            this.lb_descripcion.Size = new System.Drawing.Size(0, 13);
-            this.lb_descripcion.TabIndex = 38;
             // 
             // frmClientes
             // 
@@ -314,6 +306,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lb_descripcion;
-        private System.Windows.Forms.Label label7;
     }
 }

@@ -22,7 +22,6 @@ namespace ProgramacionOO.vistas
         {
             registro = new clases.bc_clientes();
             registro.SelectComboBox(cbtipoDoc);
-            // registro.LeerDatosComboBox(registro.LlenarComboBox());
             registro.BuscarUltimo();
             Mostrar();
 
@@ -106,10 +105,14 @@ namespace ProgramacionOO.vistas
             return result;
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void txtnodoc_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            datamanager.ValidarSoloNumero(e);
         }
 
+        private void txtnombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloLetra(e);
+        }
     }
 }

@@ -19,12 +19,6 @@ namespace ProgramacionOO.vistas
             InitializeComponent();
         }
 
-        private void frmVerCuentas_Load(object sender, EventArgs e)
-        {
-            
-          
-        }
-
         private void tbox_buscar_TextChanged(object sender, EventArgs e)
         {
             dg_VerCuentas.DataSource = registro.BuscarCuentas(cbox_filtarPor.Text, tbox_buscar.Text);

@@ -146,6 +146,7 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(235, 20);
             this.txtCliente.TabIndex = 64;
+            this.txtCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCliente_KeyPress);
             // 
             // lblTipobanco
             // 
@@ -221,6 +222,7 @@
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Size = new System.Drawing.Size(235, 20);
             this.txtCuenta.TabIndex = 48;
+            this.txtCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuenta_KeyPress);
             // 
             // label1
             // 
@@ -258,6 +260,7 @@
             this.txtnodoc.Name = "txtnodoc";
             this.txtnodoc.Size = new System.Drawing.Size(235, 20);
             this.txtnodoc.TabIndex = 47;
+            this.txtnodoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnodoc_KeyPress);
             // 
             // txtcodigo
             // 

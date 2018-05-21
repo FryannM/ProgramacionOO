@@ -114,11 +114,12 @@
             this.txtid.ReadOnly = true;
             this.txtid.Size = new System.Drawing.Size(41, 20);
             this.txtid.TabIndex = 24;
+            this.txtid.Visible = false;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(108, 154);
-            this.txtDireccion.MaxLength = 20;
+            this.txtDireccion.MaxLength = 30;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(302, 20);
             this.txtDireccion.TabIndex = 4;
@@ -149,6 +150,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(221, 20);
             this.txtNombre.TabIndex = 3;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblnombre
             // 
@@ -173,6 +175,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(108, 220);
+            this.txtCorreo.MaxLength = 25;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(221, 20);
             this.txtCorreo.TabIndex = 6;
@@ -204,10 +207,11 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(108, 187);
-            this.txtTelefono.MaxLength = 20;
+            this.txtTelefono.MaxLength = 11;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(221, 20);
             this.txtTelefono.TabIndex = 5;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // lblTelefono
             // 

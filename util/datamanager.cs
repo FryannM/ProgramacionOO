@@ -74,7 +74,7 @@ namespace ProgramacionOO
             OracleDataReader reader = null;
             if (ConexionAbrir())
             {
-                OracleCommand cmd = new OracleCommand();
+                var cmd = new OracleCommand();
 
                 try
                 {
@@ -96,12 +96,12 @@ namespace ProgramacionOO
 
         public static DataSet ConsultaDatos(string cmdSQL)
         {
-            OracleDataAdapter adapter = new OracleDataAdapter();
+            var adapter = new OracleDataAdapter();
             DataSet ds = new DataSet();
 
             if (ConexionAbrir())
             {
-                OracleCommand cmd = new OracleCommand();
+                var cmd = new OracleCommand();
                 try
                 {
                     cmd.Connection = ConexionSQL;
@@ -127,7 +127,7 @@ namespace ProgramacionOO
 
             if (ConexionAbrir())
             {
-                OracleCommand cmd = new OracleCommand();
+                var cmd = new OracleCommand();
                 try
                 {
                     cmd.Connection = ConexionSQL;
@@ -144,22 +144,46 @@ namespace ProgramacionOO
             }
             return (lret > 0);
         }
-        public static string md5(string Value)
+        public static void ValidarSoloNumero(KeyPressEventArgs e)
         {
-            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
-            byte[] data = System.Text.Encoding.ASCII.GetBytes(Value);
-            data = x.ComputeHash(data);
-            string ret = "";
-            for (int i = 0; i < data.Length; i++)
-                ret += data[i].ToString("x2").ToLower();
-
-            // Invertir el md5
-            String ret2 = "";
-            for (int i = ret.Length - 1; i >= 0; i--)
-                ret2 = ret2 + ret.Substring(i, 1);
-
-            return ret2;
+            //Para obligar a que sólo se introduzcan números 
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso 
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan 
+                e.Handled = true;
+            }
         }
+
+        public static void  ValidarSoloLetra (KeyPressEventArgs e)
+        {
+
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso 
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan 
+                e.Handled = true;
+            }
+        }
+
+
+    
 
 
         public static bool ValidarUsuario(string pnombre, string pclave)
@@ -167,7 +191,7 @@ namespace ProgramacionOO
             bool lRet = false;
             string lpassword = "";
             int lidUsuario = 0;
-            string lEncriptPsw = md5(pnombre.Trim() + pclave.Trim());
+           
             ConexionAbrir();
             if (ConexionAbrir())
             {
@@ -191,33 +215,7 @@ namespace ProgramacionOO
             return lRet;
         }
 
-        public static void LoadDataBanco(string sql)
-        {
-            if (ConexionAbrir()) 
-            try
-            {
-                
-                OracleCommand cmd = new OracleCommand(sql,ConexionSQL);
-                OracleDataReader dr = cmd.ExecuteReader();
-
-
-                if (dr.HasRows)
-                {
-                    MessageBox.Show("Ya se ha pasado Asistencia en el dia de HOY  ", "ADVERTENCIA!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    return;
-                }
-                dr.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            datamanager.ConexionCerrar();
-        }
-
+        
 
 
         // Mensajes del sistema 

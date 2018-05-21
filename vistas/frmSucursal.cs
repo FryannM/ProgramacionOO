@@ -140,5 +140,15 @@ namespace ProgramacionOO.vistas
             else
                 MessageBox.Show(clases.Exepciones.ExepcionGuardar, "Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloNumero(e);
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloLetra(e);
+        }
     }
 }

@@ -113,7 +113,7 @@ namespace ProgramacionOO.clases
 
 
 
-                OracleCommand cmd = new OracleCommand("Insert into bc_sucursales(Id_Banco,Codigo,Nombre ,Direccion,Telefono,Correo)" +
+                var cmd = new OracleCommand("Insert into bc_sucursales(Id_Banco,Codigo,Nombre ,Direccion,Telefono,Correo)" +
                                                         " Values(:Id_Banco,:Codigo,:Nombre,:Direccion,:Telefono,:Correo)", datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_banco", bc_id_Banco);
@@ -162,7 +162,7 @@ namespace ProgramacionOO.clases
             {
 
                 //(Id_Banco,Codigo,Nombre ,Direccion,Telefono,Correo)" +
-                OracleCommand cmd = new OracleCommand(" Update bc_sucursales" +
+                var cmd = new OracleCommand(" Update bc_sucursales" +
                                                       " Set id_sucursal = id_sucursal" +
                                                       " Id_Banco = :Id_Banco," +
                                                       " Codigo = :Codigo," +
@@ -200,9 +200,6 @@ namespace ProgramacionOO.clases
         {
             throw new NotImplementedException();
         }
-
-
-
 
     }
 }

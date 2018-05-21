@@ -114,7 +114,6 @@
             this.Name = "frmVerCuentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VER CUENTAS";
-            this.Load += new System.EventHandler(this.frmVerCuentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_VerCuentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

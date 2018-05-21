@@ -10,12 +10,7 @@ namespace ProgramacionOO.clases
     class bc_doc_Bancarios : Mantenimientos
     {
 
-        // ID_TIPO_DOC_BANCARIO NUMBER(20) NOT NULL,
-        //ID_CUENTA NUMBER(20) NOT NULL,
-        //ID_CLIENTE NUMBER(20) NOT NULL,
-        //ID_BANCO NUMBER(20) UNIQUE NOT NULL,-- TODOS LOS DOCUMENTOS BANCARIOS PUEDEN TENER SOLO UN BANCO
-        // IMPORTE NUMBER NOT NULL,
-        // FECHA DATE NOT NULL,
+     
 
 
         public int id_doc_Bancario { get; set; }
@@ -115,7 +110,7 @@ namespace ProgramacionOO.clases
             if (datamanager.ConexionAbrir())
             {
 
-                OracleCommand cmd = new OracleCommand("Insert into BC_DOC_BANCARIOS" +
+                var cmd = new OracleCommand("Insert into BC_DOC_BANCARIOS" +
                                                       " ( ID_DOC_BANCARIO," +
                                                         " ID_TIPO_DOC_BANCARIO ," +
                                                         " ID_CUENTA,ID_BANCO," +
@@ -173,10 +168,5 @@ namespace ProgramacionOO.clases
         {
             throw new NotImplementedException();
         }
-
-    
-
-
-
     }
 }

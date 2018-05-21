@@ -21,5 +21,20 @@ namespace ProgramacionOO.vistas
         {
 
         }
+
+        private void txtCuenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloNumero(e);
+        }
+
+        private void txtnodoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloLetra(e);
+        }
+
+        private void txtCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloLetra(e);
+        }
     }
 }

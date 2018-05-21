@@ -9,7 +9,7 @@ using System.Data;
 
 namespace ProgramacionOO.clases
 {
-    class bc_cuentas :Mantenimientos
+    class bc_cuentas : Mantenimientos
     {
         public string CodigoCuenta { get; set; }
         public char Estado { get; set; }
@@ -17,11 +17,12 @@ namespace ProgramacionOO.clases
         public double BalanceCR { get; set; }
 
 
-        public bc_cuentas() {
+        public bc_cuentas()
+        {
 
         }
 
-        public bc_cuentas (string CodigoCuenta, char Estado, double BanlanceDB,double BalanceCR) 
+        public bc_cuentas(string CodigoCuenta, char Estado, double BanlanceDB, double BalanceCR)
         {
             this.CodigoCuenta = CodigoCuenta;
             this.Estado = Estado;
@@ -35,7 +36,7 @@ namespace ProgramacionOO.clases
             CodigoCuenta = "";
             Estado = ' ';
             BalanceDB = 0;
-            BalanceCR=0;
+            BalanceCR = 0;
         }
 
         public bool Validar()
@@ -59,7 +60,7 @@ namespace ProgramacionOO.clases
 
                 if (asignar)
                 {
-                    
+
                     CodigoCuenta = dr["codigo"].ToString();
                     Estado = Convert.ToChar(dr["estado"]);
                     BalanceDB = Convert.ToDouble(dr["balance_DB"]);
@@ -76,26 +77,31 @@ namespace ProgramacionOO.clases
 
         public bool Buscar(String pNombre, bool asignar)
         {
-             var dr = datamanager.ConsultaLeer("select id_cuenta, codigo,estado,balance_DB" +
-                                               " from Bc_cuentas" +
-                                               " where Nombre = '" + pNombre + "'");
+            var dr = datamanager.ConsultaLeer("select id_cuenta, codigo,estado,balance_DB" +
+                                              " from Bc_cuentas" +
+                                              " where Nombre = '" + pNombre + "'");
             return LeerDatos(dr, asignar);
 
         }
 
-        //Optimizar luego, metodo para filtrar informacion en un DataGridView implementacion: nombreGridView.DataSource=BuscarCuenta();
         public virtual DataTable BuscarCuentas(string campo, string palabras)
         {
+            var cm = new OracleCommand();
 
-            OracleConnection conx = new OracleConnection(datamanager.cadenadeconexion);
-            conx.Open();
-            OracleCommand cm = conx.CreateCommand();
-            cm.CommandType = CommandType.Text;
-            cm.CommandText = "select * from Bc_cuentas where " + campo+ " like '" + palabras + "%'";
-            cm.ExecuteNonQuery();
-            conx.Close();
+            if (datamanager.ConexionAbrir())
+
+
+            {
+
+                cm = datamanager.ConexionSQL.CreateCommand();
+                cm.CommandType = CommandType.Text;
+                cm.CommandText = "select * from Bc_cuentas where " + campo + " like '" + palabras + "%'";
+                cm.ExecuteNonQuery();
+                datamanager.ConexionCerrar();
+            }
+
+
             return LlenarDataGridView(cm);
- 
         }
 
         public bool BuscarUltimo()
@@ -109,59 +115,44 @@ namespace ProgramacionOO.clases
 
         public int CrearDatos()
         {
-            int filasAfectadas=0;
-            
+            int filasAfectadas = 0;
 
             if (datamanager.ConexionAbrir())
             {
 
+                var cmd = new OracleCommand(" Insert into Bc_cuentas(" +
+                                            " codigo,estado,balance_DB,balance_CR)" +
+                                            " Values(:codigo," + "'" + Estado + "'" +
+                                            ",:balance_DB,:balance_CR)", datamanager.ConexionSQL);
 
 
-                OracleCommand cmd = new OracleCommand("Insert into Bc_cuentas(codigo,estado,balance_DB,balance_CR)" +
-                                                        " Values(:codigo,"+"'"+Estado+"'"+",:balance_DB,:balance_CR)", datamanager.ConexionSQL);
-
-                
                 cmd.Parameters.AddWithValue("codigo", CodigoCuenta);
                 cmd.Parameters.AddWithValue("balance_DB", BalanceDB);
                 cmd.Parameters.AddWithValue("balance_CR", BalanceCR);
-                
 
                 datamanager.ConexionAbrir();
-
-                try
-                {
-                    filasAfectadas = cmd.ExecuteNonQuery();
-                }
-
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.ToString());
-                }
+                filasAfectadas = cmd.ExecuteNonQuery();
                 datamanager.ConexionCerrar();
 
             }
             return filasAfectadas;
-
         }
-
         public virtual bool BorrarDatos(int codigoCuenta)
         {
             throw new NotImplementedException(); //No estamos trabajando con id de la tabla.
-        } 
+        }
 
         public virtual bool BorrarDatos(string CodigoCuenta)//Sobrecarga  del metodo BorrarDatos
         {
             bool lret = datamanager.ConsultaNodata("delete from Bc_cuentas where " +
-                                                   "codigo = '"+CodigoCuenta+"'");
+                                                   "codigo = '" + CodigoCuenta + "'");
 
             if (lret)
             {
 
-             Limpiar();
+                Limpiar();
 
             }
-
 
             return lret;
         }
@@ -172,14 +163,14 @@ namespace ProgramacionOO.clases
 
             if (datamanager.ConexionAbrir())
             {
-                OracleCommand cmd = new OracleCommand(" Update Bc_cuentas" +
-                                                      " Set Estado = '"+Estado+"'," +
+                var cmd = new OracleCommand(" Update Bc_cuentas" +
+                                                      " Set Estado = '" + Estado + "'," +
                                                       " Balance_DB = :Balance_DB," +
-                                                      " Balance_CR = :Balance_CR"+
+                                                      " Balance_CR = :Balance_CR" +
                                                       " Where Codigo= :Codigo", datamanager.ConexionSQL);
 
-                
-                cmd.Parameters.AddWithValue("Codigo",CodigoCuenta );
+
+                cmd.Parameters.AddWithValue("Codigo", CodigoCuenta);
                 cmd.Parameters.AddWithValue("Balance_DB", BalanceDB);
                 cmd.Parameters.AddWithValue("Balance_CR", BalanceCR);
                 datamanager.ConexionAbrir();
@@ -207,7 +198,7 @@ namespace ProgramacionOO.clases
         public virtual DataTable LlenarDataGridView(OracleCommand cSQL)
         {
             DataTable dt = new DataTable();
-            OracleDataAdapter adp = new OracleDataAdapter(cSQL);
+            var adp = new OracleDataAdapter(cSQL);
             adp.Fill(dt);
             return dt;
         }

@@ -111,6 +111,7 @@
             this.tboxNombre.Name = "tboxNombre";
             this.tboxNombre.Size = new System.Drawing.Size(141, 26);
             this.tboxNombre.TabIndex = 2;
+            this.tboxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxNombre_KeyPress);
             // 
             // tboxCodigo
             // 

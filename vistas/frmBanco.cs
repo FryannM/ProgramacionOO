@@ -135,9 +135,15 @@ namespace ProgramacionOO.vistas
             return result;
         }
 
+        private void txtRnc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloNumero(e);
+        }
 
-        
-
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloLetra(e);
+        }
     }
 }
 

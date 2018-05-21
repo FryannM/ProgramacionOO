@@ -124,6 +124,9 @@ namespace ProgramacionOO.vistas
             return result;
         }
 
-
+        private void tboxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloLetra(e);
+        }
     }
 }

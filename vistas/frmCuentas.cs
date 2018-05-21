@@ -133,5 +133,15 @@ namespace ProgramacionOO.vistas
             nuevoVerCuentas.Show();
 
         }
+
+        private void txt_mskDebito_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloNumero(e);
+        }
+
+        private void txt_mskCredito_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloNumero(e);
+        }
     }
 }

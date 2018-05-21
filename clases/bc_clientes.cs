@@ -16,10 +16,10 @@ namespace ProgramacionOO.clases
         public string bc_Nombre { get; set; }
         public string bc_Estado { get; set; }
         public int bc_numeroControlRecurrencia { get; set; }
-      //  private string Errormsg = "";
 
 
-        public bc_clientes(int pbc_Clienteid,
+        public bc_clientes(
+            int pbc_Clienteid,
             string pbc_TipoDocumento,
             string pbc_NumeroDocumento,
             string pbc_Nombre,
@@ -27,7 +27,7 @@ namespace ProgramacionOO.clases
             int pbc_numeroControlRecurrencia
             )
 
-       
+
         {
             this.bc_Clienteid = pbc_Clienteid;
             this.bc_TipoDocumento = pbc_TipoDocumento;
@@ -58,11 +58,12 @@ namespace ProgramacionOO.clases
 
             if (lret && bc_Nombre.Equals(""))
             {
-             //   Errormsg = "Nombre de Banco no puede estar vacío.";
                 lret = false;
             }
             return lret;
         }
+
+        #region MANTENIMIENTOS 
 
         public bool LeerDatos(OracleDataReader dr, bool asignar)
         {
@@ -89,15 +90,15 @@ namespace ProgramacionOO.clases
         }
 
 
-        public void SelectComboBox( ComboBox cb)
+        public void SelectComboBox(ComboBox cb)
         {
-            
+
             var dr = datamanager.ConsultaLeer("SELECT ID_TIPO_DOC_BANCARIO, NOMBRE FROM BC_tipo_doc_bancarios");
-             
+
             while (dr.Read())
             {
-                cb.Items.Add(dr[0].ToString()+" - "+dr[1].ToString());
-               // cb.Items.Add(;
+                cb.Items.Add(dr[0].ToString() + " - " + dr[1].ToString());
+
             }
         }
 
@@ -110,10 +111,13 @@ namespace ProgramacionOO.clases
             if (datamanager.ConexionAbrir())
             {
 
-
-
-                OracleCommand cmd = new OracleCommand("Insert into bc_clientes(id_cliente,id_tipo_doc_bancario,num_Documento ,nombre,estado)" +
-                                                        " Values(:id_cliente,:id_tipo_doc_bancario,:num_documento,:nombre,:estado)", datamanager.ConexionSQL);
+                var cmd = new OracleCommand(" Insert into bc_clientes(" +
+                                                      " id_cliente,id_tipo_doc_bancario," +
+                                                      " num_Documento ,nombre,estado)" +
+                                                      " Values(:id_cliente," +
+                                                      " :id_tipo_doc_bancario," +
+                                                      " :num_documento," +
+                                                      " :nombre,:estado)", datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_cliente", bc_Clienteid);
                 cmd.Parameters.AddWithValue("id_tipo_doc_bancario", bc_TipoDocumento);
@@ -134,11 +138,11 @@ namespace ProgramacionOO.clases
         public bool ActualizarDatos()
         {
             int lRet = 0;
-         
+
             if (datamanager.ConexionAbrir())
             {
-                OracleCommand cmd = new OracleCommand(" Update BC_CLIENTES SET " +
-                    "                                  id_tipo_doc_bancario = :id_tipo_doc_bancario," +                                                      
+                var cmd = new OracleCommand(" Update BC_CLIENTES SET " +
+                                                      " id_tipo_doc_bancario = :id_tipo_doc_bancario," +
                                                       " Num_documento = :Num_documento," +
                                                       " Nombre = :Nombre, " +
                                                       " Estado = :Estado " +
@@ -156,27 +160,23 @@ namespace ProgramacionOO.clases
             return lRet > 0;
         }
 
-        public bool borrarDatos(int pbancoid)
+        public bool BuscarUltimo()
         {
-            throw new NotImplementedException();
-        }
+            var dr = datamanager.ConsultaLeer(" Select BC_CLIENTES.id_cliente," +
+                                              " BC_TIPO_DOC_BANCARIOS.id_tipo_doc_bancario," +
+                                              " BC_TIPO_DOC_BANCARIOS.NOMBRE AS TIPO_DOCUMENTOS," +
+                                              " BC_CLIENTES.Num_documento," +
+                                              " BC_CLIENTES.Nombre," +
+                                              " BC_CLIENTES.Estado " +
+                                              " FROM (BC_CLIENTES  INNER JOIN BC_TIPO_DOC_BANCARIOS " +
+                                              " ON BC_CLIENTES.ID_TIPO_DOC_BANCARIO = BC_TIPO_DOC_BANCARIOS.ID_TIPO_DOC_BANCARIO)" +
+                                              " Order by id_cliente desc");
 
-        public bool BuscarUltimo()     {
-            var dr = datamanager.ConsultaLeer("Select BC_CLIENTES.id_cliente," +
-                                              "BC_TIPO_DOC_BANCARIOS.id_tipo_doc_bancario," +
-                                              "BC_TIPO_DOC_BANCARIOS.NOMBRE AS TIPO_DOCUMENTOS," +
-                                              "BC_CLIENTES.Num_documento," +
-                                              "BC_CLIENTES.Nombre," +
-                                              "BC_CLIENTES.Estado " +
-                                              "FROM (BC_CLIENTES  INNER JOIN BC_TIPO_DOC_BANCARIOS " +
-                              "ON BC_CLIENTES.ID_TIPO_DOC_BANCARIO = BC_TIPO_DOC_BANCARIOS.ID_TIPO_DOC_BANCARIO)"+
-                              "Order by id_cliente desc");
 
-            
 
             return LeerDatos(dr, true);
         }
-     
+
         public bool BorrarDatos(int pbancoid)
         {
             throw new NotImplementedException();
@@ -191,5 +191,11 @@ namespace ProgramacionOO.clases
         {
             throw new NotImplementedException();
         }
+        public bool borrarDatos(int pbancoid)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
+#endregion

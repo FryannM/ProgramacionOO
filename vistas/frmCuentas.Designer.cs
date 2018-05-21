@@ -143,6 +143,7 @@
             this.txt_mskCredito.Name = "txt_mskCredito";
             this.txt_mskCredito.Size = new System.Drawing.Size(182, 20);
             this.txt_mskCredito.TabIndex = 54;
+            this.txt_mskCredito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_mskCredito_KeyPress);
             // 
             // txt_mskDebito
             // 
@@ -151,6 +152,7 @@
             this.txt_mskDebito.Name = "txt_mskDebito";
             this.txt_mskDebito.Size = new System.Drawing.Size(182, 20);
             this.txt_mskDebito.TabIndex = 53;
+            this.txt_mskDebito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_mskDebito_KeyPress);
             // 
             // cbEstado
             // 
