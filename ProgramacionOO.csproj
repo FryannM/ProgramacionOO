@@ -199,6 +199,7 @@
     <None Include="resources\oficina.png" />
     <None Include="resources\save.png" />
     <None Include="resources\Logo.png" />
+    <None Include="resources\LogoPOO.png" />
     <Content Include="resources\taller.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

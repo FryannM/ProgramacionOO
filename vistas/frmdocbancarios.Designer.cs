@@ -39,13 +39,10 @@
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.lblTipobanco = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.lblcuenta = new System.Windows.Forms.Label();
             this.cbtipodocBancario = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblbanco = new System.Windows.Forms.Label();
-            this.lblEstado = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCuenta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -114,13 +111,10 @@
             this.gboxCuentas.Controls.Add(this.txtCliente);
             this.gboxCuentas.Controls.Add(this.lblTipobanco);
             this.gboxCuentas.Controls.Add(this.label6);
-            this.gboxCuentas.Controls.Add(this.cbEstado);
             this.gboxCuentas.Controls.Add(this.lblcuenta);
             this.gboxCuentas.Controls.Add(this.cbtipodocBancario);
             this.gboxCuentas.Controls.Add(this.label5);
-            this.gboxCuentas.Controls.Add(this.label4);
             this.gboxCuentas.Controls.Add(this.lblbanco);
-            this.gboxCuentas.Controls.Add(this.lblEstado);
             this.gboxCuentas.Controls.Add(this.label3);
             this.gboxCuentas.Controls.Add(this.txtCuenta);
             this.gboxCuentas.Controls.Add(this.label1);
@@ -173,14 +167,6 @@
             this.label6.TabIndex = 61;
             this.label6.Text = "No.cuenta:";
             // 
-            // cbEstado
-            // 
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(118, 216);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(110, 21);
-            this.cbEstado.TabIndex = 51;
-            // 
             // lblcuenta
             // 
             this.lblcuenta.AutoSize = true;
@@ -209,16 +195,6 @@
             this.label5.TabIndex = 59;
             this.label5.Text = "Banco:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 218);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
-            this.label4.TabIndex = 56;
-            this.label4.Text = "Estado:";
-            // 
             // lblbanco
             // 
             this.lblbanco.AutoSize = true;
@@ -228,16 +204,6 @@
             this.lblbanco.Size = new System.Drawing.Size(59, 20);
             this.lblbanco.TabIndex = 58;
             this.lblbanco.Text = "Banco:";
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(16, 218);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(65, 20);
-            this.lblEstado.TabIndex = 57;
-            this.lblEstado.Text = "Estado:";
             // 
             // label3
             // 
@@ -378,13 +344,10 @@
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label lblTipobanco;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label lblcuenta;
         private System.Windows.Forms.ComboBox cbtipodocBancario;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblbanco;
-        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCuenta;
         private System.Windows.Forms.Label label1;

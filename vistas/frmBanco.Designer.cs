@@ -270,6 +270,7 @@
             this.Name = "frmBanco";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bancos";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmBanco_Load);
             this.gbBancos.ResumeLayout(false);
             this.gbBancos.PerformLayout();

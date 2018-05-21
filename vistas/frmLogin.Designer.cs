@@ -74,10 +74,10 @@
             // 
             // picmain
             // 
-            this.picmain.Image = global::ProgramacionOO.Properties.Resources.login;
-            this.picmain.Location = new System.Drawing.Point(23, 47);
+            this.picmain.Image = global::ProgramacionOO.Properties.Resources.LogoPOO;
+            this.picmain.Location = new System.Drawing.Point(21, 12);
             this.picmain.Name = "picmain";
-            this.picmain.Size = new System.Drawing.Size(247, 112);
+            this.picmain.Size = new System.Drawing.Size(254, 171);
             this.picmain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picmain.TabIndex = 2;
             this.picmain.TabStop = false;
@@ -86,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 186);
+            this.ClientSize = new System.Drawing.Size(467, 193);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEntry);
             this.Controls.Add(this.picmain);
