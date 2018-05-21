@@ -21,7 +21,8 @@ namespace ProgramacionOO.vistas
         private void frmClientes_Load(object sender, EventArgs e)
         {
             registro = new clases.bc_clientes();
-
+            registro.SelectComboBox(cbtipoDoc);
+            // registro.LeerDatosComboBox(registro.LlenarComboBox());
             registro.BuscarUltimo();
             Mostrar();
 
@@ -56,7 +57,7 @@ namespace ProgramacionOO.vistas
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             registro.bc_Clienteid = Convert.ToInt16(TxtidCliente.Text);
-            registro.bc_TipoDocumento = cbtipoDoc.Text;
+            registro.bc_TipoDocumento = cbtipoDoc.Text.Substring(0,3);
             registro.bc_NumeroDocumento = txtnodoc.Text;
             registro.bc_Nombre = txtnombre.Text;
             registro.bc_Estado = cbEstado.Text;

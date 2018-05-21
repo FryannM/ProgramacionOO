@@ -4,6 +4,7 @@ using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProgramacionOO.clases
 {
@@ -72,7 +73,7 @@ namespace ProgramacionOO.clases
                 if (asignar)
                 {
                     bc_Clienteid = Convert.ToInt16(dr["ID_CLIENTE"]);
-                    bc_TipoDocumento = dr["id_tipo_doc_bancario"].ToString();
+                    bc_TipoDocumento = dr["TIPO_DOCUMENTOS"].ToString();
                     bc_NumeroDocumento = dr["num_documento"].ToString();
                     bc_Nombre = dr["nombre"].ToString();
                     bc_Estado = dr["estado"].ToString();
@@ -86,6 +87,21 @@ namespace ProgramacionOO.clases
 
             return encontrado;
         }
+
+
+        public void SelectComboBox( ComboBox cb)
+        {
+            
+            var dr = datamanager.ConsultaLeer("SELECT ID_TIPO_DOC_BANCARIO, NOMBRE FROM BC_tipo_doc_bancarios");
+             
+            while (dr.Read())
+            {
+                cb.Items.Add(dr[0].ToString()+" - "+dr[1].ToString());
+               // cb.Items.Add(;
+            }
+        }
+
+
         public int CrearDatos()
         {
 
@@ -114,15 +130,15 @@ namespace ProgramacionOO.clases
             return bc_Clienteid;
 
         }
+
         public bool ActualizarDatos()
         {
             int lRet = 0;
          
             if (datamanager.ConexionAbrir())
             {
-                OracleCommand cmd = new OracleCommand(" Update bc_clientes" +
-                                                     " Set id_cliente = :id_cliente," +
-                                                      " id_tipo_doc_bancario = :id_tipo_doc_bancario," +
+                OracleCommand cmd = new OracleCommand(" Update BC_CLIENTES SET " +
+                    "                                  id_tipo_doc_bancario = :id_tipo_doc_bancario," +                                                      
                                                       " Num_documento = :Num_documento," +
                                                       " Nombre = :Nombre, " +
                                                       " Estado = :Estado " +
@@ -145,16 +161,19 @@ namespace ProgramacionOO.clases
             throw new NotImplementedException();
         }
 
-        public bool buscarUltimo()
-        {
-            throw new NotImplementedException();
-        }
+        public bool BuscarUltimo()     {
+            var dr = datamanager.ConsultaLeer("Select BC_CLIENTES.id_cliente," +
+                                              "BC_TIPO_DOC_BANCARIOS.id_tipo_doc_bancario," +
+                                              "BC_TIPO_DOC_BANCARIOS.NOMBRE AS TIPO_DOCUMENTOS," +
+                                              "BC_CLIENTES.Num_documento," +
+                                              "BC_CLIENTES.Nombre," +
+                                              "BC_CLIENTES.Estado " +
+                                              "FROM (BC_CLIENTES  INNER JOIN BC_TIPO_DOC_BANCARIOS " +
+                              "ON BC_CLIENTES.ID_TIPO_DOC_BANCARIO = BC_TIPO_DOC_BANCARIOS.ID_TIPO_DOC_BANCARIO)"+
+                              "Order by id_cliente desc");
 
-        public bool BuscarUltimo()
-        {
-            var dr = datamanager.ConsultaLeer(" Select id_cliente,id_tipo_doc_bancario,Num_documento, Nombre,Estado" +
-                                             "  From BC_CLIENTES" +
-                                             "  Order by id_cliente desc");
+            
+
             return LeerDatos(dr, true);
         }
      

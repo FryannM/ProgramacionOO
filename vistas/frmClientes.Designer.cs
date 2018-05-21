@@ -48,6 +48,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lb_descripcion = new System.Windows.Forms.Label();
             this.gboxClienteTex.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +65,8 @@
             // 
             // gboxClienteTex
             // 
+            this.gboxClienteTex.Controls.Add(this.lb_descripcion);
+            this.gboxClienteTex.Controls.Add(this.label7);
             this.gboxClienteTex.Controls.Add(this.cbEstado);
             this.gboxClienteTex.Controls.Add(this.lblnodoc);
             this.gboxClienteTex.Controls.Add(this.cbtipoDoc);
@@ -97,7 +101,7 @@
             // 
             this.lblnodoc.AutoSize = true;
             this.lblnodoc.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnodoc.Location = new System.Drawing.Point(6, 72);
+            this.lblnodoc.Location = new System.Drawing.Point(6, 76);
             this.lblnodoc.Name = "lblnodoc";
             this.lblnodoc.Size = new System.Drawing.Size(156, 20);
             this.lblnodoc.TabIndex = 35;
@@ -106,9 +110,6 @@
             // cbtipoDoc
             // 
             this.cbtipoDoc.FormattingEnabled = true;
-            this.cbtipoDoc.Items.AddRange(new object[] {
-            "Cheque",
-            "Cash"});
             this.cbtipoDoc.Location = new System.Drawing.Point(178, 32);
             this.cbtipoDoc.Name = "cbtipoDoc";
             this.cbtipoDoc.Size = new System.Drawing.Size(182, 21);
@@ -153,7 +154,7 @@
             // 
             // txtnodoc
             // 
-            this.txtnodoc.Location = new System.Drawing.Point(178, 74);
+            this.txtnodoc.Location = new System.Drawing.Point(178, 78);
             this.txtnodoc.Name = "txtnodoc";
             this.txtnodoc.Size = new System.Drawing.Size(182, 20);
             this.txtnodoc.TabIndex = 29;
@@ -246,6 +247,23 @@
             this.label5.TabIndex = 31;
             this.label5.Text = "Eliminar";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(178, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 13);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "Descripción:";
+            // 
+            // lb_descripcion
+            // 
+            this.lb_descripcion.AutoSize = true;
+            this.lb_descripcion.Location = new System.Drawing.Point(243, 59);
+            this.lb_descripcion.Name = "lb_descripcion";
+            this.lb_descripcion.Size = new System.Drawing.Size(0, 13);
+            this.lb_descripcion.TabIndex = 38;
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,5 +313,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lb_descripcion;
+        private System.Windows.Forms.Label label7;
     }
 }
