@@ -58,6 +58,7 @@
     <Compile Include="clases\bc_Titulares_Cuentas.cs" />
     <Compile Include="clases\Exepciones.cs" />
     <Compile Include="clases\Mantenimientos.cs" />
+    <Compile Include="util\Consultas.cs" />
     <Compile Include="util\datamanager.cs" />
     <Compile Include="vistas\frmBanco.cs">
       <SubType>Form</SubType>

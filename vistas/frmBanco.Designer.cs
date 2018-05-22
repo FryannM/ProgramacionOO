@@ -121,6 +121,7 @@
             // 
             // txtDireccion
             // 
+            this.txtDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDireccion.Location = new System.Drawing.Point(99, 140);
             this.txtDireccion.MaxLength = 30;
             this.txtDireccion.Name = "txtDireccion";
@@ -149,6 +150,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Location = new System.Drawing.Point(84, 105);
             this.txtNombre.MaxLength = 25;
             this.txtNombre.Name = "txtNombre";
@@ -178,6 +180,7 @@
             // 
             // txtRnc
             // 
+            this.txtRnc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtRnc.Location = new System.Drawing.Point(84, 70);
             this.txtRnc.MaxLength = 11;
             this.txtRnc.Name = "txtRnc";
@@ -187,6 +190,7 @@
             // 
             // txtcodigo
             // 
+            this.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcodigo.Location = new System.Drawing.Point(84, 35);
             this.txtcodigo.MaxLength = 10;
             this.txtcodigo.Name = "txtcodigo";

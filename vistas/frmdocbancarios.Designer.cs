@@ -142,6 +142,7 @@
             // 
             // txtCliente
             // 
+            this.txtCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCliente.Location = new System.Drawing.Point(118, 179);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(235, 20);
@@ -218,6 +219,7 @@
             // 
             // txtCuenta
             // 
+            this.txtCuenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCuenta.Location = new System.Drawing.Point(118, 142);
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Size = new System.Drawing.Size(235, 20);
@@ -256,6 +258,7 @@
             // 
             // txtnodoc
             // 
+            this.txtnodoc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnodoc.Location = new System.Drawing.Point(118, 105);
             this.txtnodoc.Name = "txtnodoc";
             this.txtnodoc.Size = new System.Drawing.Size(235, 20);
@@ -264,6 +267,7 @@
             // 
             // txtcodigo
             // 
+            this.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcodigo.Enabled = false;
             this.txtcodigo.Location = new System.Drawing.Point(104, 30);
             this.txtcodigo.Name = "txtcodigo";

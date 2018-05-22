@@ -64,12 +64,10 @@ namespace ProgramacionOO.vistas
             bool lret;
             if (TxtidCliente.Text == "0")
             {
-                // registro.ValidarCamposRequeridos();
                 lret = registro.CrearDatos() > 0;
             }
             else
             {
-                // registro.ValidarCamposRequeridos();
                 lret = registro.ActualizarDatos();
                 lret = true;
             }
@@ -113,6 +111,11 @@ namespace ProgramacionOO.vistas
         private void txtnombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             datamanager.ValidarSoloLetra(e);
+        }
+
+        private void cbEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloLetra(e); datamanager.ValidarSoloNumero(e);
         }
     }
 }

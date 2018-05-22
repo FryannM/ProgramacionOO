@@ -48,7 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.gboxClienteTex.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,6 +101,7 @@
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(247, 21);
             this.cbEstado.TabIndex = 31;
+            this.cbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbEstado_KeyPress);
             // 
             // lblnodoc
             // 
@@ -143,6 +143,7 @@
             // 
             // txtnombre
             // 
+            this.txtnombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnombre.Location = new System.Drawing.Point(113, 114);
             this.txtnombre.MaxLength = 25;
             this.txtnombre.Name = "txtnombre";
@@ -162,6 +163,7 @@
             // 
             // txtnodoc
             // 
+            this.txtnodoc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnodoc.Location = new System.Drawing.Point(178, 78);
             this.txtnodoc.MaxLength = 12;
             this.txtnodoc.Name = "txtnodoc";
@@ -171,16 +173,16 @@
             // 
             // TxtidCliente
             // 
-            this.TxtidCliente.Location = new System.Drawing.Point(359, 41);
+            this.TxtidCliente.Location = new System.Drawing.Point(444, 148);
             this.TxtidCliente.Name = "TxtidCliente";
-            this.TxtidCliente.Size = new System.Drawing.Size(100, 20);
+            this.TxtidCliente.Size = new System.Drawing.Size(33, 20);
             this.TxtidCliente.TabIndex = 36;
             this.TxtidCliente.Visible = false;
             // 
             // btnNuevo
             // 
             this.btnNuevo.Image = global::ProgramacionOO.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(418, 98);
+            this.btnNuevo.Location = new System.Drawing.Point(418, 124);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(59, 44);
             this.btnNuevo.TabIndex = 20;
@@ -190,7 +192,7 @@
             // btnEditar
             // 
             this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
-            this.btnEditar.Location = new System.Drawing.Point(418, 142);
+            this.btnEditar.Location = new System.Drawing.Point(418, 168);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(59, 44);
             this.btnEditar.TabIndex = 21;
@@ -200,7 +202,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(418, 186);
+            this.btnGuardar.Location = new System.Drawing.Point(418, 212);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(59, 44);
             this.btnGuardar.TabIndex = 22;
@@ -210,7 +212,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(418, 230);
+            this.btnEliminar.Location = new System.Drawing.Point(418, 186);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(59, 44);
             this.btnEliminar.TabIndex = 23;
@@ -220,7 +222,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(492, 107);
+            this.label2.Location = new System.Drawing.Point(492, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 28;
@@ -230,7 +232,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(492, 197);
+            this.label3.Location = new System.Drawing.Point(492, 223);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 29;
@@ -240,38 +242,27 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(492, 152);
+            this.label4.Location = new System.Drawing.Point(492, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 30;
             this.label4.Text = "Editar";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(492, 242);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Eliminar";
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 308);
-            this.Controls.Add(this.TxtidCliente);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.TxtidCliente);
             this.Controls.Add(this.gboxClienteTex);
+            this.Controls.Add(this.btnEliminar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -304,7 +295,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lb_descripcion;
     }
 }

@@ -4,10 +4,11 @@ using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProgramacionOO.clases
 {
-    class bc_doc_Bancarios : Mantenimientos
+    class bc_doc_Bancarios :bc_clientes, Mantenimientos
     {
 
      
@@ -102,7 +103,7 @@ namespace ProgramacionOO.clases
 
 
 
-        public int CrearDatos()
+        public virtual  int CrearDatos()
         {
 
             id_doc_Bancario = 0;
@@ -139,34 +140,20 @@ namespace ProgramacionOO.clases
         }
 
 
-        public bool BuscarUltimo()
+
+        public virtual bool BuscarUltimo()
         {
+           // StringBuilder
             var dr = datamanager.ConsultaLeer(" Select ID_DOC_BANCARIO,ID_TIPO_DOC_BANCARIO,ID_CUENTA, ID_BANCO,IMPORTE,FECHA" +
                                              "  From BC_DOC_BANCARIOS" +
                                              "  Order by ID_DOC_BANCARIO desc");
             return LeerDatos(dr, true);
         }
 
+      
 
 
-        public bool ActualizarDatos()
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        public bool BorrarDatos(int pbancoid)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Buscar(string Param, bool asignar)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Buscar(int Param, bool asignar)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -118,6 +118,7 @@
             // 
             // txtDireccion
             // 
+            this.txtDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDireccion.Location = new System.Drawing.Point(108, 154);
             this.txtDireccion.MaxLength = 30;
             this.txtDireccion.Name = "txtDireccion";
@@ -146,9 +147,10 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Location = new System.Drawing.Point(108, 121);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(221, 20);
+            this.txtNombre.Size = new System.Drawing.Size(235, 20);
             this.txtNombre.TabIndex = 3;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -174,14 +176,16 @@
             // 
             // txtCorreo
             // 
+            this.txtCorreo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCorreo.Location = new System.Drawing.Point(108, 220);
             this.txtCorreo.MaxLength = 25;
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(221, 20);
+            this.txtCorreo.Size = new System.Drawing.Size(235, 20);
             this.txtCorreo.TabIndex = 6;
             // 
             // txtcodigo
             // 
+            this.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcodigo.Location = new System.Drawing.Point(108, 88);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(132, 20);
@@ -206,10 +210,11 @@
             // 
             // txtTelefono
             // 
+            this.txtTelefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTelefono.Location = new System.Drawing.Point(108, 187);
             this.txtTelefono.MaxLength = 11;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(221, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(235, 20);
             this.txtTelefono.TabIndex = 5;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 

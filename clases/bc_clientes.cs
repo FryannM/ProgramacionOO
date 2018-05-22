@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ProgramacionOO.clases
 {
-    class bc_clientes : Mantenimientos
+    class bc_clientes : util.Consultas, Mantenimientos
     {
         public int bc_Clienteid { get; set; }
         public string bc_TipoDocumento { get; set; }
@@ -26,7 +26,6 @@ namespace ProgramacionOO.clases
             string pbc_Estado,
             int pbc_numeroControlRecurrencia
             )
-
 
         {
             this.bc_Clienteid = pbc_Clienteid;
@@ -90,20 +89,18 @@ namespace ProgramacionOO.clases
         }
 
 
-        public void SelectComboBox(ComboBox cb)
+        public virtual void SelectComboBox(ComboBox cb)
         {
-
-            var dr = datamanager.ConsultaLeer("SELECT ID_TIPO_DOC_BANCARIO, NOMBRE FROM BC_tipo_doc_bancarios");
+            var dr = datamanager.ConsultaLeer(LlenarCB_Clientes.ToString());
 
             while (dr.Read())
             {
                 cb.Items.Add(dr[0].ToString() + " - " + dr[1].ToString());
-
             }
         }
 
 
-        public int CrearDatos()
+        public virtual int CrearDatos()
         {
 
             bc_Clienteid = 0;
@@ -111,13 +108,7 @@ namespace ProgramacionOO.clases
             if (datamanager.ConexionAbrir())
             {
 
-                var cmd = new OracleCommand(" Insert into bc_clientes(" +
-                                                      " id_cliente,id_tipo_doc_bancario," +
-                                                      " num_Documento ,nombre,estado)" +
-                                                      " Values(:id_cliente," +
-                                                      " :id_tipo_doc_bancario," +
-                                                      " :num_documento," +
-                                                      " :nombre,:estado)", datamanager.ConexionSQL);
+                var cmd = new OracleCommand(CrearDatos_CLientes.ToString() , datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_cliente", bc_Clienteid);
                 cmd.Parameters.AddWithValue("id_tipo_doc_bancario", bc_TipoDocumento);
@@ -135,18 +126,13 @@ namespace ProgramacionOO.clases
 
         }
 
-        public bool ActualizarDatos()
+        public virtual bool ActualizarDatos()
         {
             int lRet = 0;
 
             if (datamanager.ConexionAbrir())
             {
-                var cmd = new OracleCommand(" Update BC_CLIENTES SET " +
-                                                      " id_tipo_doc_bancario = :id_tipo_doc_bancario," +
-                                                      " Num_documento = :Num_documento," +
-                                                      " Nombre = :Nombre, " +
-                                                      " Estado = :Estado " +
-                                                      " Where id_cliente = :id_cliente ", datamanager.ConexionSQL);
+                var cmd = new OracleCommand(ActualizaCliente.ToString(), datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_cliente", bc_Clienteid);
                 cmd.Parameters.AddWithValue("id_tipo_doc_bancario", bc_TipoDocumento);
@@ -160,19 +146,10 @@ namespace ProgramacionOO.clases
             return lRet > 0;
         }
 
-        public bool BuscarUltimo()
+        public virtual bool BuscarUltimo()
         {
-            var dr = datamanager.ConsultaLeer(" Select BC_CLIENTES.id_cliente," +
-                                              " BC_TIPO_DOC_BANCARIOS.id_tipo_doc_bancario," +
-                                              " BC_TIPO_DOC_BANCARIOS.NOMBRE AS TIPO_DOCUMENTOS," +
-                                              " BC_CLIENTES.Num_documento," +
-                                              " BC_CLIENTES.Nombre," +
-                                              " BC_CLIENTES.Estado " +
-                                              " FROM (BC_CLIENTES  INNER JOIN BC_TIPO_DOC_BANCARIOS " +
-                                              " ON BC_CLIENTES.ID_TIPO_DOC_BANCARIO = BC_TIPO_DOC_BANCARIOS.ID_TIPO_DOC_BANCARIO)" +
-                                              " Order by id_cliente desc");
-
-
+        
+            var dr = datamanager.ConsultaLeer(UltimoCliente.ToString());
 
             return LeerDatos(dr, true);
         }

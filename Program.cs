@@ -17,7 +17,7 @@ namespace ProgramacionOO
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new vistas.frmLogin());
+            Application.Run(new frmMenu());
 
         }
     }

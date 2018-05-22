@@ -207,6 +207,7 @@
             // 
             // txtcodigo
             // 
+            this.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcodigo.Enabled = false;
             this.txtcodigo.Location = new System.Drawing.Point(90, 26);
             this.txtcodigo.Name = "txtcodigo";
