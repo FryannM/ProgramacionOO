@@ -4,18 +4,16 @@ using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProgramacionOO.clases
 {
-    class bc_sucursales : Mantenimientos
+    class bc_sucursales : bc_clientes
     {
-
-
-
         public int bc_id_Sucursal { get; set; }
         public int bc_id_Banco { get; set; }
         public string bc_Codigo { get; set; }
-        public string bc_Nombre { get; set; }
+
         public string bc_Direccion { get; set; }
         public string bc_Telefono { get; set; }
         public string bc_Correo { get; set; }
@@ -43,11 +41,13 @@ namespace ProgramacionOO.clases
             this.bc_Telefono = pbc_Telefono;
             this.bc_Correo = pbc_Correo;
         }
+
         public bc_sucursales()
         {
             Limpiar();
         }
-        public void Limpiar()
+
+        new public void Limpiar()
         {
 
             bc_id_Sucursal = 0;
@@ -56,10 +56,9 @@ namespace ProgramacionOO.clases
             bc_Direccion = "";
             bc_Telefono = "";
             bc_Correo = "";
-
-
         }
-        public bool Validar()
+
+        new public bool Validar()
         {
             bool lret = true;
 
@@ -71,8 +70,7 @@ namespace ProgramacionOO.clases
             return lret;
         }
 
-
-        public bool LeerDatos(OracleDataReader dr, bool asignar)
+        public override bool LeerDatos(OracleDataReader dr, bool asignar)
         {
             bool encontrado = false;
             if (dr.Read())
@@ -81,8 +79,8 @@ namespace ProgramacionOO.clases
                 if (asignar)
                 {
                     bc_id_Sucursal = Convert.ToInt16(dr["id_Sucursal"]);
-                    bc_id_Banco = Convert.ToInt16(dr["id_banco"]);
-                 //  bc_NombreBanco = dr["Nombre  "].ToString();
+                    bc_NombreBanco = (dr["Nombre_Banco"].ToString());
+                   bc_id_Banco = Convert.ToInt16(dr["id_banco"].ToString());
                     bc_Codigo = dr["codigo"].ToString();
                     bc_Direccion = dr["direccion"].ToString();
                   bc_Nombre = dr["nombre"].ToString();
@@ -98,15 +96,11 @@ namespace ProgramacionOO.clases
 
             return encontrado;
         }
-
-
-
-
-
-        public int CrearDatos()
+     
+        public override int CrearDatos()
         {
 
-            bc_id_Banco = 0;
+            bc_id_Sucursal = 0;
 
             if (datamanager.ConexionAbrir())
             {
@@ -129,32 +123,33 @@ namespace ProgramacionOO.clases
                 datamanager.ConexionCerrar();
 
             }
-            return bc_id_Banco;
+            return bc_id_Sucursal;
         }
 
-        public bool BuscarUltimo()
+
+        public override void SelectComboBox(ComboBox cb)
         {
-            //var dr = datamanager.ConsultaLeer(" SELECT bc_sucursales.ID_SUCURSAL," +
-            //                                  "  bc_sucursales.id_banco,bc_bancos.nombre, " +
-            //                                  "  bc_sucursales.codigo," +
-            //                                  "  bc_sucursales.direccion," +
-            //                                  "  bc_sucursales.telefono," +
-            //                                  "  bc_sucursales.Correo from bc_sucursales" +
-            //                                  "  INNER  JOIN  bc_bancos" +
-            //                                  "  ON  bc_bancos.BANCOID = bc_sucursales.ID_BANCO" +
-            //                                  "  ORDER BY bc_sucursales.ID_SUCURSAL desc");
+            var dr = datamanager.ConsultaLeer(LlenarCB_SucursalBANCO.ToString());
 
+            while (dr.Read())
+            {
+                cb.Items.Add(dr[0].ToString() + " - " + dr[1].ToString());
+            }
+        }
+        public override bool BuscarUltimo()
+        {
+          
 
-            var dr = datamanager.ConsultaLeer(" Select id_sucursal,id_banco,codigo,Nombre,direccion,telefono ,correo" +
-                             " From bc_sucursales" +
-                        " Order by id_sucursal desc");
+            var dr = datamanager.ConsultaLeer(" Select bc_bancos.id_banco,bc_bancos.nombre as Nombre_Banco , bc_sucursales.id_sucursal, bc_sucursales.id_banco, bc_sucursales.codigo, " +
+                                              " bc_sucursales.Nombre, bc_sucursales.direccion, bc_sucursales.telefono, bc_sucursales.correo "+
+                                              " From bc_sucursales inner join bc_bancos "+
+                                              " on  bc_sucursales.id_banco = bc_bancos.id_banco "+
+                                              " Order by id_sucursal desc ");
 
             return LeerDatos(dr, true);
         }
 
-
-
-        public bool ActualizarDatos()
+        public override bool ActualizarDatos()
         {
             int lRet = 0;
 
@@ -163,12 +158,12 @@ namespace ProgramacionOO.clases
 
                 //(Id_Banco,Codigo,Nombre ,Direccion,Telefono,Correo)" +
                 var cmd = new OracleCommand(" Update bc_sucursales" +
-                                                      " Set id_sucursal = id_sucursal" +
+                                                      " Set id_sucursal = :id_sucursal," +
                                                       " Id_Banco = :Id_Banco," +
                                                       " Codigo = :Codigo," +
                                                       " Nombre = :Nombre," +
                                                       " Direccion = :Direccion, " +
-                                                      " Telefono = :Telefono " +
+                                                      " Telefono = :Telefono, " +
                                                       " Correo = :Correo " +
                                                       " Where id_sucursal = :id_sucursal ", datamanager.ConexionSQL);
 
@@ -184,21 +179,8 @@ namespace ProgramacionOO.clases
                 datamanager.ConexionCerrar();
             }
             return lRet > 0;
-        }
 
-        public bool BorrarDatos(int pbancoid)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Buscar(string Param, bool asignar)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Buscar(int Param, bool asignar)
-        {
-            throw new NotImplementedException();
+           
         }
 
     }

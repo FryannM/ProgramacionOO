@@ -35,16 +35,11 @@ namespace ProgramacionOO.vistas
         }
         private void Mostrar()
         {
-
-
-
             txtid.Text = Convert.ToInt16(registro.bc_bancoid).ToString();
             txtcodigo.Text = registro.bc_bancoCodigo;
             txtRnc.Text = registro.bc_bancoRnc;
             txtNombre.Text = registro.bc_bancoNombre;
-            txtDireccion.Text = registro.bc_bancoDireccion;
-          
-
+            txtDireccion.Text = registro.bc_bancoDireccion;        
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {

@@ -9,8 +9,8 @@ using System.Data;
 
 namespace ProgramacionOO.clases
 {
-    class bc_cuentas : Mantenimientos
-    {
+    class bc_cuentas : bc_bancos, Mantenimientos
+        {
         public string CodigoCuenta { get; set; }
         public char Estado { get; set; }
         public double BalanceDB { get; set; }
@@ -31,7 +31,7 @@ namespace ProgramacionOO.clases
 
         }
 
-        public void Limpiar()
+        new public void Limpiar()
         {
             CodigoCuenta = "";
             Estado = ' ';
@@ -39,7 +39,7 @@ namespace ProgramacionOO.clases
             BalanceCR = 0;
         }
 
-        public bool Validar()
+        new public bool Validar()
         {
             bool lret = true;
 
@@ -50,7 +50,7 @@ namespace ProgramacionOO.clases
             return lret;
         }
 
-        public bool LeerDatos(OracleDataReader dr, bool asignar)
+        public override bool LeerDatos(OracleDataReader dr, bool asignar)
         {
             bool encontrado = false;
 
@@ -75,7 +75,7 @@ namespace ProgramacionOO.clases
             return encontrado;
         }
 
-        public bool Buscar(String pNombre, bool asignar)
+        public override bool Buscar(String pNombre, bool asignar)
         {
             var dr = datamanager.ConsultaLeer("select id_cuenta, codigo,estado,balance_DB" +
                                               " from Bc_cuentas" +
@@ -104,7 +104,7 @@ namespace ProgramacionOO.clases
             return LlenarDataGridView(cm);
         }
 
-        public bool BuscarUltimo()
+        public override bool BuscarUltimo()
 
         {
             var dr = datamanager.ConsultaLeer(" Select codigo,estado,balance_DB,balance_CR" +
@@ -113,7 +113,7 @@ namespace ProgramacionOO.clases
             return LeerDatos(dr, true);
         }
 
-        public int CrearDatos()
+        public override int CrearDatos()
         {
             int filasAfectadas = 0;
 
@@ -137,12 +137,8 @@ namespace ProgramacionOO.clases
             }
             return filasAfectadas;
         }
-        public virtual bool BorrarDatos(int codigoCuenta)
-        {
-            throw new NotImplementedException(); //No estamos trabajando con id de la tabla.
-        }
 
-        public virtual bool BorrarDatos(string CodigoCuenta)//Sobrecarga  del metodo BorrarDatos
+        public virtual bool BorrarDatos(string CodigoCuenta)
         {
             bool lret = datamanager.ConsultaNodata("delete from Bc_cuentas where " +
                                                    "codigo = '" + CodigoCuenta + "'");
@@ -157,7 +153,7 @@ namespace ProgramacionOO.clases
             return lret;
         }
 
-        public bool ActualizarDatos()
+        public override bool ActualizarDatos()
         {
             int lRet = 0;
 
@@ -182,17 +178,12 @@ namespace ProgramacionOO.clases
             return lRet > 0;
         }
 
-        public bool BuscarCodigo(String Codigo)
+        public virtual bool BuscarCodigo(String Codigo)
         {
             var dr = datamanager.ConsultaLeer("select codigo from Bc_cuentas where codigo = '" + Codigo.ToString() + "'");
 
 
             return LeerDatos(dr, false);
-        }
-
-        public bool Buscar(int Bancoid, bool asignar)
-        {
-            throw new NotImplementedException();
         }
 
         public virtual DataTable LlenarDataGridView(OracleCommand cSQL)

@@ -44,7 +44,6 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtcodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtidBanco = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.gbBancos = new System.Windows.Forms.GroupBox();
@@ -53,13 +52,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.cbBanco = new System.Windows.Forms.ComboBox();
             this.gbBancos.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEliminar
             // 
             this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(483, 233);
+            this.btnEliminar.Location = new System.Drawing.Point(483, 245);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(59, 44);
             this.btnEliminar.TabIndex = 15;
@@ -69,7 +69,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(483, 186);
+            this.btnGuardar.Location = new System.Drawing.Point(483, 194);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(59, 44);
             this.btnGuardar.TabIndex = 14;
@@ -79,7 +79,7 @@
             // btnEditar
             // 
             this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
-            this.btnEditar.Location = new System.Drawing.Point(483, 139);
+            this.btnEditar.Location = new System.Drawing.Point(483, 143);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(59, 44);
             this.btnEditar.TabIndex = 13;
@@ -109,7 +109,7 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(96, 21);
+            this.txtid.Location = new System.Drawing.Point(108, 21);
             this.txtid.Name = "txtid";
             this.txtid.ReadOnly = true;
             this.txtid.Size = new System.Drawing.Size(41, 20);
@@ -187,6 +187,7 @@
             // 
             this.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcodigo.Location = new System.Drawing.Point(108, 88);
+            this.txtcodigo.MaxLength = 10;
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(132, 20);
             this.txtcodigo.TabIndex = 2;
@@ -200,13 +201,6 @@
             this.label2.Size = new System.Drawing.Size(72, 20);
             this.label2.TabIndex = 26;
             this.label2.Text = "Bancoid";
-            // 
-            // txtidBanco
-            // 
-            this.txtidBanco.Location = new System.Drawing.Point(108, 55);
-            this.txtidBanco.Name = "txtidBanco";
-            this.txtidBanco.Size = new System.Drawing.Size(132, 20);
-            this.txtidBanco.TabIndex = 1;
             // 
             // txtTelefono
             // 
@@ -230,12 +224,12 @@
             // 
             // gbBancos
             // 
+            this.gbBancos.Controls.Add(this.cbBanco);
             this.gbBancos.Controls.Add(this.lblSucursal);
             this.gbBancos.Controls.Add(this.txtTelefono);
             this.gbBancos.Controls.Add(this.txtcodigo);
             this.gbBancos.Controls.Add(this.lblTelefono);
             this.gbBancos.Controls.Add(this.txtCorreo);
-            this.gbBancos.Controls.Add(this.txtidBanco);
             this.gbBancos.Controls.Add(this.lblcodigo);
             this.gbBancos.Controls.Add(this.label2);
             this.gbBancos.Controls.Add(this.lblnombre);
@@ -301,6 +295,14 @@
             this.label6.TabIndex = 36;
             this.label6.Text = "Agregar";
             // 
+            // cbBanco
+            // 
+            this.cbBanco.FormattingEnabled = true;
+            this.cbBanco.Location = new System.Drawing.Point(108, 57);
+            this.cbBanco.Name = "cbBanco";
+            this.cbBanco.Size = new System.Drawing.Size(235, 21);
+            this.cbBanco.TabIndex = 29;
+            // 
             // frmSucursal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,7 +347,6 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtcodigo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtidBanco;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.GroupBox gbBancos;
@@ -354,5 +355,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbBanco;
     }
 }

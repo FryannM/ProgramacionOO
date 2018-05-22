@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ProgramacionOO.clases
 {
-    class bc_tipo_doc_bancarios : Mantenimientos
+    class bc_tipo_doc_bancarios :bc_cuentas
     {
         public string codigoTipoDoc { get; set; }
         public char origen { get; set; }
@@ -17,7 +17,6 @@ namespace ProgramacionOO.clases
 
         public bc_tipo_doc_bancarios()
         {
-
         }
 
         public bc_tipo_doc_bancarios(string codigoTipoDoc, string nombre ,char origen)
@@ -25,11 +24,9 @@ namespace ProgramacionOO.clases
             this.codigoTipoDoc = codigoTipoDoc;
             this.nombre = nombre;
             this.origen = origen;
-           
-
         }
 
-        public void Limpiar()
+       new public void Limpiar()
         {
             codigoTipoDoc = "";
             nombre = "";
@@ -37,7 +34,7 @@ namespace ProgramacionOO.clases
             
         }
 
-        public bool Validar()
+        new public bool Validar()
         {
             bool lret = true;
 
@@ -48,7 +45,7 @@ namespace ProgramacionOO.clases
             return lret;
         }
 
-        public bool LeerDatos(OracleDataReader dr, bool asignar)
+        public override bool LeerDatos(OracleDataReader dr, bool asignar)
         {
             bool encontrado = false;
 
@@ -72,14 +69,14 @@ namespace ProgramacionOO.clases
             return encontrado;
         }
 
-        public bool Buscar(String pnombre, bool asignar)
+        public override bool Buscar(String pnombre, bool asignar)
         {
             var dr = datamanager.ConsultaLeer("select id_cuenta, codigo, origen where nombre = '" + pnombre + "'");
             return LeerDatos(dr, asignar);
 
         }      
 
-        public bool BuscarUltimo()
+        public override bool BuscarUltimo()
 
         {
             var dr = datamanager.ConsultaLeer("select codigo , nombre , origen From Bc_tipo_doc_bancarios Order by ID_TIPO_DOC_BANCARIO  desc");
@@ -88,7 +85,7 @@ namespace ProgramacionOO.clases
             return LeerDatos(dr, true); 
         }
 
-        public int CrearDatos()
+        public override int CrearDatos()
         {
             int filasAfectadas = 0;
 
@@ -125,7 +122,7 @@ namespace ProgramacionOO.clases
 
         }
 
-        public virtual bool BorrarDatos(int codigoTipoDoc)
+        public override bool BorrarDatos(int codigoTipoDoc)
         {
             throw new NotImplementedException();
         }
@@ -144,7 +141,7 @@ namespace ProgramacionOO.clases
             return lret;
         }
 
-        public bool ActualizarDatos()
+        public override bool ActualizarDatos()
         {
             int lRet = 0;
 
@@ -167,16 +164,12 @@ namespace ProgramacionOO.clases
             return lRet > 0;
         }
 
-        public bool BuscarCodigo(String Codigo)
+        public virtual bool BuscarCodigo(String Codigo)
         {
             var dr = datamanager.ConsultaLeer("select codigo from Bc_tipo_doc_bancarios where codigo = '"+Codigo.ToString()+"'");
-
 
             return LeerDatos(dr, false);
         }
 
-        public bool Buscar(int Param, bool asignar) {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -11,7 +11,7 @@ namespace ProgramacionOO
 {
     public partial class frmMenu : Form
     {
-       public frmMenu(/*string nombre, string Estado*/)
+        public frmMenu(/*string nombre, string Estado*/)
         {
 
            // llbNombre.Text = nombre;
@@ -50,28 +50,24 @@ namespace ProgramacionOO
             frm.MdiParent = this;
             frm.Show();
         }
-
         private void titularesCuentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             vistas.frmTitularesCuentas frm = new vistas.frmTitularesCuentas();
             frm.MdiParent = this;
             frm.Show();
         }
-
         private void docbancariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             vistas.frmTipoDocBancarios frm = new vistas.frmTipoDocBancarios();
             frm.MdiParent = this;
             frm.Show();
         }
-
         private void tipoDocBancariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             vistas.frmTipoDocBancarios frm = new vistas.frmTipoDocBancarios();
             frm.MdiParent = this;
             frm.Show();
         }
-
         private void sucursalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             vistas.frmSucursal frm = new vistas.frmSucursal();

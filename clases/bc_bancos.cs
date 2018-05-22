@@ -9,10 +9,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProgramacionOO.clases
 {
-    public  class bc_bancos : Mantenimientos
+    public  class bc_bancos :util.Consultas, Mantenimientos
     {
-
-
         #region Atributos
         public int bc_bancoid { get; set; }
        
@@ -53,8 +51,7 @@ namespace ProgramacionOO.clases
 
         #region Métodos y funciones
 
-
-        public   void Limpiar()
+        public void Limpiar()
         {
             bc_bancoid = 0;
             bc_bancoNombre = "";
@@ -63,8 +60,7 @@ namespace ProgramacionOO.clases
             bc_bancoRnc = "";
 
         }
-
-        public  bool Validar()
+        public bool Validar()
         {
             bool lret = true;
 
@@ -75,9 +71,7 @@ namespace ProgramacionOO.clases
             }
             return lret;
         }
-
-
-        public bool ValidarCamposRequeridos()
+        protected virtual bool ValidarCamposRequeridos()
         {
             clases.bc_bancos registro = new clases.bc_bancos();
             bool rsult = true;
@@ -95,18 +89,14 @@ namespace ProgramacionOO.clases
             }
             return rsult;
         }
-
-
-        public int CrearDatos()
+        public virtual int CrearDatos()
         {
             bc_bancoid = 0;
 
             if (datamanager.ConexionAbrir())
             {
 
-                   OracleCommand cmd = new OracleCommand("Insert into bc_bancos" +
-                    "(id_banco,Codigo,Nombre,Direccion,Rnc)" +
-                    " Values(:id_banco,:Codigo,:Nombre,:Direccion,:Rnc)", datamanager.ConexionSQL);
+                OracleCommand cmd = new OracleCommand(CrearDatos_BC_Banco.ToString(), datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_banco", bc_bancoid);
                 cmd.Parameters.AddWithValue("Codigo", bc_bancoCodigo);
@@ -121,8 +111,7 @@ namespace ProgramacionOO.clases
             }
             return bc_bancoid;
         }
-
-       public   bool LeerDatos(OracleDataReader dr, bool asignar)
+        public virtual bool LeerDatos(OracleDataReader dr, bool asignar)
         {
             bool encontrado = false;
             if (dr.Read())
@@ -144,41 +133,18 @@ namespace ProgramacionOO.clases
 
             return encontrado;
         }
-
-        public  bool Buscar(String pNombre, bool asignar)
+        public virtual bool BuscarUltimo()
         {
-            var dr = datamanager.ConsultaLeer("select id_banco, codigo,Nombre,Direccion,Rnc" +
-                                               " from bc_bancos" +
-                                               " where Nombre = '" + pNombre + "'");
-            return LeerDatos(dr, asignar);
-
-        }
-
-        public  bool Buscar(int Bancoid, bool asignar)
-        {
-            var dr = datamanager.ConsultaLeer("select id_banco,Codigo, nombre,Direccion,Rnc" +
-                                               " from bc_bancos" +
-                                               " where id_banco = " + Bancoid.ToString());
-
-            return LeerDatos(dr, asignar);
-        }
-
-         public    bool BuscarUltimo()
-
-        {
-            var dr = datamanager.ConsultaLeer(" Select id_banco,Codigo, Nombre,Direccion,Rnc" +
-                                              " From bc_bancos" +
-                                              " Order by id_banco desc ");
+            var dr = datamanager.ConsultaLeer(UltimoBanco.ToString());
             return LeerDatos(dr, true);
         }
-
-        public  bool ActualizarDatos()
+        public virtual bool ActualizarDatos()
         {
             int lRet = 0;
 
             if (datamanager.ConexionAbrir())
             {
-                OracleCommand cmd = new OracleCommand(" Update bc_bancos" +
+                var cmd = new OracleCommand(" Update bc_bancos" +
                                                      " Set id_banco = :id_banco," +
                                                       " Codigo = :Codigo," +
                                                       " Nombre = :Nombre," +
@@ -204,7 +170,16 @@ namespace ProgramacionOO.clases
                                                " where id_banco = " + pbancoid.ToString());
             if (lret) Limpiar();
             return lret;
-        }       
+        }
+        public virtual bool Buscar(String pNombre, bool asignar)
+        {
+            throw new NotImplementedException();
+
+        }
+        public virtual bool Buscar(int Bancoid, bool asignar)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 #endregion

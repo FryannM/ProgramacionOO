@@ -23,6 +23,7 @@ namespace ProgramacionOO.vistas
         private void frmSucursal_Load(object sender, EventArgs e)
         {
             registro = new clases.bc_sucursales();
+            registro.SelectComboBox(cbBanco);
 
             registro.BuscarUltimo();
             Mostrar();
@@ -34,7 +35,9 @@ namespace ProgramacionOO.vistas
         {
             // txtidBanco.Text = registro.bc_NombreBanco;
             txtid.Text = Convert.ToInt16(registro.bc_id_Sucursal).ToString();
-            txtidBanco.Text = Convert.ToInt16(registro.bc_id_Banco).ToString();
+            cbBanco.Text =registro.bc_id_Banco+" -"+ registro.bc_NombreBanco;
+
+           
             txtcodigo.Text = registro.bc_Codigo;
             txtNombre.Text = registro.bc_Nombre;
             txtDireccion.Text = registro.bc_Direccion;
@@ -46,7 +49,7 @@ namespace ProgramacionOO.vistas
         {
             if (result == true)
             {
-                txtidBanco.Enabled = false;
+                cbBanco.Enabled = false;
                 txtcodigo.Enabled = false;
                 txtNombre.Enabled = false;
                 txtDireccion.Enabled = false;
@@ -58,7 +61,7 @@ namespace ProgramacionOO.vistas
             }
             else
             {
-                txtidBanco.Enabled = true;
+                 cbBanco.Enabled = true;
                 txtcodigo.Enabled = true;
                 txtNombre.Enabled = true;
                 txtDireccion.Enabled = true;
@@ -73,7 +76,7 @@ namespace ProgramacionOO.vistas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            txtidBanco.Clear();
+            cbBanco.Text = "";
             txtcodigo.Clear();
             txtNombre.Clear();
             txtDireccion.Clear();
@@ -109,7 +112,8 @@ namespace ProgramacionOO.vistas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            registro.bc_id_Banco = Convert.ToInt16(txtidBanco.Text);
+            //registro.bc_id_Banco = Convert.ToInt16(txtidBanco.Text);
+            registro.bc_id_Banco = Convert.ToInt16(cbBanco.Text.Substring(0, 3));
             registro.bc_Codigo = txtcodigo.Text;
             registro.bc_Nombre = txtNombre.Text;
             registro.bc_Direccion = txtDireccion.Text;
@@ -120,14 +124,12 @@ namespace ProgramacionOO.vistas
             if (txtid.Text == "0")
             {
 
-                // registro.ValidarCamposRequeridos();
                 lret = registro.CrearDatos() > 0;
 
 
             }
             else
             {
-                // registro.ValidarCamposRequeridos();
                 lret = registro.ActualizarDatos();
                 lret = true;
             }

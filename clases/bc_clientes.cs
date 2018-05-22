@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ProgramacionOO.clases
 {
-    class bc_clientes : util.Consultas, Mantenimientos
+    class bc_clientes : bc_bancos, Mantenimientos
     {
         public int bc_Clienteid { get; set; }
         public string bc_TipoDocumento { get; set; }
@@ -35,11 +35,13 @@ namespace ProgramacionOO.clases
             this.bc_Estado = pbc_Estado;
             this.bc_numeroControlRecurrencia = pbc_numeroControlRecurrencia;
         }
+
         public bc_clientes()
         {
             Limpiar();
         }
-        public void Limpiar()
+
+        new public void Limpiar()
         {
             bc_Clienteid = 0;
             bc_TipoDocumento = "";
@@ -47,11 +49,9 @@ namespace ProgramacionOO.clases
             bc_Nombre = "";
             bc_Estado = "";
             bc_numeroControlRecurrencia = 0;
-
-
         }
 
-        public bool Validar()
+        new public bool Validar()
         {
             bool lret = true;
 
@@ -64,7 +64,7 @@ namespace ProgramacionOO.clases
 
         #region MANTENIMIENTOS 
 
-        public bool LeerDatos(OracleDataReader dr, bool asignar)
+        public override bool LeerDatos(OracleDataReader dr, bool asignar)
         {
             bool encontrado = false;
             if (dr.Read())
@@ -88,7 +88,6 @@ namespace ProgramacionOO.clases
             return encontrado;
         }
 
-
         public virtual void SelectComboBox(ComboBox cb)
         {
             var dr = datamanager.ConsultaLeer(LlenarCB_Clientes.ToString());
@@ -99,8 +98,7 @@ namespace ProgramacionOO.clases
             }
         }
 
-
-        public virtual int CrearDatos()
+        public override int CrearDatos()
         {
 
             bc_Clienteid = 0;
@@ -108,7 +106,7 @@ namespace ProgramacionOO.clases
             if (datamanager.ConexionAbrir())
             {
 
-                var cmd = new OracleCommand(CrearDatos_CLientes.ToString() , datamanager.ConexionSQL);
+                var cmd = new OracleCommand(CrearDatos_CLientes.ToString(), datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_cliente", bc_Clienteid);
                 cmd.Parameters.AddWithValue("id_tipo_doc_bancario", bc_TipoDocumento);
@@ -126,7 +124,7 @@ namespace ProgramacionOO.clases
 
         }
 
-        public virtual bool ActualizarDatos()
+        public override bool ActualizarDatos()
         {
             int lRet = 0;
 
@@ -146,31 +144,11 @@ namespace ProgramacionOO.clases
             return lRet > 0;
         }
 
-        public virtual bool BuscarUltimo()
+        public override bool BuscarUltimo()
         {
-        
             var dr = datamanager.ConsultaLeer(UltimoCliente.ToString());
 
             return LeerDatos(dr, true);
-        }
-
-        public bool BorrarDatos(int pbancoid)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Buscar(string pNombre, bool asignar)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Buscar(int Bancoid, bool asignar)
-        {
-            throw new NotImplementedException();
-        }
-        public bool borrarDatos(int pbancoid)
-        {
-            throw new NotImplementedException();
         }
 
     }

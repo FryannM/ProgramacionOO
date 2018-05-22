@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace ProgramacionOO.clases
 {
-    public class bc_Titulares_Cuentas : Mantenimientos
+    public class bc_Titulares_Cuentas : bc_bancos
     {
 
         public int bc_Titular_Cuentaid { get; set; }
         public int bc_Cuenta_id { get; set; }
         public int bc_Cliente_id { get; set; }
-        public string errormsg = "";
+    new public string errormsg = "";
 
 
 
@@ -33,7 +33,7 @@ namespace ProgramacionOO.clases
         {
             Limpiar();
         }
-        public void Limpiar()
+        new public void Limpiar()
         {
             bc_Titular_Cuentaid = 0;
             bc_Cuenta_id = 0;
@@ -41,7 +41,7 @@ namespace ProgramacionOO.clases
         }
 
 
-        public bool Validar()
+        new public bool Validar()
         {
             bool lret = true;
 
@@ -54,7 +54,7 @@ namespace ProgramacionOO.clases
         }
 
 
-        public bool LeerDatos(OracleDataReader dr, bool asignar)
+        public override bool LeerDatos(OracleDataReader dr, bool asignar)
         {
             bool encontrado = false;
             if (dr.Read())
@@ -77,7 +77,7 @@ namespace ProgramacionOO.clases
         }
 
 
-        public int CrearDatos()
+        public  override int CrearDatos()
         {
             bc_Titular_Cuentaid = 0;
 
@@ -102,7 +102,7 @@ namespace ProgramacionOO.clases
         }
 
 
-       public bool Buscar(String pNombre, bool asignar)
+       public override bool Buscar(String pNombre, bool asignar)
         {
             var dr = datamanager.ConsultaLeer("select id_titular_cuenta, id_cuenta,id_cliente" +
                                                " from bc_titulares_cuentas" +
@@ -111,7 +111,7 @@ namespace ProgramacionOO.clases
 
         }
 
-        public bool Buscar(int Titulaa, bool asignar)
+        public override bool Buscar(int Titulaa, bool asignar)
         {
             var dr = datamanager.ConsultaLeer("select id_titular_cuenta, id_cuenta,id_cliente" +
                                                " from bc_titulares_cuentas" +
@@ -120,7 +120,7 @@ namespace ProgramacionOO.clases
             return LeerDatos(dr, asignar);
         }
 
-        public bool BuscarUltimo()
+        public override bool BuscarUltimo()
 
         {
             var dr = datamanager.ConsultaLeer(" Select id_titular_cuenta,id_cuenta, id_cliente" +
@@ -129,14 +129,7 @@ namespace ProgramacionOO.clases
             return LeerDatos(dr, true);
         }
 
-
-
-
-
-
-
-
-        public bool ActualizarDatos()
+        public override bool ActualizarDatos()
         {
             int lRet = 0;
 
@@ -160,10 +153,6 @@ namespace ProgramacionOO.clases
             return lRet > 0;
         }
 
-        public bool BorrarDatos(int pbancoid)
-        {
-            throw new NotImplementedException();
-        }
 
 
 
