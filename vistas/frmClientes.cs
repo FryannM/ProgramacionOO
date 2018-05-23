@@ -24,13 +24,18 @@ namespace ProgramacionOO.vistas
         public frmClientes(string id_tipo_doc, string num_doc, string nombre, string estado)
         {
             InitializeComponent();
+            cbtipoDoc.Text = id_tipo_doc;
+            txtnodoc.Text = num_doc;
+            txtnombre.Text = nombre;
+            cbEstado.Text = estado;
+
         }
         private void frmClientes_Load(object sender, EventArgs e)
         {
             registro = new clases.bc_clientes();
             registro.SelectComboBox(cbtipoDoc);
             registro.BuscarUltimo();
-            Mostrar();
+            //Mostrar();
 
             bool result = true;
             Disable(result);
@@ -129,7 +134,6 @@ namespace ProgramacionOO.vistas
         {
             this.Close();
             VerClientes verClientes = new VerClientes();
-            txtnodoc.Enabled = true;
             Disable(false);
             verClientes.Show();
         }

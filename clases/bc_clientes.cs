@@ -194,7 +194,7 @@ namespace ProgramacionOO.clases
 
                 cm = datamanager.ConexionSQL.CreateCommand();
                 cm.CommandType = CommandType.Text;
-                cm.CommandText = "select * from bc_clientes";
+                cm.CommandText = UltimoCliente.ToString();
                 cm.ExecuteNonQuery();
                 datamanager.ConexionCerrar();
             }
