@@ -9,13 +9,12 @@ using System.Data;
 
 namespace ProgramacionOO.clases
 {
-    class bc_cuentas : bc_bancos, Mantenimientos
+    class bc_cuentas : bc_bancos
         {
         public string CodigoCuenta { get; set; }
         public char Estado { get; set; }
         public double BalanceDB { get; set; }
         public double BalanceCR { get; set; }
-
 
         public bc_cuentas()
         {
@@ -31,7 +30,7 @@ namespace ProgramacionOO.clases
 
         }
 
-        new public void Limpiar()
+        public override void Limpiar()
         {
             CodigoCuenta = "";
             Estado = ' ';
@@ -39,7 +38,7 @@ namespace ProgramacionOO.clases
             BalanceCR = 0;
         }
 
-        new public bool Validar()
+        public override bool Validar()
         {
             bool lret = true;
 
@@ -138,7 +137,7 @@ namespace ProgramacionOO.clases
             return filasAfectadas;
         }
 
-        public virtual bool BorrarDatos(string CodigoCuenta)
+        public override bool BorrarDatos(string CodigoCuenta)
         {
             bool lret = datamanager.ConsultaNodata("delete from Bc_cuentas where " +
                                                    "codigo = '" + CodigoCuenta + "'");
@@ -181,8 +180,6 @@ namespace ProgramacionOO.clases
         public virtual bool BuscarCodigo(String Codigo)
         {
             var dr = datamanager.ConsultaLeer("select codigo from Bc_cuentas where codigo = '" + Codigo.ToString() + "'");
-
-
             return LeerDatos(dr, false);
         }
 

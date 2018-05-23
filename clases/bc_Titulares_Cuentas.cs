@@ -4,16 +4,19 @@ using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProgramacionOO.clases
 {
-    public class bc_Titulares_Cuentas : bc_bancos
+    class bc_Titulares_Cuentas : bc_clientes
     {
 
         public int bc_Titular_Cuentaid { get; set; }
         public int bc_Cuenta_id { get; set; }
         public int bc_Cliente_id { get; set; }
-    new public string errormsg = "";
+        public string bc_nombreCliente { get; set; }
+        public string bc_codigoCuenta { get; set; }
+        new public string errormsg = "";
 
 
 
@@ -65,6 +68,8 @@ namespace ProgramacionOO.clases
                     bc_Titular_Cuentaid = Convert.ToInt16(dr["id_titular_cuenta"]);
                     bc_Cuenta_id = Convert.ToInt16(dr["id_cuenta"]);
                     bc_Cliente_id = Convert.ToInt16(dr["id_cliente"]);
+                    bc_nombreCliente = (dr["NOMBRE"]).ToString();
+                    bc_codigoCuenta = (dr["codigo"]).ToString();
 
                 }
             }
@@ -77,16 +82,16 @@ namespace ProgramacionOO.clases
         }
 
 
-        public  override int CrearDatos()
+        public override int CrearDatos()
         {
             bc_Titular_Cuentaid = 0;
 
             if (datamanager.ConexionAbrir())
             {
 
-                OracleCommand cmd = new OracleCommand("Insert into bc_titulares_cuentas" +
-                 "(id_titular_cuenta,id_cuenta,id_cliente)" +
-                 " Values(:id_titular_cuenta,:id_cuenta,:id_cliente)", datamanager.ConexionSQL);
+                var cmd = new OracleCommand("Insert into bc_titulares_cuentas" +
+                   "(id_titular_cuenta,id_cuenta,id_cliente)" +
+                   " Values(:id_titular_cuenta,:id_cuenta,:id_cliente)", datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_titular_cuenta", bc_Titular_Cuentaid);
                 cmd.Parameters.AddWithValue("id_cuenta", bc_Cuenta_id);
@@ -102,7 +107,7 @@ namespace ProgramacionOO.clases
         }
 
 
-       public override bool Buscar(String pNombre, bool asignar)
+        public override bool Buscar(String pNombre, bool asignar)
         {
             var dr = datamanager.ConsultaLeer("select id_titular_cuenta, id_cuenta,id_cliente" +
                                                " from bc_titulares_cuentas" +
@@ -123,9 +128,14 @@ namespace ProgramacionOO.clases
         public override bool BuscarUltimo()
 
         {
-            var dr = datamanager.ConsultaLeer(" Select id_titular_cuenta,id_cuenta, id_cliente" +
-                                              " From bc_titulares_cuentas" +
-                                              " Order by id_titular_cuenta desc ");
+            var dr = datamanager.ConsultaLeer("  Select bc_titulares_cuentas.id_titular_cuenta,bc_cuentas.codigo,bc_clientes.NOMBRE," +
+                                               " bc_titulares_cuentas.id_cuenta, bc_titulares_cuentas.id_cliente" +
+                                               " From bc_titulares_cuentas" +
+                                               " INNER JOIN bc_cuentas" +
+                                               " on bc_titulares_cuentas.ID_CUENTA = bc_cuentas.id_cuenta" +
+                                               " INNER JOIN bc_clientes" +
+                                               " on bc_titulares_cuentas.ID_CLIENTE = bc_clientes.ID_CLIENTE" +
+                                               " Order by id_titular_cuenta desc");
             return LeerDatos(dr, true);
         }
 
@@ -135,17 +145,17 @@ namespace ProgramacionOO.clases
 
             if (datamanager.ConexionAbrir())
             {
-                OracleCommand cmd = new OracleCommand(" Update bc_titulares_cuentas" +
-                                                     " Set id_titular_cuenta = :id_titular_cuenta," +
-                                                      " id_cuenta = :id_cliente," +
-                                                      " id_cliente = :id_cliente," +
+                var cmd = new OracleCommand(" Update bc_titulares_cuentas" +
+                                                      " Set id_titular_cuenta = :id_titular_cuenta," +
+                                                       " id_cuenta = :id_cliente," +
+                                                       " id_cliente = :id_cliente," +
 
-                                                      " Where id_titular_cuenta = :id_cliente ", datamanager.ConexionSQL);
+                                                       " Where id_titular_cuenta = :id_cliente ", datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_titular_cuenta", bc_Titular_Cuentaid);
                 cmd.Parameters.AddWithValue("id_cuenta", bc_Cuenta_id);
                 cmd.Parameters.AddWithValue("id_cliente", bc_Cliente_id);
-               
+
                 datamanager.ConexionAbrir();
                 cmd.ExecuteNonQuery();
                 datamanager.ConexionCerrar();
@@ -153,12 +163,30 @@ namespace ProgramacionOO.clases
             return lRet > 0;
         }
 
+        public override bool BuscarCodigo(string Codigo)
+        {
+            var  dr = datamanager.ConsultaLeer("select codigo from bc_titulares_cuentas where ID_TITULAR_CUENTA = '" + Codigo.ToString() + "'");
 
 
 
-       
+            return LeerDatos(dr, false); 
+
+         
+        }
+
+        public override void SelectComboBox(ComboBox cb)
+        {
+            var dr = datamanager.ConsultaLeer(LlenarCB_Clientes.ToString());
+
+            while (dr.Read())
+            {
+                cb.Items.Add(dr[0].ToString() + " - " + dr[1].ToString());
+            }
+        }
 
 
-      
+
+
+
     }
 }

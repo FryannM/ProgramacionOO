@@ -36,8 +36,8 @@ namespace ProgramacionOO.vistas
         {
 
             txtTitularCuenta.Text = Convert.ToInt16(registro.bc_Titular_Cuentaid).ToString();
-            txtCuenta.Text = Convert.ToInt16(registro.bc_Cuenta_id).ToString();
-            TxtidCliente.Text = Convert.ToInt16(registro.bc_Cliente_id).ToString();
+            txtCuenta.Text = registro.bc_codigoCuenta;
+            TxtidCliente.Text = registro.bc_nombreCliente;
 
         }
         private bool Disable(bool result)
@@ -56,7 +56,7 @@ namespace ProgramacionOO.vistas
                 txtCuenta.Enabled = true;
                 TxtidCliente.Enabled = true;
                 btnGuardar.Enabled = true;
-                btnEliminar.Enabled = true;
+                btnVerTitular.Enabled = true;
             }
             return result;
         }
@@ -81,19 +81,17 @@ namespace ProgramacionOO.vistas
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             registro.bc_Titular_Cuentaid = Convert.ToInt16(txtTitularCuenta.Text);
-            registro.bc_Cuenta_id = Convert.ToInt16(txtCuenta.Text);
-            registro.bc_Cliente_id = Convert.ToInt16(TxtidCliente.Text);
+            registro.bc_Cuenta_id = Convert.ToInt32(txtCuenta.Text);
+            registro.bc_Cliente_id = Convert.ToInt32(TxtidCliente.Text);
 
 
             bool lret;
-            if (TxtidCliente.Text == "0")
+            if (registro.BuscarCodigo(registro.bc_Titular_Cuentaid.ToString()) == false)
             {
-                // registro.ValidarCamposRequeridos();
                 lret = registro.CrearDatos() > 0;
             }
             else
             {
-                // registro.ValidarCamposRequeridos();
                 lret = registro.ActualizarDatos();
                 lret = true;
             }
@@ -104,6 +102,21 @@ namespace ProgramacionOO.vistas
             }
             else
                 MessageBox.Show(clases.Exepciones.ExepcionGuardar, "Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnVerTitular_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtidCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloLetra(e);
+        }
+
+        private void txtCuenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            datamanager.ValidarSoloNumero(e);
         }
     }
     }

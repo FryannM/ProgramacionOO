@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ProgramacionOO.clases
 {
-    class bc_clientes : bc_bancos, Mantenimientos
+    class bc_clientes : bc_cuentas
     {
         public int bc_Clienteid { get; set; }
         public string bc_TipoDocumento { get; set; }
@@ -41,7 +41,7 @@ namespace ProgramacionOO.clases
             Limpiar();
         }
 
-        new public void Limpiar()
+        public override void Limpiar()
         {
             bc_Clienteid = 0;
             bc_TipoDocumento = "";
@@ -51,7 +51,7 @@ namespace ProgramacionOO.clases
             bc_numeroControlRecurrencia = 0;
         }
 
-        new public bool Validar()
+        public override bool Validar()
         {
             bool lret = true;
 

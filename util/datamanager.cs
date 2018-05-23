@@ -19,9 +19,6 @@ namespace ProgramacionOO
         public static OracleConnection ConexionSQL;
       
 
-        /// <summary>
-        /// <para>Cadena de conexión a la base de datos extraida del archivo App.config.</para>
-        /// </summary>
         public static string cadenadeconexion
         {
             get
@@ -50,7 +47,7 @@ namespace ProgramacionOO
             }
             return ret;
         }
-        // Fin ConexionAbrir
+
 
         public static bool ConexionCerrar()
         {
@@ -67,7 +64,7 @@ namespace ProgramacionOO
             }
             return ret;
         }
-        // Fin ConexionCerra
+
 
         public static OracleDataReader ConsultaLeer(string cmdSQL)
         {
@@ -88,11 +85,10 @@ namespace ProgramacionOO
                     MessageBox.Show(ex.Message);
                     reader = null;
                 }
-                //ConexionCerrar();
+;
             }
             return reader;
         }
-        // Fin ConsultaLeer
 
         public static DataSet ConsultaDatos(string cmdSQL)
         {
@@ -118,7 +114,7 @@ namespace ProgramacionOO
             }
             return ds;
         }
-        // Fin ConsultaDatos
+
 
 
         public static bool ConsultaNodata(string cmdSQL)
@@ -146,7 +142,7 @@ namespace ProgramacionOO
         }
         public static void ValidarSoloNumero(KeyPressEventArgs e)
         {
-            //Para obligar a que sólo se introduzcan números 
+     
             if (Char.IsDigit(e.KeyChar))
             {
                 e.Handled = false;
@@ -183,9 +179,6 @@ namespace ProgramacionOO
         }
 
 
-    
-
-
         public static bool ValidarUsuario(string pnombre, string pclave)
         {
             bool lRet = false;
@@ -215,10 +208,7 @@ namespace ProgramacionOO
             return lRet;
         }
 
-        
 
-
-        // Mensajes del sistema 
         public static string SMensajes = ("Estas seguro que deseas Salir?");
         public static string ErrorSys = ("Favor Comunicarse con el Fryann Martinez ");
         public static string MensajeGuardar=("Información del Banco fue almacenada.");

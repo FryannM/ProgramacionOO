@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ProgramacionOO.clases
 {
-    class bc_tipo_doc_bancarios :bc_cuentas
+    class bc_tipo_doc_bancarios : bc_cuentas
     {
         public string codigoTipoDoc { get; set; }
         public char origen { get; set; }
@@ -127,7 +127,7 @@ namespace ProgramacionOO.clases
             throw new NotImplementedException();
         }
 
-        public virtual bool BorrarDatos(string CodigoTipo)//Sobrecarga  del metodo BorrarDatos
+        public override bool BorrarDatos(string CodigoTipo)//Sobrecarga  del metodo BorrarDatos
         {
             bool lret = datamanager.ConsultaNodata("delete " +
                                                " from Bc_tipo_doc_bancarios" +
@@ -164,7 +164,7 @@ namespace ProgramacionOO.clases
             return lRet > 0;
         }
 
-        public virtual bool BuscarCodigo(String Codigo)
+        public override bool BuscarCodigo(String Codigo)
         {
             var dr = datamanager.ConsultaLeer("select codigo from Bc_tipo_doc_bancarios where codigo = '"+Codigo.ToString()+"'");
 

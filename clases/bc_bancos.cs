@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProgramacionOO.clases
 {
-    public  class bc_bancos :util.Consultas, Mantenimientos
+    public  class bc_bancos :util.Consultas, IMantenimientos
     {
         #region Atributos
         public int bc_bancoid { get; set; }
@@ -51,7 +51,7 @@ namespace ProgramacionOO.clases
 
         #region Métodos y funciones
 
-        public void Limpiar()
+        public virtual void Limpiar()
         {
             bc_bancoid = 0;
             bc_bancoNombre = "";
@@ -60,7 +60,7 @@ namespace ProgramacionOO.clases
             bc_bancoRnc = "";
 
         }
-        public bool Validar()
+        public virtual bool Validar()
         {
             bool lret = true;
 
@@ -71,24 +71,8 @@ namespace ProgramacionOO.clases
             }
             return lret;
         }
-        protected virtual bool ValidarCamposRequeridos()
-        {
-            clases.bc_bancos registro = new clases.bc_bancos();
-            bool rsult = true;
 
-            ValidationContext context = new ValidationContext(registro, null, null);
-            List<ValidationResult> results = new List<ValidationResult>();
-            bool valid = Validator.TryValidateObject(registro, context, results, true);
-
-            if (!valid)
-            {
-                foreach (ValidationResult vr in results)
-                {
-                    MessageBox.Show(vr.ErrorMessage, Environment.NewLine);
-                }
-            }
-            return rsult;
-        }
+      
         public virtual int CrearDatos()
         {
             bc_bancoid = 0;
@@ -96,7 +80,7 @@ namespace ProgramacionOO.clases
             if (datamanager.ConexionAbrir())
             {
 
-                OracleCommand cmd = new OracleCommand(CrearDatos_BC_Banco.ToString(), datamanager.ConexionSQL);
+               var cmd = new OracleCommand(CrearDatos_BC_Banco.ToString(), datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_banco", bc_bancoid);
                 cmd.Parameters.AddWithValue("Codigo", bc_bancoCodigo);

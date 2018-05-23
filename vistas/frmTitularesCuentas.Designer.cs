@@ -29,72 +29,33 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTitularesCuentas));
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblTitularCuenta = new System.Windows.Forms.Label();
             this.txtCuenta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblidCliente = new System.Windows.Forms.Label();
             this.TxtidCliente = new System.Windows.Forms.TextBox();
+            this.txtTitularCuenta = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblTitularCuenta = new System.Windows.Forms.Label();
-            this.txtTitularCuenta = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnVerTitular = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(493, 219);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(59, 44);
-            this.btnEliminar.TabIndex = 36;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
-            this.btnGuardar.Location = new System.Drawing.Point(493, 161);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(59, 44);
-            this.btnGuardar.TabIndex = 35;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
-            this.btnEditar.Location = new System.Drawing.Point(493, 97);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(59, 44);
-            this.btnEditar.TabIndex = 34;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Image = global::ProgramacionOO.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(493, 39);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(59, 44);
-            this.btnNuevo.TabIndex = 33;
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblTitularCuenta);
-            this.groupBox1.Controls.Add(this.txtTitularCuenta);
             this.groupBox1.Controls.Add(this.txtCuenta);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblidCliente);
             this.groupBox1.Controls.Add(this.TxtidCliente);
+            this.groupBox1.Controls.Add(this.txtTitularCuenta);
             this.groupBox1.Location = new System.Drawing.Point(12, 63);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(453, 200);
@@ -102,13 +63,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TITULAR";
             // 
+            // lblTitularCuenta
+            // 
+            this.lblTitularCuenta.AutoSize = true;
+            this.lblTitularCuenta.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitularCuenta.Location = new System.Drawing.Point(6, 49);
+            this.lblTitularCuenta.Name = "lblTitularCuenta";
+            this.lblTitularCuenta.Size = new System.Drawing.Size(60, 20);
+            this.lblTitularCuenta.TabIndex = 40;
+            this.lblTitularCuenta.Text = "Titular";
+            // 
             // txtCuenta
             // 
             this.txtCuenta.Enabled = false;
             this.txtCuenta.Location = new System.Drawing.Point(81, 106);
+            this.txtCuenta.MaxLength = 20;
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Size = new System.Drawing.Size(209, 20);
             this.txtCuenta.TabIndex = 37;
+            this.txtCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuenta_KeyPress);
             // 
             // label1
             // 
@@ -132,11 +105,22 @@
             // 
             // TxtidCliente
             // 
+            this.TxtidCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtidCliente.Enabled = false;
             this.TxtidCliente.Location = new System.Drawing.Point(81, 156);
+            this.TxtidCliente.MaxLength = 30;
             this.TxtidCliente.Name = "TxtidCliente";
             this.TxtidCliente.Size = new System.Drawing.Size(310, 20);
             this.TxtidCliente.TabIndex = 33;
+            this.TxtidCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtidCliente_KeyPress);
+            // 
+            // txtTitularCuenta
+            // 
+            this.txtTitularCuenta.Enabled = false;
+            this.txtTitularCuenta.Location = new System.Drawing.Point(129, 51);
+            this.txtTitularCuenta.Name = "txtTitularCuenta";
+            this.txtTitularCuenta.Size = new System.Drawing.Size(209, 20);
+            this.txtTitularCuenta.TabIndex = 39;
             // 
             // label2
             // 
@@ -154,9 +138,9 @@
             this.label5.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(558, 230);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.Size = new System.Drawing.Size(107, 20);
             this.label5.TabIndex = 42;
-            this.label5.Text = "Eliminar";
+            this.label5.Text = "Ver Titulares";
             // 
             // label4
             // 
@@ -188,23 +172,45 @@
             this.label6.TabIndex = 39;
             this.label6.Text = "Agregar";
             // 
-            // lblTitularCuenta
+            // btnGuardar
             // 
-            this.lblTitularCuenta.AutoSize = true;
-            this.lblTitularCuenta.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitularCuenta.Location = new System.Drawing.Point(6, 49);
-            this.lblTitularCuenta.Name = "lblTitularCuenta";
-            this.lblTitularCuenta.Size = new System.Drawing.Size(60, 20);
-            this.lblTitularCuenta.TabIndex = 40;
-            this.lblTitularCuenta.Text = "Titular";
+            this.btnGuardar.Image = global::ProgramacionOO.Properties.Resources.save;
+            this.btnGuardar.Location = new System.Drawing.Point(493, 161);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(59, 44);
+            this.btnGuardar.TabIndex = 35;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtTitularCuenta
+            // btnEditar
             // 
-            this.txtTitularCuenta.Enabled = false;
-            this.txtTitularCuenta.Location = new System.Drawing.Point(81, 49);
-            this.txtTitularCuenta.Name = "txtTitularCuenta";
-            this.txtTitularCuenta.Size = new System.Drawing.Size(209, 20);
-            this.txtTitularCuenta.TabIndex = 39;
+            this.btnEditar.Image = global::ProgramacionOO.Properties.Resources.edit;
+            this.btnEditar.Location = new System.Drawing.Point(493, 97);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(59, 44);
+            this.btnEditar.TabIndex = 34;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = global::ProgramacionOO.Properties.Resources.agregar;
+            this.btnNuevo.Location = new System.Drawing.Point(493, 39);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(59, 44);
+            this.btnNuevo.TabIndex = 33;
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnVerTitular
+            // 
+            this.btnVerTitular.Image = global::ProgramacionOO.Properties.Resources.clients1;
+            this.btnVerTitular.Location = new System.Drawing.Point(493, 219);
+            this.btnVerTitular.Name = "btnVerTitular";
+            this.btnVerTitular.Size = new System.Drawing.Size(59, 44);
+            this.btnVerTitular.TabIndex = 36;
+            this.btnVerTitular.UseVisualStyleBackColor = true;
+            this.btnVerTitular.Click += new System.EventHandler(this.btnVerTitular_Click);
             // 
             // frmTitularesCuentas
             // 
@@ -220,7 +226,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnVerTitular);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTitularesCuentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -234,7 +240,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnVerTitular;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;

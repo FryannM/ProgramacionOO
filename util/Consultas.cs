@@ -59,6 +59,11 @@ namespace ProgramacionOO.util
                                               .Append("NOMBRE FROM BC_Bancos ");
         #endregion
 
+        #region TITULARES 
+
+       
+
+        #endregion
 
     }
 }

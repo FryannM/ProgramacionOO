@@ -121,6 +121,12 @@
     <Compile Include="vistas\frmVerCuentas.designer.cs">
       <DependentUpon>frmVerCuentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="vistas\frmVerTitulares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistas\frmVerTitulares.Designer.cs">
+      <DependentUpon>frmVerTitulares.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="vistas\frmBanco.resx">
       <DependentUpon>frmBanco.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +167,9 @@
     <EmbeddedResource Include="vistas\frmVerCuentas.resx">
       <DependentUpon>frmVerCuentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="vistas\frmVerTitulares.resx">
+      <DependentUpon>frmVerTitulares.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -190,6 +199,7 @@
     <None Include="resources\edit.png" />
     <None Include="resources\delete.png" />
     <None Include="resources\actualizar.png" />
+    <None Include="resources\clients.ico" />
     <Content Include="resources\facilitador.ico" />
     <Content Include="resources\Home.ico" />
     <Content Include="resources\if_custom-reports_63120.ico" />
