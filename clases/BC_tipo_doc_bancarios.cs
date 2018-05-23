@@ -11,10 +11,13 @@ namespace ProgramacionOO.clases
 {
     class bc_tipo_doc_bancarios : bc_cuentas
     {
+        #region ATRIBUTOS
         public string codigoTipoDoc { get; set; }
         public char origen { get; set; }
         public string nombre { get; set; }
+        #endregion
 
+        #region CONSTRUCTORES
         public bc_tipo_doc_bancarios()
         {
         }
@@ -26,7 +29,10 @@ namespace ProgramacionOO.clases
             this.origen = origen;
         }
 
-       new public void Limpiar()
+        #endregion
+
+        #region METODOS Y FUNCIONES
+        public override void Limpiar()
         {
             codigoTipoDoc = "";
             nombre = "";
@@ -34,7 +40,7 @@ namespace ProgramacionOO.clases
             
         }
 
-        new public bool Validar()
+        public override bool Validar()
         {
             bool lret = true;
 
@@ -170,6 +176,6 @@ namespace ProgramacionOO.clases
 
             return LeerDatos(dr, false);
         }
-
+        #endregion
     }
 }

@@ -10,6 +10,7 @@ namespace ProgramacionOO.clases
 {
     class bc_sucursales : bc_clientes
     {
+        #region ATRIBUTOS
         public int bc_id_Sucursal { get; set; }
         public int bc_id_Banco { get; set; }
         public string bc_Codigo { get; set; }
@@ -18,9 +19,10 @@ namespace ProgramacionOO.clases
         public string bc_Telefono { get; set; }
         public string bc_Correo { get; set; }
         public string bc_NombreBanco { get; set; }
+        #endregion
 
-
-        public bc_sucursales(int pbc_id_Sucursal,int
+        #region CONSTRUCTORES
+        public bc_sucursales(int pbc_id_Sucursal, int
             pbc_id_Banco,
             string pbc_Codigo,
             string pbc_Nombre,
@@ -47,7 +49,11 @@ namespace ProgramacionOO.clases
             Limpiar();
         }
 
-        new public void Limpiar()
+        #endregion
+
+        #region METODOS Y FUNCIONES
+
+        public override void Limpiar()
         {
 
             bc_id_Sucursal = 0;
@@ -58,7 +64,7 @@ namespace ProgramacionOO.clases
             bc_Correo = "";
         }
 
-        new public bool Validar()
+        public override bool Validar()
         {
             bool lret = true;
 
@@ -80,10 +86,10 @@ namespace ProgramacionOO.clases
                 {
                     bc_id_Sucursal = Convert.ToInt16(dr["id_Sucursal"]);
                     bc_NombreBanco = (dr["Nombre_Banco"].ToString());
-                   bc_id_Banco = Convert.ToInt16(dr["id_banco"].ToString());
+                    bc_id_Banco = Convert.ToInt16(dr["id_banco"].ToString());
                     bc_Codigo = dr["codigo"].ToString();
                     bc_Direccion = dr["direccion"].ToString();
-                  bc_Nombre = dr["nombre"].ToString();
+                    bc_Nombre = dr["nombre"].ToString();
                     bc_Telefono = dr["telefono"].ToString();
                     bc_Correo = dr["correo"].ToString();
 
@@ -96,7 +102,7 @@ namespace ProgramacionOO.clases
 
             return encontrado;
         }
-     
+
         public override int CrearDatos()
         {
 
@@ -126,7 +132,6 @@ namespace ProgramacionOO.clases
             return bc_id_Sucursal;
         }
 
-
         public override void SelectComboBox(ComboBox cb)
         {
             var dr = datamanager.ConsultaLeer(LlenarCB_SucursalBANCO.ToString());
@@ -136,14 +141,15 @@ namespace ProgramacionOO.clases
                 cb.Items.Add(dr[0].ToString() + " - " + dr[1].ToString());
             }
         }
+
         public override bool BuscarUltimo()
         {
-          
+
 
             var dr = datamanager.ConsultaLeer(" Select bc_bancos.id_banco,bc_bancos.nombre as Nombre_Banco , bc_sucursales.id_sucursal, bc_sucursales.id_banco, bc_sucursales.codigo, " +
-                                              " bc_sucursales.Nombre, bc_sucursales.direccion, bc_sucursales.telefono, bc_sucursales.correo "+
-                                              " From bc_sucursales inner join bc_bancos "+
-                                              " on  bc_sucursales.id_banco = bc_bancos.id_banco "+
+                                              " bc_sucursales.Nombre, bc_sucursales.direccion, bc_sucursales.telefono, bc_sucursales.correo " +
+                                              " From bc_sucursales inner join bc_bancos " +
+                                              " on  bc_sucursales.id_banco = bc_bancos.id_banco " +
                                               " Order by id_sucursal desc ");
 
             return LeerDatos(dr, true);
@@ -180,8 +186,9 @@ namespace ProgramacionOO.clases
             }
             return lRet > 0;
 
-           
+         
         }
 
+#endregion
     }
 }

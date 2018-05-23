@@ -17,14 +17,22 @@ namespace ProgramacionOO.vistas
             InitializeComponent();
         }
 
+        public frmCuentas(string codigo,string estado,string debito, string credito)
+        {
+            InitializeComponent();
+            txtcodigo.Text = codigo;
+            cbEstado.Text = estado;
+            txt_mskDebito.Text = debito;
+            txt_mskCredito.Text = credito;
+        }
+
         clases.bc_cuentas registro { get; set; }
 
         private void frmCuentas_Load(object sender, EventArgs e)
         {
             registro = new clases.bc_cuentas();
-
             registro.BuscarUltimo();
-            Mostrar();
+           // Mostrar();
             bool result = true;
 
             Disable(result);
@@ -129,7 +137,10 @@ namespace ProgramacionOO.vistas
 
         private void bt_VerCuentas_Click(object sender, EventArgs e)
         {
+            this.Close();
             frmVerCuentas nuevoVerCuentas = new frmVerCuentas();
+            txtcodigo.Enabled = true;
+            Disable(false);
             nuevoVerCuentas.Show();
 
         }

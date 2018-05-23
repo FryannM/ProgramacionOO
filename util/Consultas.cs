@@ -45,12 +45,12 @@ namespace ProgramacionOO.util
                                                .Append("Values(:id_banco,:Codigo,:Nombre,:Direccion,:Rnc)");
 
 
-        protected StringBuilder UltimoBanco = new StringBuilder().Append("Select id_banco,Codigo,Nombre,Direccion,Rnc From")
-                                                                 .Append(" bc_bancos Order by id_banco desc");
+        protected StringBuilder UltimoBanco = new StringBuilder()
+                                                .Append("Select id_banco,Codigo,Nombre,Direccion,Rnc From")
+                                                .Append(" bc_bancos Order by id_banco desc");
+
 
         #endregion [FIN STRINGBUILDER BC_BANCOS]
-
-
 
         #region SUCURSALES 
 

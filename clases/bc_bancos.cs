@@ -12,8 +12,7 @@ namespace ProgramacionOO.clases
     public  class bc_bancos :util.Consultas, IMantenimientos
     {
         #region Atributos
-        public int bc_bancoid { get; set; }
-       
+        public int bc_bancoid { get; set; }   
         public string bc_bancoCodigo { get; set; }
         [StringLength(20, MinimumLength = 3, ErrorMessage = "El nombre debe de tener de 3 a 50 caracteres")]
         public string bc_bancoNombre { get; set; }
@@ -60,6 +59,7 @@ namespace ProgramacionOO.clases
             bc_bancoRnc = "";
 
         }
+
         public virtual bool Validar()
         {
             bool lret = true;
@@ -72,7 +72,6 @@ namespace ProgramacionOO.clases
             return lret;
         }
 
-      
         public virtual int CrearDatos()
         {
             bc_bancoid = 0;
@@ -95,6 +94,7 @@ namespace ProgramacionOO.clases
             }
             return bc_bancoid;
         }
+
         public virtual bool LeerDatos(OracleDataReader dr, bool asignar)
         {
             bool encontrado = false;
@@ -117,11 +117,13 @@ namespace ProgramacionOO.clases
 
             return encontrado;
         }
+
         public virtual bool BuscarUltimo()
         {
             var dr = datamanager.ConsultaLeer(UltimoBanco.ToString());
             return LeerDatos(dr, true);
         }
+
         public virtual bool ActualizarDatos()
         {
             int lRet = 0;
@@ -147,6 +149,7 @@ namespace ProgramacionOO.clases
             }
             return lRet > 0;
         }
+
         public virtual bool BorrarDatos(int pbancoid)
         {
             bool lret = datamanager.ConsultaNodata("delete " +
@@ -155,11 +158,18 @@ namespace ProgramacionOO.clases
             if (lret) Limpiar();
             return lret;
         }
+
+        public virtual bool BorrarDatos(string CodigoCuenta)
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual bool Buscar(String pNombre, bool asignar)
         {
             throw new NotImplementedException();
 
         }
+
         public virtual bool Buscar(int Bancoid, bool asignar)
         {
             throw new NotImplementedException();

@@ -10,16 +10,16 @@ namespace ProgramacionOO.clases
 {
     class bc_Titulares_Cuentas : bc_clientes
     {
-
+        #region ATRIBUTOS
         public int bc_Titular_Cuentaid { get; set; }
         public int bc_Cuenta_id { get; set; }
         public int bc_Cliente_id { get; set; }
         public string bc_nombreCliente { get; set; }
         public string bc_codigoCuenta { get; set; }
         new public string errormsg = "";
+        #endregion
 
-
-
+        #region CONSTRUCTORES
         public bc_Titulares_Cuentas(
             int pbc_Titular_Cuentaid,
             int pbc_Cuenta_id,
@@ -36,7 +36,11 @@ namespace ProgramacionOO.clases
         {
             Limpiar();
         }
-        new public void Limpiar()
+
+        #endregion
+
+        #region METODOS Y FUNCIONES
+        public override void Limpiar()
         {
             bc_Titular_Cuentaid = 0;
             bc_Cuenta_id = 0;
@@ -44,7 +48,7 @@ namespace ProgramacionOO.clases
         }
 
 
-        new public bool Validar()
+        public override bool Validar()
         {
             bool lret = true;
 
@@ -186,7 +190,6 @@ namespace ProgramacionOO.clases
 
 
 
-
-
+        #endregion
     }
 }

@@ -17,6 +17,7 @@ namespace ProgramacionOO.clases
         int CrearDatos();
         bool ActualizarDatos();
         bool BorrarDatos(int pbancoid);
+        bool BorrarDatos(string codigo);
         bool Buscar(String Param, bool asignar);
         bool Buscar(int Param, bool asignar);
 

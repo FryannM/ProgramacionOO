@@ -1,6 +1,6 @@
 ﻿namespace ProgramacionOO.vistas
 {
-    partial class frmVerTitulares
+    partial class VerClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -34,42 +34,45 @@
             this.lbl_Buscar = new System.Windows.Forms.Label();
             this.cbox_filtarPor = new System.Windows.Forms.ComboBox();
             this.lbl_filtrarPor = new System.Windows.Forms.Label();
-            this.dg_VerCuentas = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dg_VerCuentas)).BeginInit();
+            this.dg_VerClientes = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_VerClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_selecionCuenta
             // 
             this.bt_selecionCuenta.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bt_selecionCuenta.Location = new System.Drawing.Point(603, 101);
+            this.bt_selecionCuenta.Location = new System.Drawing.Point(598, 104);
             this.bt_selecionCuenta.Name = "bt_selecionCuenta";
             this.bt_selecionCuenta.Size = new System.Drawing.Size(165, 68);
             this.bt_selecionCuenta.TabIndex = 15;
             this.bt_selecionCuenta.Text = "Seleccionar Cuenta";
             this.bt_selecionCuenta.UseVisualStyleBackColor = true;
+            this.bt_selecionCuenta.Click += new System.EventHandler(this.bt_selecionCuenta_Click);
             // 
             // bt_Salir
             // 
             this.bt_Salir.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bt_Salir.Location = new System.Drawing.Point(603, 252);
+            this.bt_Salir.Location = new System.Drawing.Point(598, 255);
             this.bt_Salir.Name = "bt_Salir";
             this.bt_Salir.Size = new System.Drawing.Size(165, 58);
             this.bt_Salir.TabIndex = 14;
             this.bt_Salir.Text = "Salir";
             this.bt_Salir.UseVisualStyleBackColor = true;
+            this.bt_Salir.Click += new System.EventHandler(this.bt_Salir_Click);
             // 
             // tbox_buscar
             // 
-            this.tbox_buscar.Location = new System.Drawing.Point(333, 17);
+            this.tbox_buscar.Location = new System.Drawing.Point(328, 20);
             this.tbox_buscar.Name = "tbox_buscar";
             this.tbox_buscar.Size = new System.Drawing.Size(245, 20);
             this.tbox_buscar.TabIndex = 13;
+            this.tbox_buscar.TextChanged += new System.EventHandler(this.tbox_buscar_TextChanged);
             // 
             // lbl_Buscar
             // 
             this.lbl_Buscar.AutoSize = true;
             this.lbl_Buscar.Font = new System.Drawing.Font("Lucida Bright", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Buscar.Location = new System.Drawing.Point(266, 18);
+            this.lbl_Buscar.Location = new System.Drawing.Point(261, 21);
             this.lbl_Buscar.Name = "lbl_Buscar";
             this.lbl_Buscar.Size = new System.Drawing.Size(61, 17);
             this.lbl_Buscar.TabIndex = 12;
@@ -83,7 +86,7 @@
             "Estado",
             "Balance_DB",
             "Balance_CR"});
-            this.cbox_filtarPor.Location = new System.Drawing.Point(111, 16);
+            this.cbox_filtarPor.Location = new System.Drawing.Point(106, 19);
             this.cbox_filtarPor.Name = "cbox_filtarPor";
             this.cbox_filtarPor.Size = new System.Drawing.Size(144, 21);
             this.cbox_filtarPor.TabIndex = 11;
@@ -92,38 +95,40 @@
             // 
             this.lbl_filtrarPor.AutoSize = true;
             this.lbl_filtrarPor.Font = new System.Drawing.Font("Lucida Bright", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_filtrarPor.Location = new System.Drawing.Point(24, 18);
+            this.lbl_filtrarPor.Location = new System.Drawing.Point(19, 21);
             this.lbl_filtrarPor.Name = "lbl_filtrarPor";
             this.lbl_filtrarPor.Size = new System.Drawing.Size(85, 17);
             this.lbl_filtrarPor.TabIndex = 10;
             this.lbl_filtrarPor.Text = "Filtrar por:";
             // 
-            // dg_VerCuentas
+            // dg_VerClientes
             // 
-            this.dg_VerCuentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dg_VerCuentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dg_VerCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_VerCuentas.Location = new System.Drawing.Point(27, 45);
-            this.dg_VerCuentas.Name = "dg_VerCuentas";
-            this.dg_VerCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_VerCuentas.Size = new System.Drawing.Size(551, 390);
-            this.dg_VerCuentas.TabIndex = 9;
+            this.dg_VerClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dg_VerClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dg_VerClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_VerClientes.Location = new System.Drawing.Point(22, 48);
+            this.dg_VerClientes.Name = "dg_VerClientes";
+            this.dg_VerClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dg_VerClientes.Size = new System.Drawing.Size(551, 390);
+            this.dg_VerClientes.TabIndex = 9;
             // 
-            // frmVerTitulares
+            // VerClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 450);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bt_selecionCuenta);
             this.Controls.Add(this.bt_Salir);
             this.Controls.Add(this.tbox_buscar);
             this.Controls.Add(this.lbl_Buscar);
             this.Controls.Add(this.cbox_filtarPor);
             this.Controls.Add(this.lbl_filtrarPor);
-            this.Controls.Add(this.dg_VerCuentas);
-            this.Name = "frmVerTitulares";
-            this.Text = "frmVerTitulares";
-            ((System.ComponentModel.ISupportInitialize)(this.dg_VerCuentas)).EndInit();
+            this.Controls.Add(this.dg_VerClientes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "VerClientes";
+            this.Text = "VerClientes";
+            this.Load += new System.EventHandler(this.VerClientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_VerClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,6 +142,6 @@
         private System.Windows.Forms.Label lbl_Buscar;
         private System.Windows.Forms.ComboBox cbox_filtarPor;
         private System.Windows.Forms.Label lbl_filtrarPor;
-        private System.Windows.Forms.DataGridView dg_VerCuentas;
+        private System.Windows.Forms.DataGridView dg_VerClientes;
     }
 }

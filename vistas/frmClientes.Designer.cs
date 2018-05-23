@@ -48,6 +48,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.bt_verClientes = new System.Windows.Forms.Button();
+            this.lbl_verClientes = new System.Windows.Forms.Label();
             this.gboxClienteTex.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -248,11 +250,33 @@
             this.label4.TabIndex = 30;
             this.label4.Text = "Editar";
             // 
+            // bt_verClientes
+            // 
+            this.bt_verClientes.Image = global::ProgramacionOO.Properties.Resources.clients1;
+            this.bt_verClientes.Location = new System.Drawing.Point(418, 74);
+            this.bt_verClientes.Name = "bt_verClientes";
+            this.bt_verClientes.Size = new System.Drawing.Size(59, 44);
+            this.bt_verClientes.TabIndex = 37;
+            this.bt_verClientes.UseVisualStyleBackColor = true;
+            this.bt_verClientes.Click += new System.EventHandler(this.bt_verClientes_Click);
+            // 
+            // lbl_verClientes
+            // 
+            this.lbl_verClientes.AutoSize = true;
+            this.lbl_verClientes.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_verClientes.Location = new System.Drawing.Point(492, 85);
+            this.lbl_verClientes.Name = "lbl_verClientes";
+            this.lbl_verClientes.Size = new System.Drawing.Size(99, 20);
+            this.lbl_verClientes.TabIndex = 38;
+            this.lbl_verClientes.Text = "Ver clientes";
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 308);
+            this.Controls.Add(this.lbl_verClientes);
+            this.Controls.Add(this.bt_verClientes);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -296,5 +320,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lb_descripcion;
+        private System.Windows.Forms.Button bt_verClientes;
+        private System.Windows.Forms.Label lbl_verClientes;
     }
 }

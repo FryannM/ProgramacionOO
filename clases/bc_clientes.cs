@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
@@ -10,13 +11,16 @@ namespace ProgramacionOO.clases
 {
     class bc_clientes : bc_cuentas
     {
+        #region ATRIBUTOS
         public int bc_Clienteid { get; set; }
         public string bc_TipoDocumento { get; set; }
         public string bc_NumeroDocumento { get; set; }
         public string bc_Nombre { get; set; }
         public string bc_Estado { get; set; }
         public int bc_numeroControlRecurrencia { get; set; }
+        #endregion
 
+        #region CONSTRUCTORES
 
         public bc_clientes(
             int pbc_Clienteid,
@@ -41,6 +45,10 @@ namespace ProgramacionOO.clases
             Limpiar();
         }
 
+        #endregion
+
+        #region METODOS Y FUNCIONES 
+
         public override void Limpiar()
         {
             bc_Clienteid = 0;
@@ -61,8 +69,6 @@ namespace ProgramacionOO.clases
             }
             return lret;
         }
-
-        #region MANTENIMIENTOS 
 
         public override bool LeerDatos(OracleDataReader dr, bool asignar)
         {
@@ -86,16 +92,6 @@ namespace ProgramacionOO.clases
             }
 
             return encontrado;
-        }
-
-        public virtual void SelectComboBox(ComboBox cb)
-        {
-            var dr = datamanager.ConsultaLeer(LlenarCB_Clientes.ToString());
-
-            while (dr.Read())
-            {
-                cb.Items.Add(dr[0].ToString() + " - " + dr[1].ToString());
-            }
         }
 
         public override int CrearDatos()
@@ -151,6 +147,62 @@ namespace ProgramacionOO.clases
             return LeerDatos(dr, true);
         }
 
+        public virtual void SelectComboBox(ComboBox cb)
+        {
+            var dr = datamanager.ConsultaLeer(LlenarCB_Clientes.ToString());
+
+            while (dr.Read())
+            {
+                cb.Items.Add(dr[0].ToString() + " - " + dr[1].ToString());
+            }
+        }
+
+        public virtual DataTable BuscarClientes(string campo, string palabras)
+        {
+            var cm = new OracleCommand();
+
+            if (datamanager.ConexionAbrir())
+
+            {
+                cm = datamanager.ConexionSQL.CreateCommand();
+                cm.CommandType = CommandType.Text;
+                cm.CommandText = "select * from Bc_clientes where " + campo + " like '" + palabras + "%'";
+                cm.ExecuteNonQuery();
+                datamanager.ConexionCerrar();
+            }
+
+
+            return LlenarDataGridView(cm);
+        }
+
+        public override DataTable LlenarDataGridView(OracleCommand cSQL)
+        {
+            DataTable dt = new DataTable();
+            var adp = new OracleDataAdapter(cSQL);
+            adp.Fill(dt);
+            return dt;
+        }
+
+        public virtual DataTable verTodosCliente()
+        {
+            var cm = new OracleCommand();
+
+            if (datamanager.ConexionAbrir())
+
+
+            {
+
+                cm = datamanager.ConexionSQL.CreateCommand();
+                cm.CommandType = CommandType.Text;
+                cm.CommandText = "select * from bc_clientes";
+                cm.ExecuteNonQuery();
+                datamanager.ConexionCerrar();
+            }
+
+
+            return LlenarDataGridView(cm);
+
+        }
     }
 }
 #endregion

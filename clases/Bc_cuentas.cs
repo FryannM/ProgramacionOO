@@ -11,11 +11,15 @@ namespace ProgramacionOO.clases
 {
     class bc_cuentas : bc_bancos
         {
+
+        #region ATRIBUTOS
         public string CodigoCuenta { get; set; }
         public char Estado { get; set; }
         public double BalanceDB { get; set; }
         public double BalanceCR { get; set; }
+        #endregion
 
+        #region CONSTRUCTORES
         public bc_cuentas()
         {
 
@@ -30,6 +34,9 @@ namespace ProgramacionOO.clases
 
         }
 
+        #endregion
+
+        #region METODOS Y FUNCIONES
         public override void Limpiar()
         {
             CodigoCuenta = "";
@@ -81,26 +88,6 @@ namespace ProgramacionOO.clases
                                               " where Nombre = '" + pNombre + "'");
             return LeerDatos(dr, asignar);
 
-        }
-
-        public virtual DataTable BuscarCuentas(string campo, string palabras)
-        {
-            var cm = new OracleCommand();
-
-            if (datamanager.ConexionAbrir())
-
-
-            {
-
-                cm = datamanager.ConexionSQL.CreateCommand();
-                cm.CommandType = CommandType.Text;
-                cm.CommandText = "select * from Bc_cuentas where " + campo + " like '" + palabras + "%'";
-                cm.ExecuteNonQuery();
-                datamanager.ConexionCerrar();
-            }
-
-
-            return LlenarDataGridView(cm);
         }
 
         public override bool BuscarUltimo()
@@ -177,6 +164,47 @@ namespace ProgramacionOO.clases
             return lRet > 0;
         }
 
+        public virtual DataTable BuscarCuentas(string campo, string palabras)
+        {
+            var cm = new OracleCommand();
+
+            if (datamanager.ConexionAbrir())
+
+
+            {
+
+                cm = datamanager.ConexionSQL.CreateCommand();
+                cm.CommandType = CommandType.Text;
+                cm.CommandText = "select * from Bc_cuentas where " + campo + " like '" + palabras + "%'";
+                cm.ExecuteNonQuery();
+                datamanager.ConexionCerrar();
+            }
+
+
+            return LlenarDataGridView(cm);
+        }
+
+        public virtual DataTable verTodasCuentas()
+        {
+            var cm = new OracleCommand();
+
+            if (datamanager.ConexionAbrir())
+
+
+            {
+
+                cm = datamanager.ConexionSQL.CreateCommand();
+                cm.CommandType = CommandType.Text;
+                cm.CommandText = "select * from Bc_cuentas";
+                cm.ExecuteNonQuery();
+                datamanager.ConexionCerrar();
+            }
+
+
+            return LlenarDataGridView(cm);
+
+        }
+
         public virtual bool BuscarCodigo(String Codigo)
         {
             var dr = datamanager.ConsultaLeer("select codigo from Bc_cuentas where codigo = '" + Codigo.ToString() + "'");
@@ -190,6 +218,8 @@ namespace ProgramacionOO.clases
             adp.Fill(dt);
             return dt;
         }
+
+        #endregion
     }
 
 }

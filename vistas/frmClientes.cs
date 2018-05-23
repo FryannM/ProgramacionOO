@@ -14,7 +14,14 @@ namespace ProgramacionOO.vistas
     {
         private clases.bc_clientes registro { get; set; }
 
+        
+
         public frmClientes()
+        {
+            InitializeComponent();
+        }
+
+        public frmClientes(string id_tipo_doc, string num_doc, string nombre, string estado)
         {
             InitializeComponent();
         }
@@ -116,6 +123,15 @@ namespace ProgramacionOO.vistas
         private void cbEstado_KeyPress(object sender, KeyPressEventArgs e)
         {
             datamanager.ValidarSoloLetra(e); datamanager.ValidarSoloNumero(e);
+        }
+
+        private void bt_verClientes_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            VerClientes verClientes = new VerClientes();
+            txtnodoc.Enabled = true;
+            Disable(false);
+            verClientes.Show();
         }
     }
 }

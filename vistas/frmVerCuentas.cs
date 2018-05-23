@@ -13,6 +13,7 @@ namespace ProgramacionOO.vistas
     public partial class frmVerCuentas : Form
     {
         clases.bc_cuentas registro = new clases.bc_cuentas();
+        
 
         public frmVerCuentas()
         {
@@ -27,6 +28,25 @@ namespace ProgramacionOO.vistas
         private void bt_Salir_Click(object sender, EventArgs e)
         {
         this.Close();
+        }
+
+        
+
+        private void frmVerCuentas_Load(object sender, EventArgs e)
+        {
+            dg_VerCuentas.DataSource = registro.verTodasCuentas();
+            
+        }
+
+        private void bt_selecionCuenta_Click(object sender, EventArgs e)
+        {
+            frmCuentas cuenta = new frmCuentas(dg_VerCuentas.CurrentRow.Cells[1].Value.ToString(),
+                                               dg_VerCuentas.CurrentRow.Cells[2].Value.ToString(),
+                                               dg_VerCuentas.CurrentRow.Cells[3].Value.ToString(),
+                                               dg_VerCuentas.CurrentRow.Cells[4].Value.ToString());
+            cuenta.Show();
+            this.Close();
+
         }
     }
 }

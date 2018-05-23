@@ -34,6 +34,7 @@
             this.lbl_Buscar = new System.Windows.Forms.Label();
             this.tbox_buscar = new System.Windows.Forms.TextBox();
             this.bt_Salir = new System.Windows.Forms.Button();
+            this.bt_selecionCuenta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_VerCuentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,6 +45,7 @@
             this.dg_VerCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_VerCuentas.Location = new System.Drawing.Point(12, 48);
             this.dg_VerCuentas.Name = "dg_VerCuentas";
+            this.dg_VerCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_VerCuentas.Size = new System.Drawing.Size(551, 390);
             this.dg_VerCuentas.TabIndex = 0;
             // 
@@ -84,26 +86,38 @@
             // 
             this.tbox_buscar.Location = new System.Drawing.Point(318, 20);
             this.tbox_buscar.Name = "tbox_buscar";
-            this.tbox_buscar.Size = new System.Drawing.Size(164, 20);
+            this.tbox_buscar.Size = new System.Drawing.Size(245, 20);
             this.tbox_buscar.TabIndex = 6;
             this.tbox_buscar.TextChanged += new System.EventHandler(this.tbox_buscar_TextChanged);
             // 
             // bt_Salir
             // 
             this.bt_Salir.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bt_Salir.Location = new System.Drawing.Point(488, 12);
+            this.bt_Salir.Location = new System.Drawing.Point(588, 255);
             this.bt_Salir.Name = "bt_Salir";
-            this.bt_Salir.Size = new System.Drawing.Size(75, 30);
+            this.bt_Salir.Size = new System.Drawing.Size(165, 58);
             this.bt_Salir.TabIndex = 7;
             this.bt_Salir.Text = "Salir";
             this.bt_Salir.UseVisualStyleBackColor = true;
             this.bt_Salir.Click += new System.EventHandler(this.bt_Salir_Click);
             // 
+            // bt_selecionCuenta
+            // 
+            this.bt_selecionCuenta.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.bt_selecionCuenta.Location = new System.Drawing.Point(588, 104);
+            this.bt_selecionCuenta.Name = "bt_selecionCuenta";
+            this.bt_selecionCuenta.Size = new System.Drawing.Size(165, 68);
+            this.bt_selecionCuenta.TabIndex = 8;
+            this.bt_selecionCuenta.Text = "Seleccionar Cuenta";
+            this.bt_selecionCuenta.UseVisualStyleBackColor = true;
+            this.bt_selecionCuenta.Click += new System.EventHandler(this.bt_selecionCuenta_Click);
+            // 
             // frmVerCuentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 450);
+            this.ClientSize = new System.Drawing.Size(788, 450);
+            this.Controls.Add(this.bt_selecionCuenta);
             this.Controls.Add(this.bt_Salir);
             this.Controls.Add(this.tbox_buscar);
             this.Controls.Add(this.lbl_Buscar);
@@ -114,6 +128,7 @@
             this.Name = "frmVerCuentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VER CUENTAS";
+            this.Load += new System.EventHandler(this.frmVerCuentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_VerCuentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -128,5 +143,6 @@
         private System.Windows.Forms.Label lbl_Buscar;
         private System.Windows.Forms.TextBox tbox_buscar;
         private System.Windows.Forms.Button bt_Salir;
+        private System.Windows.Forms.Button bt_selecionCuenta;
     }
 }

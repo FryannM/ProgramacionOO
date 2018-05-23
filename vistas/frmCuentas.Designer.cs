@@ -54,9 +54,9 @@
             // 
             // bt_VerCuentas
             // 
-            this.bt_VerCuentas.Location = new System.Drawing.Point(16, 268);
+            this.bt_VerCuentas.Location = new System.Drawing.Point(288, 19);
             this.bt_VerCuentas.Name = "bt_VerCuentas";
-            this.bt_VerCuentas.Size = new System.Drawing.Size(172, 32);
+            this.bt_VerCuentas.Size = new System.Drawing.Size(70, 65);
             this.bt_VerCuentas.TabIndex = 47;
             this.bt_VerCuentas.Text = "Ver Cuentas";
             this.bt_VerCuentas.UseVisualStyleBackColor = true;
@@ -128,6 +128,7 @@
             this.gboxCuentas.Controls.Add(this.lblbalances);
             this.gboxCuentas.Controls.Add(this.lblEstado);
             this.gboxCuentas.Controls.Add(this.lblbalancecd);
+            this.gboxCuentas.Controls.Add(this.bt_VerCuentas);
             this.gboxCuentas.Controls.Add(this.lblcodigo);
             this.gboxCuentas.Controls.Add(this.txtcodigo);
             this.gboxCuentas.Location = new System.Drawing.Point(16, 55);
@@ -258,14 +259,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 312);
+            this.ClientSize = new System.Drawing.Size(646, 277);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.bt_VerCuentas);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEditar);
@@ -291,15 +291,15 @@
         private System.Windows.Forms.Button bt_VerCuentas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox gboxCuentas;
-        private System.Windows.Forms.MaskedTextBox txt_mskCredito;
-        private System.Windows.Forms.MaskedTextBox txt_mskDebito;
-        private System.Windows.Forms.ComboBox cbEstado;
+        public System.Windows.Forms.GroupBox gboxCuentas;
+        public System.Windows.Forms.MaskedTextBox txt_mskCredito;
+        public System.Windows.Forms.MaskedTextBox txt_mskDebito;
+        public System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label lblbalances;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblbalancecd;
         private System.Windows.Forms.Label lblcodigo;
-        private System.Windows.Forms.TextBox txtcodigo;
+        public System.Windows.Forms.TextBox txtcodigo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

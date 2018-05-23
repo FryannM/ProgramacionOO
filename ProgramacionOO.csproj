@@ -56,7 +56,7 @@
     <Compile Include="clases\bc_tipo_doc_bancarios.cs" />
     <Compile Include="clases\bc_Titulares_Cuentas.cs" />
     <Compile Include="clases\Exepciones.cs" />
-    <Compile Include="clases\Mantenimientos.cs" />
+    <Compile Include="clases\IMantenimientos.cs" />
     <Compile Include="util\Consultas.cs" />
     <Compile Include="util\datamanager.cs" />
     <Compile Include="vistas\frmBanco.cs">
@@ -127,6 +127,12 @@
     <Compile Include="vistas\frmVerTitulares.Designer.cs">
       <DependentUpon>frmVerTitulares.cs</DependentUpon>
     </Compile>
+    <Compile Include="vistas\VerClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistas\VerClientes.Designer.cs">
+      <DependentUpon>VerClientes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="vistas\frmBanco.resx">
       <DependentUpon>frmBanco.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +176,10 @@
     <EmbeddedResource Include="vistas\frmVerTitulares.resx">
       <DependentUpon>frmVerTitulares.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="vistas\VerClientes.resx">
+      <DependentUpon>VerClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DiagramaDeClase.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
