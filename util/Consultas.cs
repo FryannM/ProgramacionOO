@@ -14,7 +14,7 @@ namespace ProgramacionOO.util
                                                .Append(" BC_TIPO_DOC_BANCARIOS.id_tipo_doc_bancario," )
                                                .Append(" BC_TIPO_DOC_BANCARIOS.NOMBRE AS TIPO_DOCUMENTOS," )
                                                .Append(" BC_CLIENTES.Num_documento,")
-                                               .Append (" BC_CLIENTES.Nombre,")
+                                               .Append ("BC_CLIENTES.Nombre,")
                                                .Append(" BC_CLIENTES.Estado ")
                                                .Append(" FROM (BC_CLIENTES  INNER JOIN BC_TIPO_DOC_BANCARIOS ")
                                                .Append(" ON BC_CLIENTES.ID_TIPO_DOC_BANCARIO = BC_TIPO_DOC_BANCARIOS.ID_TIPO_DOC_BANCARIO)")
