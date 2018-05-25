@@ -104,7 +104,6 @@ namespace ProgramacionOO.clases
 
                 var cmd = new OracleCommand(CrearDatos_CLientes.ToString(), datamanager.ConexionSQL);
 
-                cmd.Parameters.AddWithValue("id_cliente", bc_Clienteid);
                 cmd.Parameters.AddWithValue("id_tipo_doc_bancario", bc_TipoDocumento);
                 cmd.Parameters.AddWithValue("num_Documento", bc_NumeroDocumento);
                 cmd.Parameters.AddWithValue("nombre", bc_Nombre);

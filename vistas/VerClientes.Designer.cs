@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bt_selecionCuenta = new System.Windows.Forms.Button();
             this.bt_Salir = new System.Windows.Forms.Button();
             this.tbox_buscar = new System.Windows.Forms.TextBox();
             this.lbl_Buscar = new System.Windows.Forms.Label();
@@ -37,17 +36,6 @@
             this.dg_VerClientes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dg_VerClientes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bt_selecionCuenta
-            // 
-            this.bt_selecionCuenta.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bt_selecionCuenta.Location = new System.Drawing.Point(598, 104);
-            this.bt_selecionCuenta.Name = "bt_selecionCuenta";
-            this.bt_selecionCuenta.Size = new System.Drawing.Size(165, 68);
-            this.bt_selecionCuenta.TabIndex = 15;
-            this.bt_selecionCuenta.Text = "Seleccionar Cuenta";
-            this.bt_selecionCuenta.UseVisualStyleBackColor = true;
-            this.bt_selecionCuenta.Click += new System.EventHandler(this.bt_selecionCuenta_Click);
             // 
             // bt_Salir
             // 
@@ -111,13 +99,13 @@
             this.dg_VerClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_VerClientes.Size = new System.Drawing.Size(551, 390);
             this.dg_VerClientes.TabIndex = 9;
+            this.dg_VerClientes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dg_VerClientes_MouseDoubleClick);
             // 
             // VerClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.bt_selecionCuenta);
             this.Controls.Add(this.bt_Salir);
             this.Controls.Add(this.tbox_buscar);
             this.Controls.Add(this.lbl_Buscar);
@@ -135,8 +123,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button bt_selecionCuenta;
         private System.Windows.Forms.Button bt_Salir;
         private System.Windows.Forms.TextBox tbox_buscar;
         private System.Windows.Forms.Label lbl_Buscar;

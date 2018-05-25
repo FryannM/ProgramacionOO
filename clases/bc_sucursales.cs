@@ -111,10 +111,7 @@ namespace ProgramacionOO.clases
             if (datamanager.ConexionAbrir())
             {
 
-
-
-                var cmd = new OracleCommand("Insert into bc_sucursales(Id_Banco,Codigo,Nombre ,Direccion,Telefono,Correo)" +
-                                                        " Values(:Id_Banco,:Codigo,:Nombre,:Direccion,:Telefono,:Correo)", datamanager.ConexionSQL);
+                var cmd = new OracleCommand(CrearSucursal.ToString(), datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_banco", bc_id_Banco);
                 cmd.Parameters.AddWithValue("codigo", bc_Codigo);
@@ -125,13 +122,10 @@ namespace ProgramacionOO.clases
 
                 datamanager.ConexionAbrir();
                 bc_id_Banco = (int)cmd.ExecuteNonQuery();
-
                 datamanager.ConexionCerrar();
-
             }
             return bc_id_Sucursal;
         }
-
         public override void SelectComboBox(ComboBox cb)
         {
             var dr = datamanager.ConsultaLeer(LlenarCB_SucursalBANCO.ToString());
@@ -141,20 +135,12 @@ namespace ProgramacionOO.clases
                 cb.Items.Add(dr[0].ToString() + " - " + dr[1].ToString());
             }
         }
-
-        public override bool BuscarUltimo()
+       public override bool BuscarUltimo()
         {
-
-
-            var dr = datamanager.ConsultaLeer(" Select bc_bancos.id_banco,bc_bancos.nombre as Nombre_Banco , bc_sucursales.id_sucursal, bc_sucursales.id_banco, bc_sucursales.codigo, " +
-                                              " bc_sucursales.Nombre, bc_sucursales.direccion, bc_sucursales.telefono, bc_sucursales.correo " +
-                                              " From bc_sucursales inner join bc_bancos " +
-                                              " on  bc_sucursales.id_banco = bc_bancos.id_banco " +
-                                              " Order by id_sucursal desc ");
+            var dr = datamanager.ConsultaLeer(BuscarUltimaSucursal.ToString());
 
             return LeerDatos(dr, true);
         }
-
         public override bool ActualizarDatos()
         {
             int lRet = 0;
@@ -162,16 +148,8 @@ namespace ProgramacionOO.clases
             if (datamanager.ConexionAbrir())
             {
 
-                //(Id_Banco,Codigo,Nombre ,Direccion,Telefono,Correo)" +
-                var cmd = new OracleCommand(" Update bc_sucursales" +
-                                                      " Set id_sucursal = :id_sucursal," +
-                                                      " Id_Banco = :Id_Banco," +
-                                                      " Codigo = :Codigo," +
-                                                      " Nombre = :Nombre," +
-                                                      " Direccion = :Direccion, " +
-                                                      " Telefono = :Telefono, " +
-                                                      " Correo = :Correo " +
-                                                      " Where id_sucursal = :id_sucursal ", datamanager.ConexionSQL);
+              
+                var cmd = new OracleCommand(ActualizarSucursal.ToString(), datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_sucursal", bc_id_Sucursal);
                 cmd.Parameters.AddWithValue("Id_Banco", bc_id_Banco);
@@ -189,6 +167,6 @@ namespace ProgramacionOO.clases
          
         }
 
-#endregion
     }
 }
+#endregion

@@ -25,10 +25,7 @@ namespace ProgramacionOO.vistas
             dg_VerCuentas.DataSource = registro.BuscarCuentas(cbox_filtarPor.Text, tbox_buscar.Text);
         }
 
-        private void bt_Salir_Click(object sender, EventArgs e)
-        {
-        this.Close();
-        }
+       
 
         
 
@@ -38,15 +35,18 @@ namespace ProgramacionOO.vistas
             
         }
 
-        private void bt_selecionCuenta_Click(object sender, EventArgs e)
+        
+
+        private void dg_VerCuentas_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             frmCuentas cuenta = new frmCuentas(dg_VerCuentas.CurrentRow.Cells[1].Value.ToString(),
-                                               dg_VerCuentas.CurrentRow.Cells[2].Value.ToString(),
-                                               dg_VerCuentas.CurrentRow.Cells[3].Value.ToString(),
-                                               dg_VerCuentas.CurrentRow.Cells[4].Value.ToString());
+                                            dg_VerCuentas.CurrentRow.Cells[2].Value.ToString(),
+                                            dg_VerCuentas.CurrentRow.Cells[3].Value.ToString(),
+                                            dg_VerCuentas.CurrentRow.Cells[4].Value.ToString());
             cuenta.Show();
             this.Close();
-
         }
+
+        
     }
 }

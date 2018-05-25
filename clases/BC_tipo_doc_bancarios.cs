@@ -100,10 +100,8 @@ namespace ProgramacionOO.clases
             {
 
 
-
-                OracleCommand cmd = new OracleCommand("Insert into Bc_tipo_doc_bancarios(codigo,nombre,origen)" +
+                var cmd = new OracleCommand("Insert into Bc_tipo_doc_bancarios(codigo,nombre,origen)" +
                                                         "Values(:codigo,:nombre,'"+origen+"')", datamanager.ConexionSQL);
-
 
                 cmd.Parameters.AddWithValue("codigo", codigoTipoDoc);
                 cmd.Parameters.AddWithValue("nombre", nombre);

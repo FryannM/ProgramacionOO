@@ -40,6 +40,7 @@ namespace ProgramacionOO.clases
         #endregion
 
         #region METODOS Y FUNCIONES
+
         public override void Limpiar()
         {
             bc_Titular_Cuentaid = 0;
@@ -93,9 +94,7 @@ namespace ProgramacionOO.clases
             if (datamanager.ConexionAbrir())
             {
 
-                var cmd = new OracleCommand("Insert into bc_titulares_cuentas" +
-                   "(id_titular_cuenta,id_cuenta,id_cliente)" +
-                   " Values(:id_titular_cuenta,:id_cuenta,:id_cliente)", datamanager.ConexionSQL);
+                var cmd = new OracleCommand(CrearTitular.ToString(), datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_titular_cuenta", bc_Titular_Cuentaid);
                 cmd.Parameters.AddWithValue("id_cuenta", bc_Cuenta_id);
@@ -132,14 +131,7 @@ namespace ProgramacionOO.clases
         public override bool BuscarUltimo()
 
         {
-            var dr = datamanager.ConsultaLeer("  Select bc_titulares_cuentas.id_titular_cuenta,bc_cuentas.codigo,bc_clientes.NOMBRE," +
-                                               " bc_titulares_cuentas.id_cuenta, bc_titulares_cuentas.id_cliente" +
-                                               " From bc_titulares_cuentas" +
-                                               " INNER JOIN bc_cuentas" +
-                                               " on bc_titulares_cuentas.ID_CUENTA = bc_cuentas.id_cuenta" +
-                                               " INNER JOIN bc_clientes" +
-                                               " on bc_titulares_cuentas.ID_CLIENTE = bc_clientes.ID_CLIENTE" +
-                                               " Order by id_titular_cuenta desc");
+            var dr = datamanager.ConsultaLeer(BuscarUltimoTitular.ToString());
             return LeerDatos(dr, true);
         }
 
@@ -149,12 +141,7 @@ namespace ProgramacionOO.clases
 
             if (datamanager.ConexionAbrir())
             {
-                var cmd = new OracleCommand(" Update bc_titulares_cuentas" +
-                                                      " Set id_titular_cuenta = :id_titular_cuenta," +
-                                                       " id_cuenta = :id_cliente," +
-                                                       " id_cliente = :id_cliente," +
-
-                                                       " Where id_titular_cuenta = :id_cliente ", datamanager.ConexionSQL);
+                var cmd = new OracleCommand(ActualizarTitular.ToString(), datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_titular_cuenta", bc_Titular_Cuentaid);
                 cmd.Parameters.AddWithValue("id_cuenta", bc_Cuenta_id);
@@ -171,11 +158,7 @@ namespace ProgramacionOO.clases
         {
             var  dr = datamanager.ConsultaLeer("select codigo from bc_titulares_cuentas where ID_TITULAR_CUENTA = '" + Codigo.ToString() + "'");
 
-
-
-            return LeerDatos(dr, false); 
-
-         
+            return LeerDatos(dr, false);     
         }
 
         public override void SelectComboBox(ComboBox cb)
