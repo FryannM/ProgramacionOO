@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\clases",
+    "\\util",
     "\\vistas"
   ],
-  "SelectedNode": "\\vistas\\frmVerCuentas.cs",
+  "SelectedNode": "\\util\\ValidacionDocumentos.cs",
   "PreviewInSolutionExplorer": false
 }

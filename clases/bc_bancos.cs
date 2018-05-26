@@ -109,6 +109,7 @@ namespace ProgramacionOO.clases
                     bc_bancoNombre = dr["Nombre"].ToString();
                     bc_bancoDireccion = dr["Direccion"].ToString();
                     bc_bancoRnc = dr["Rnc"].ToString();
+
                 }
             }
             else

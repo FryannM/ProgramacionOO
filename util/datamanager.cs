@@ -115,8 +115,6 @@ namespace ProgramacionOO
             return ds;
         }
 
-
-
         public static bool ConsultaNodata(string cmdSQL)
         {
             int lret = 0;
@@ -140,6 +138,7 @@ namespace ProgramacionOO
             }
             return (lret > 0);
         }
+
         public static void ValidarSoloNumero(KeyPressEventArgs e)
         {
      
@@ -178,7 +177,6 @@ namespace ProgramacionOO
             }
         }
 
-
         public static bool ValidarUsuario(string pnombre, string pclave)
         {
             bool lRet = false;
@@ -207,7 +205,6 @@ namespace ProgramacionOO
             }
             return lRet;
         }
-
 
         public static string SMensajes = ("Estas seguro que deseas Salir?");
         public static string ErrorSys = ("Favor Comunicarse con el Fryann Martinez ");

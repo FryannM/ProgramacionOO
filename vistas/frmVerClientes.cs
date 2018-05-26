@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ProgramacionOO.vistas
 {
-    public partial class VerClientes : Form
+    public partial class frmVerClientes : Form
     {
         clases.bc_clientes clientes = new clases.bc_clientes();
-        public VerClientes()
+        public frmVerClientes()
         {
             InitializeComponent();
         }

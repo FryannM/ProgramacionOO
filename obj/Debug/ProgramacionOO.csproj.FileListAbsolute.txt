@@ -77,7 +77,6 @@ E:\Programacion\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.csprojRes
 E:\Programacion\ProgramacionOO\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmSucursal.resources
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmSucursal.resources
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerTitulares.resources
-C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.VerClientes.resources
 E:\Programacion\C#\ProgramacionOO\bin\Debug\ProgramacionOO.exe.config
 E:\Programacion\C#\ProgramacionOO\bin\Debug\ProgramacionOO.exe
 E:\Programacion\C#\ProgramacionOO\bin\Debug\ProgramacionOO.pdb
@@ -101,4 +100,5 @@ E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.exe
 E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.pdb
 E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.csprojResolveAssemblyReference.cache
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerBancos.resources
-C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.csprojResolveAssemblyReference.cache
+C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerSucursales.resources
+C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerClientes.resources

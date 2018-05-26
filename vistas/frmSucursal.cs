@@ -12,28 +12,37 @@ namespace ProgramacionOO.vistas
 {
     public partial class frmSucursal : Form
     {
-      private clases.bc_sucursales registro { get; set; }
+      private clases.bc_sucursales registro { get; set; } = new clases.bc_sucursales();
 
 
         public frmSucursal()
+        {   
+            InitializeComponent();
+            Mostrar();
+        }
+
+        public frmSucursal(string ID_SUCURSAL,string ID_BANCO, string CODIGO,
+        string NOMBRE, string DIRECCION, string TELEFONO,string CORREO)
         {
             InitializeComponent();
+            txtid.Text = ID_SUCURSAL.ToString();
+            cbBanco.Text = ID_BANCO.ToString();
+            txtcodigo.Text = CODIGO.ToString();
+            txtNombre.Text = NOMBRE.ToString();
+            txtDireccion.Text = DIRECCION.ToString();
+            txtTelefono.Text = TELEFONO.ToString();
+            txtCorreo.Text = CORREO.ToString();
         }
 
         private void frmSucursal_Load(object sender, EventArgs e)
         {
-            registro = new clases.bc_sucursales();
             registro.SelectComboBox(cbBanco);
-
-            registro.BuscarUltimo();
-            Mostrar();
-
             bool result = true;
             Disable(result);
         }
         private void Mostrar()
         {
-            // txtidBanco.Text = registro.bc_NombreBanco;
+            registro.BuscarUltimo();
             txtid.Text = Convert.ToInt16(registro.bc_id_Sucursal).ToString();
             cbBanco.Text =registro.bc_id_Banco+" -"+ registro.bc_NombreBanco;
 
@@ -56,19 +65,19 @@ namespace ProgramacionOO.vistas
                 txtCorreo.Enabled = false;
                 txtTelefono.Enabled = false;
                 btnGuardar.Enabled = false;
-                btnEliminar.Enabled = false;
+                btnVerSucursal.Enabled = true;
 
             }
             else
             {
-                 cbBanco.Enabled = true;
+                cbBanco.Enabled = true;
                 txtcodigo.Enabled = true;
                 txtNombre.Enabled = true;
                 txtDireccion.Enabled = true;
                 txtCorreo.Enabled = true;
                 txtTelefono.Enabled = true;
                 btnGuardar.Enabled = true;
-                btnEliminar.Enabled = true;
+                btnVerSucursal.Enabled = true;
             }
 
             return result;
@@ -94,20 +103,12 @@ namespace ProgramacionOO.vistas
             Disable(result);
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnVerSucursales_Click(object sender, EventArgs e)
         {
-            bool lret = false;
-            if (MessageBox.Show(datamanager.MensajeEliminar, "Borrar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                lret = registro.BorrarDatos(registro.bc_id_Banco);
-
-                if (lret)
-                {
-                    MessageBox.Show(datamanager.ConfirmacionEliminar, "Eliminando", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Mostrar();
-                }
-            }
-            txtNombre.Focus();
+            this.Close();
+            frmVerSucursales sucursales = new frmVerSucursales();
+            sucursales.Show();
+                
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

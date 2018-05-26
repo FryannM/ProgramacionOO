@@ -31,10 +31,10 @@ namespace ProgramacionOO.vistas
 
         private void dg_VerCuentas_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmCuentas cuenta = new frmCuentas(dg_VerCuentas.CurrentRow.Cells[1].Value.ToString(),
+            frmCuentas cuenta = new frmCuentas(dg_VerCuentas.CurrentRow.Cells[0].Value.ToString(),
+                                            dg_VerCuentas.CurrentRow.Cells[1].Value.ToString(),
                                             dg_VerCuentas.CurrentRow.Cells[2].Value.ToString(),
-                                            dg_VerCuentas.CurrentRow.Cells[3].Value.ToString(),
-                                            dg_VerCuentas.CurrentRow.Cells[4].Value.ToString());
+                                            dg_VerCuentas.CurrentRow.Cells[3].Value.ToString());
             cuenta.Show();
             this.Close();
         }

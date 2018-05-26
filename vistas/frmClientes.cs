@@ -132,7 +132,7 @@ namespace ProgramacionOO.vistas
         private void bt_verClientes_Click(object sender, EventArgs e)
         {
             this.Close();
-            VerClientes verClientes = new VerClientes();
+            frmVerClientes verClientes = new frmVerClientes();
             Disable(false);
             verClientes.Show();
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
@@ -135,7 +136,7 @@ namespace ProgramacionOO.clases
                 cb.Items.Add(dr[0].ToString() + " - " + dr[1].ToString());
             }
         }
-       public override bool BuscarUltimo()
+        public override bool BuscarUltimo()
         {
             var dr = datamanager.ConsultaLeer(BuscarUltimaSucursal.ToString());
 
@@ -146,9 +147,7 @@ namespace ProgramacionOO.clases
             int lRet = 0;
 
             if (datamanager.ConexionAbrir())
-            {
-
-              
+            {            
                 var cmd = new OracleCommand(ActualizarSucursal.ToString(), datamanager.ConexionSQL);
 
                 cmd.Parameters.AddWithValue("id_sucursal", bc_id_Sucursal);
@@ -162,10 +161,48 @@ namespace ProgramacionOO.clases
                 cmd.ExecuteNonQuery();
                 datamanager.ConexionCerrar();
             }
-            return lRet > 0;
-
-         
+            return lRet > 0;       
         }
+        public override DataTable BuscarPor(string campo, string palabras)
+        {
+            var cm = new OracleCommand();
+
+            if (datamanager.ConexionAbrir())
+
+            {
+                try
+                {
+                    cm = datamanager.ConexionSQL.CreateCommand();
+                    cm.CommandType = CommandType.Text;
+                    cm.CommandText = "select * from Bc_sucursales where " + campo + " like '" + palabras + "%'";
+                    cm.ExecuteNonQuery();
+                    datamanager.ConexionCerrar();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error: Exprexion SQL no completada");
+                }
+            }
+            return LlenarDataGridView(cm);
+        }
+        public override DataTable verTodos()
+        {
+            var cm = new OracleCommand();
+
+            if (datamanager.ConexionAbrir())
+            {
+                cm = datamanager.ConexionSQL.CreateCommand();
+                cm.CommandType = CommandType.Text;
+                cm.CommandText = BuscarUltimaSucursal.ToString();
+                cm.ExecuteNonQuery();
+                datamanager.ConexionCerrar();
+            }
+
+
+            return LlenarDataGridView(cm);
+
+        }
+
 
     }
 }

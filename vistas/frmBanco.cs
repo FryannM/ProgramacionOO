@@ -59,30 +59,37 @@ namespace ProgramacionOO.vistas
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            registro.bc_bancoid = Convert.ToInt16(txtid.Text);
-            registro.bc_bancoCodigo = tboxcodigo.Text;
-            registro.bc_bancoNombre = txtNombre.Text;
-            registro.bc_bancoDireccion = txtDireccion.Text;
-            registro.bc_bancoRnc = txtRnc.Text;
 
-            bool lret;
-            if (txtid.Text == "0")
+            if (util.ValidacionDocumentos.Validar(txtRnc.Text.ToArray()))
             {
+                registro.bc_bancoRnc = txtRnc.Text;
+                registro.bc_bancoid = Convert.ToInt16(txtid.Text);
+                registro.bc_bancoCodigo = tboxcodigo.Text;
+                registro.bc_bancoNombre = txtNombre.Text;
+                registro.bc_bancoDireccion = txtDireccion.Text;
 
-                  lret = registro.CrearDatos() > 0;
+                bool lret;
+                if (txtid.Text == "0")
+                {
+
+                    lret = registro.CrearDatos() > 0;
+                }
+                else
+                {
+                    lret = registro.ActualizarDatos();
+                    lret = true;
+                }
+                if (lret)
+                {
+                    MessageBox.Show(datamanager.MensajeGuardar, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Disable(true);
+                }
+                else
+                    MessageBox.Show(clases.Exepciones.ExepcionGuardar, "Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                lret = registro.ActualizarDatos();
-                lret = true;
-            }
-            if (lret)
-            {
-                MessageBox.Show(datamanager.MensajeGuardar, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Disable(true);
-            }
-            else 
-                MessageBox.Show(clases.Exepciones.ExepcionGuardar,"Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            else { MessageBox.Show("No es un RNC valido"); }
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

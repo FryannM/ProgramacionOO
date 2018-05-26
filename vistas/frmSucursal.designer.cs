@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSucursal));
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnVerSucursal = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -47,24 +47,23 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.gbBancos = new System.Windows.Forms.GroupBox();
+            this.cbBanco = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbBanco = new System.Windows.Forms.ComboBox();
             this.gbBancos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnEliminar
+            // btnVerSucursal
             // 
-            this.btnEliminar.Image = global::ProgramacionOO.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(483, 245);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(59, 44);
-            this.btnEliminar.TabIndex = 15;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnVerSucursal.Location = new System.Drawing.Point(483, 245);
+            this.btnVerSucursal.Name = "btnVerSucursal";
+            this.btnVerSucursal.Size = new System.Drawing.Size(59, 44);
+            this.btnVerSucursal.TabIndex = 15;
+            this.btnVerSucursal.UseVisualStyleBackColor = true;
+            this.btnVerSucursal.Click += new System.EventHandler(this.btnVerSucursales_Click);
             // 
             // btnGuardar
             // 
@@ -245,6 +244,14 @@
             this.gbBancos.TabStop = false;
             this.gbBancos.Text = "SUCURSAL";
             // 
+            // cbBanco
+            // 
+            this.cbBanco.FormattingEnabled = true;
+            this.cbBanco.Location = new System.Drawing.Point(108, 57);
+            this.cbBanco.Name = "cbBanco";
+            this.cbBanco.Size = new System.Drawing.Size(235, 21);
+            this.cbBanco.TabIndex = 29;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -259,11 +266,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(548, 260);
+            this.label5.Location = new System.Drawing.Point(548, 258);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.Size = new System.Drawing.Size(122, 20);
             this.label5.TabIndex = 39;
-            this.label5.Text = "Eliminar";
+            this.label5.Text = "Ver Sucursales";
             // 
             // label4
             // 
@@ -295,26 +302,18 @@
             this.label6.TabIndex = 36;
             this.label6.Text = "Agregar";
             // 
-            // cbBanco
-            // 
-            this.cbBanco.FormattingEnabled = true;
-            this.cbBanco.Location = new System.Drawing.Point(108, 57);
-            this.cbBanco.Name = "cbBanco";
-            this.cbBanco.Size = new System.Drawing.Size(235, 21);
-            this.cbBanco.TabIndex = 29;
-            // 
             // frmSucursal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 413);
+            this.ClientSize = new System.Drawing.Size(682, 413);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gbBancos);
-            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnVerSucursal);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
@@ -332,7 +331,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnVerSucursal;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
