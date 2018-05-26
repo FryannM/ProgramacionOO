@@ -33,6 +33,7 @@
             this.cbox_filtarPor = new System.Windows.Forms.ComboBox();
             this.lbl_Buscar = new System.Windows.Forms.Label();
             this.tbox_buscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dg_VerCuentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             this.dg_VerCuentas.Location = new System.Drawing.Point(12, 48);
             this.dg_VerCuentas.Name = "dg_VerCuentas";
             this.dg_VerCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_VerCuentas.Size = new System.Drawing.Size(530, 390);
+            this.dg_VerCuentas.Size = new System.Drawing.Size(682, 390);
             this.dg_VerCuentas.TabIndex = 0;
             this.dg_VerCuentas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dg_VerCuentas_MouseDoubleClick);
             // 
@@ -75,7 +76,7 @@
             // 
             this.lbl_Buscar.AutoSize = true;
             this.lbl_Buscar.Font = new System.Drawing.Font("Lucida Bright", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Buscar.Location = new System.Drawing.Point(251, 21);
+            this.lbl_Buscar.Location = new System.Drawing.Point(382, 23);
             this.lbl_Buscar.Name = "lbl_Buscar";
             this.lbl_Buscar.Size = new System.Drawing.Size(61, 17);
             this.lbl_Buscar.TabIndex = 5;
@@ -83,17 +84,28 @@
             // 
             // tbox_buscar
             // 
-            this.tbox_buscar.Location = new System.Drawing.Point(318, 20);
+            this.tbox_buscar.Location = new System.Drawing.Point(449, 22);
             this.tbox_buscar.Name = "tbox_buscar";
             this.tbox_buscar.Size = new System.Drawing.Size(245, 20);
             this.tbox_buscar.TabIndex = 6;
             this.tbox_buscar.TextChanged += new System.EventHandler(this.tbox_buscar_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(12, 450);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Doble clic para seleccionar una cuenta.";
+            // 
             // frmVerCuentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 450);
+            this.ClientSize = new System.Drawing.Size(704, 472);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbox_buscar);
             this.Controls.Add(this.lbl_Buscar);
             this.Controls.Add(this.cbox_filtarPor);
@@ -117,5 +129,6 @@
         private System.Windows.Forms.ComboBox cbox_filtarPor;
         private System.Windows.Forms.Label lbl_Buscar;
         private System.Windows.Forms.TextBox tbox_buscar;
+        private System.Windows.Forms.Label label1;
     }
 }

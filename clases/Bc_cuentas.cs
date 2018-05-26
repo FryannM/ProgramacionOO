@@ -164,38 +164,38 @@ namespace ProgramacionOO.clases
             return lRet > 0;
         }
 
-        public virtual DataTable BuscarCuentas(string campo, string palabras)
+        public override DataTable BuscarPor(string campo, string palabras)
         {
             var cm = new OracleCommand();
 
             if (datamanager.ConexionAbrir())
 
-
             {
-
-                cm = datamanager.ConexionSQL.CreateCommand();
-                cm.CommandType = CommandType.Text;
-                cm.CommandText = "select * from Bc_cuentas where " + campo + " like '" + palabras + "%'";
-                cm.ExecuteNonQuery();
-                datamanager.ConexionCerrar();
+                try
+                {
+                    cm = datamanager.ConexionSQL.CreateCommand();
+                    cm.CommandType = CommandType.Text;
+                    cm.CommandText = "select * from Bc_cuentas where " + campo + " like '" + palabras + "%'";
+                    cm.ExecuteNonQuery();
+                    datamanager.ConexionCerrar();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error: Exprexion SQL no completada");
+                }
             }
-
-
             return LlenarDataGridView(cm);
         }
 
-        public virtual DataTable verTodasCuentas()
+        public override DataTable verTodos()
         {
             var cm = new OracleCommand();
 
             if (datamanager.ConexionAbrir())
-
-
             {
-
                 cm = datamanager.ConexionSQL.CreateCommand();
                 cm.CommandType = CommandType.Text;
-                cm.CommandText = "select * from Bc_cuentas";
+                cm.CommandText = verCuentas.ToString();
                 cm.ExecuteNonQuery();
                 datamanager.ConexionCerrar();
             }
@@ -210,15 +210,6 @@ namespace ProgramacionOO.clases
             var dr = datamanager.ConsultaLeer("select codigo from Bc_cuentas where codigo = '" + Codigo.ToString() + "'");
             return LeerDatos(dr, false);
         }
-
-        public virtual DataTable LlenarDataGridView(OracleCommand cSQL)
-        {
-            DataTable dt = new DataTable();
-            var adp = new OracleDataAdapter(cSQL);
-            adp.Fill(dt);
-            return dt;
-        }
-
         #endregion
     }
 

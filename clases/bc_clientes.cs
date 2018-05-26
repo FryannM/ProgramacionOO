@@ -77,8 +77,8 @@ namespace ProgramacionOO.clases
             {
                 encontrado = true;
                 if (asignar)
-                {
-                    bc_Clienteid = Convert.ToInt16(dr["ID_CLIENTE"]);
+                {   
+                   // bc_Clienteid = Convert.ToInt32(dr["id_cliente"]);
                     bc_TipoDocumento = dr["TIPO_DOCUMENTOS"].ToString();
                     bc_NumeroDocumento = dr["num_documento"].ToString();
                     bc_Nombre = dr["nombre"].ToString();
@@ -163,26 +163,24 @@ namespace ProgramacionOO.clases
             if (datamanager.ConexionAbrir())
 
             {
-                cm = datamanager.ConexionSQL.CreateCommand();
-                cm.CommandType = CommandType.Text;
-                cm.CommandText = "select * from Bc_clientes where " + campo + " like '" + palabras + "%'";
-                cm.ExecuteNonQuery();
-                datamanager.ConexionCerrar();
+                try
+                {
+                    cm = datamanager.ConexionSQL.CreateCommand();
+                    cm.CommandType = CommandType.Text;
+                    cm.CommandText = "select * from Bc_clientes where " + campo + " like '" + palabras + "%'";
+                    cm.ExecuteNonQuery();
+                    datamanager.ConexionCerrar();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error: Exprexion SQL no completada");
+                }
+
             }
-
-
             return LlenarDataGridView(cm);
         }
 
-        public override DataTable LlenarDataGridView(OracleCommand cSQL)
-        {
-            DataTable dt = new DataTable();
-            var adp = new OracleDataAdapter(cSQL);
-            adp.Fill(dt);
-            return dt;
-        }
-
-        public virtual DataTable verTodosCliente()
+       public override DataTable verTodos()
         {
             var cm = new OracleCommand();
 
@@ -205,3 +203,4 @@ namespace ProgramacionOO.clases
     }
 }
 #endregion
+

@@ -12,9 +12,11 @@ namespace ProgramacionOO.vistas
 {
     public partial class frmCuentas : Form
     {
+        clases.bc_cuentas registro { get; set; } = new clases.bc_cuentas();
         public frmCuentas()
         {
             InitializeComponent();
+            Mostrar();
         }
 
         public frmCuentas(string codigo,string estado,string debito, string credito)
@@ -26,21 +28,17 @@ namespace ProgramacionOO.vistas
             txt_mskCredito.Text = credito;
         }
 
-        clases.bc_cuentas registro { get; set; }
+        
 
         private void frmCuentas_Load(object sender, EventArgs e)
         {
-            registro = new clases.bc_cuentas();
-            registro.BuscarUltimo();
-           // Mostrar();
             bool result = true;
-
             Disable(result);
         }
 
         public void Mostrar()
         {
-
+            registro.BuscarUltimo();
             txtcodigo.Text = registro.CodigoCuenta;
             cbEstado.Text = Convert.ToString(registro.Estado);
             txt_mskDebito.Text = (registro.BalanceDB).ToString();

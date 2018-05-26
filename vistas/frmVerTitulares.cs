@@ -16,5 +16,10 @@ namespace ProgramacionOO.vistas
         {
             InitializeComponent();
         }
+
+        private void dg_VerCuentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

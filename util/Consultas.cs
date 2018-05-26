@@ -10,11 +10,12 @@ namespace ProgramacionOO.util
     {
         #region [STRINGBUILDER CLIENTE]
         protected StringBuilder UltimoCliente = new StringBuilder()
-                                               .Append("Select BC_CLIENTES.id_cliente,")
+                                               .Append("Select ")
+                                               .Append(" BC_CLIENTES.id_cliente,")
                                                .Append(" BC_TIPO_DOC_BANCARIOS.id_tipo_doc_bancario,")
                                                .Append(" BC_TIPO_DOC_BANCARIOS.NOMBRE AS TIPO_DOCUMENTOS,")
                                                .Append(" BC_CLIENTES.Num_documento,")
-                                               .Append("BC_CLIENTES.Nombre,")
+                                               .Append(" BC_CLIENTES.Nombre,")
                                                .Append(" BC_CLIENTES.Estado ")
                                                .Append(" FROM (BC_CLIENTES  INNER JOIN BC_TIPO_DOC_BANCARIOS ")
                                                .Append(" ON BC_CLIENTES.ID_TIPO_DOC_BANCARIO = BC_TIPO_DOC_BANCARIOS.ID_TIPO_DOC_BANCARIO)")
@@ -84,8 +85,6 @@ namespace ProgramacionOO.util
 
         #endregion
 
-
-
         #region [STRINGBUILDER TITULARES] 
 
 
@@ -112,6 +111,13 @@ namespace ProgramacionOO.util
             .Append(" Order by id_titular_cuenta desc");
 
         #endregion
+
+        #region [STRINGBUILDER CUENTAS]
+        protected StringBuilder verCuentas = new StringBuilder()
+             .Append("Select * from bc_cuentas");
+
+        #endregion
+
 
     }
 }

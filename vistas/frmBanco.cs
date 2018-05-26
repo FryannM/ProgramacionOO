@@ -15,35 +15,40 @@ namespace ProgramacionOO.vistas
 {
     public partial class frmBanco : Form
     {
-        private clases.bc_bancos registro { get; set; }
+        private clases.bc_bancos registro { get; set; } = new clases.bc_bancos();
 
 
         public frmBanco()
         {
             InitializeComponent();
+            Mostrar();
+        }
+        public frmBanco(string CODIGO,string NOMBRE,string DIRECCION,string RNC)
+        {
+            InitializeComponent();
+            tboxcodigo.Text = CODIGO;
+            txtNombre.Text = NOMBRE;
+            txtDireccion.Text = DIRECCION;
+            txtRnc.Text = RNC;
         }
 
         private void frmBanco_Load(object sender, EventArgs e)
         {
-            registro = new clases.bc_bancos();
-           
-            registro.BuscarUltimo();
-            Mostrar();
-
             bool result = true;
             Disable(result);
         }
         private void Mostrar()
         {
+            registro.BuscarUltimo();
             txtid.Text = Convert.ToInt16(registro.bc_bancoid).ToString();
-            txtcodigo.Text = registro.bc_bancoCodigo;
+            tboxcodigo.Text = registro.bc_bancoCodigo;
             txtRnc.Text = registro.bc_bancoRnc;
             txtNombre.Text = registro.bc_bancoNombre;
             txtDireccion.Text = registro.bc_bancoDireccion;        
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            txtcodigo.Clear();
+            tboxcodigo.Clear();
             txtNombre.Clear();
             txtDireccion.Clear();
             txtRnc.Clear();
@@ -55,7 +60,7 @@ namespace ProgramacionOO.vistas
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             registro.bc_bancoid = Convert.ToInt16(txtid.Text);
-            registro.bc_bancoCodigo = txtcodigo.Text;
+            registro.bc_bancoCodigo = tboxcodigo.Text;
             registro.bc_bancoNombre = txtNombre.Text;
             registro.bc_bancoDireccion = txtDireccion.Text;
             registro.bc_bancoRnc = txtRnc.Text;
@@ -64,20 +69,15 @@ namespace ProgramacionOO.vistas
             if (txtid.Text == "0")
             {
 
-                 // registro.ValidarCamposRequeridos();
                   lret = registro.CrearDatos() > 0;
-                
-
             }
             else
             {
-               // registro.ValidarCamposRequeridos();
                 lret = registro.ActualizarDatos();
                 lret = true;
             }
             if (lret)
             {
-
                 MessageBox.Show(datamanager.MensajeGuardar, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Disable(true);
             }
@@ -90,41 +90,32 @@ namespace ProgramacionOO.vistas
             bool result = false;
             Disable(result);
         }
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnVerBanco_Click(object sender, EventArgs e)
         {
-            bool lret = false;
-            if (MessageBox.Show(datamanager.MensajeEliminar, "Borrar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                lret = registro.BorrarDatos(registro.bc_bancoid);
-
-                if (lret)
-                {
-                    MessageBox.Show(datamanager.ConfirmacionEliminar, "Eliminando", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Mostrar();
-                }
-            }
-            txtNombre.Focus();
+            this.Close();
+            frmVerBancos verBancos = new frmVerBancos();
+            verBancos.Show();
         }
         private bool Disable(bool result)
         {
             if (result == true)
             {
-                txtcodigo.Enabled = false;
+                tboxcodigo.Enabled = false;
                 txtNombre.Enabled = false;
                 txtDireccion.Enabled = false;
                 txtRnc.Enabled = false;
                 btnGuardar.Enabled = false;
-                btnEliminar.Enabled = false;
+                btnVerBanco.Enabled = true;
 
             }
             else
             {
-                txtcodigo.Enabled = true;
+                tboxcodigo.Enabled = true;
                 txtNombre.Enabled = true;
                 txtDireccion.Enabled = true;
                 txtRnc.Enabled = true;
                 btnGuardar.Enabled = true;
-                btnEliminar.Enabled = true;
+                btnVerBanco.Enabled = true;
             }
 
             return result;

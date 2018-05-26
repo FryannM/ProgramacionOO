@@ -54,11 +54,11 @@
             // 
             // bt_VerCuentas
             // 
-            this.bt_VerCuentas.Location = new System.Drawing.Point(288, 19);
+            this.bt_VerCuentas.Image = global::ProgramacionOO.Properties.Resources.Entry;
+            this.bt_VerCuentas.Location = new System.Drawing.Point(429, 205);
             this.bt_VerCuentas.Name = "bt_VerCuentas";
-            this.bt_VerCuentas.Size = new System.Drawing.Size(70, 65);
+            this.bt_VerCuentas.Size = new System.Drawing.Size(59, 47);
             this.bt_VerCuentas.TabIndex = 47;
-            this.bt_VerCuentas.Text = "Ver Cuentas";
             this.bt_VerCuentas.UseVisualStyleBackColor = true;
             this.bt_VerCuentas.Click += new System.EventHandler(this.bt_VerCuentas_Click);
             // 
@@ -128,7 +128,6 @@
             this.gboxCuentas.Controls.Add(this.lblbalances);
             this.gboxCuentas.Controls.Add(this.lblEstado);
             this.gboxCuentas.Controls.Add(this.lblbalancecd);
-            this.gboxCuentas.Controls.Add(this.bt_VerCuentas);
             this.gboxCuentas.Controls.Add(this.lblcodigo);
             this.gboxCuentas.Controls.Add(this.txtcodigo);
             this.gboxCuentas.Location = new System.Drawing.Point(16, 55);
@@ -219,11 +218,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(494, 215);
+            this.label5.Location = new System.Drawing.Point(496, 222);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.Size = new System.Drawing.Size(101, 20);
             this.label5.TabIndex = 54;
-            this.label5.Text = "Eliminar";
+            this.label5.Text = "Ver Cuentas";
             // 
             // label4
             // 
@@ -266,6 +265,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.bt_VerCuentas);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEditar);

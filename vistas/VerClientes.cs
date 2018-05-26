@@ -30,22 +30,23 @@ namespace ProgramacionOO.vistas
 
         private void VerClientes_Load(object sender, EventArgs e)
         {
-            dg_VerClientes.DataSource= clientes.verTodosCliente();
+            dg_VerClientes.DataSource= clientes.verTodos();
         }
 
         private void bt_selecionCuenta_Click(object sender, EventArgs e)
         {
-           
+            
         }
 
         private void dg_VerClientes_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmClientes cuenta = new frmClientes(dg_VerClientes.CurrentRow.Cells[2].Value.ToString(),
-                                                dg_VerClientes.CurrentRow.Cells[3].Value.ToString(),
-                                                dg_VerClientes.CurrentRow.Cells[4].Value.ToString(),
-                                                dg_VerClientes.CurrentRow.Cells[5].Value.ToString());
-            cuenta.Show();
+            frmClientes clientes = new frmClientes(dg_VerClientes.CurrentRow.Cells[2].Value.ToString(),
+                                                    dg_VerClientes.CurrentRow.Cells[3].Value.ToString(),
+                                                    dg_VerClientes.CurrentRow.Cells[4].Value.ToString(),
+                                                    dg_VerClientes.CurrentRow.Cells[5].Value.ToString());
+            clientes.Show();
             this.Close();
+
         }
     }
 }

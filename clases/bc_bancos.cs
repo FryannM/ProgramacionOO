@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace ProgramacionOO.clases
 {
@@ -173,6 +174,66 @@ namespace ProgramacionOO.clases
         public virtual bool Buscar(int Bancoid, bool asignar)
         {
             throw new NotImplementedException();
+        }
+
+        public virtual DataTable LlenarDataGridView(OracleCommand cSQL)
+        {
+            DataTable dt = new DataTable();
+            var adp = new OracleDataAdapter(cSQL);
+            try {
+                               
+                adp.Fill(dt);
+               
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Para realizar un filtro debes seleccionar un campo, por el cual vas a filtrar");
+            }
+            return dt;
+
+        }
+
+        public virtual DataTable verTodos()
+        {
+            var cm = new OracleCommand();
+
+            if (datamanager.ConexionAbrir())
+
+            {
+                cm = datamanager.ConexionSQL.CreateCommand();
+                cm.CommandType = CommandType.Text;
+                cm.CommandText = UltimoBanco.ToString();
+                cm.ExecuteNonQuery();
+                datamanager.ConexionCerrar();
+            }
+
+
+            return LlenarDataGridView(cm);
+
+        }
+
+        public virtual DataTable BuscarPor(string campo, string palabras)
+        {
+            var cm = new OracleCommand();
+
+            if (datamanager.ConexionAbrir())
+
+            {
+                try
+                {
+
+                    cm = datamanager.ConexionSQL.CreateCommand();
+                    cm.CommandType = CommandType.Text;
+                    cm.CommandText = "select * from Bc_bancos where " + campo + " like '" + palabras + "%'";
+                    cm.ExecuteNonQuery();
+                    datamanager.ConexionCerrar();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error: Exprexion SQL no completada");
+                }
+            }
+            return LlenarDataGridView(cm);
         }
     }
 }

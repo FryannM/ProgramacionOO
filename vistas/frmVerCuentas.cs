@@ -14,28 +14,20 @@ namespace ProgramacionOO.vistas
     {
         clases.bc_cuentas registro = new clases.bc_cuentas();
         
-
         public frmVerCuentas()
         {
             InitializeComponent();
         }
-
         private void tbox_buscar_TextChanged(object sender, EventArgs e)
         {
-            dg_VerCuentas.DataSource = registro.BuscarCuentas(cbox_filtarPor.Text, tbox_buscar.Text);
+            dg_VerCuentas.DataSource = registro.BuscarPor(cbox_filtarPor.Text, tbox_buscar.Text);
         }
-
-       
-
-        
 
         private void frmVerCuentas_Load(object sender, EventArgs e)
         {
-            dg_VerCuentas.DataSource = registro.verTodasCuentas();
+            dg_VerCuentas.DataSource = registro.verTodos();
             
         }
-
-        
 
         private void dg_VerCuentas_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -46,7 +38,6 @@ namespace ProgramacionOO.vistas
             cuenta.Show();
             this.Close();
         }
-
-        
+      
     }
 }

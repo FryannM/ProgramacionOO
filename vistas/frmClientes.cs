@@ -12,14 +12,16 @@ namespace ProgramacionOO.vistas
 {
     public partial class frmClientes : Form
     {
-        private clases.bc_clientes registro { get; set; }
+        private clases.bc_clientes registro = new clases.bc_clientes();
 
-        
+
 
         public frmClientes()
         {
             InitializeComponent();
-        }
+           
+            Mostrar();
+                   }
 
         public frmClientes(string id_tipo_doc, string num_doc, string nombre, string estado)
         {
@@ -28,27 +30,24 @@ namespace ProgramacionOO.vistas
             txtnodoc.Text = num_doc;
             txtnombre.Text = nombre;
             cbEstado.Text = estado;
+          
 
         }
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            //Mostrar();
-            registro = new clases.bc_clientes();
             registro.SelectComboBox(cbtipoDoc);
-            registro.BuscarUltimo();
-
             bool result = true;
             Disable(result);
         }
         private void Mostrar()
-        {
-
+        {         
+            registro.BuscarUltimo();
             TxtidCliente.Text = Convert.ToInt16(registro.bc_Clienteid).ToString();
             cbtipoDoc.Text = registro.bc_TipoDocumento;
             txtnodoc.Text = registro.bc_NumeroDocumento;
             txtnombre.Text = registro.bc_Nombre;
             cbEstado.Text = registro.bc_Estado;
-
+            
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -67,8 +66,7 @@ namespace ProgramacionOO.vistas
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-           // registro.bc_bancoid = Convert.ToInt16(txtid.Text);
-            registro.bc_Clienteid = Convert.ToInt32(TxtidCliente.Text);
+            registro.bc_Clienteid = Convert.ToInt16(TxtidCliente.Text);
             registro.bc_TipoDocumento = cbtipoDoc.Text.Substring(0,3);
             registro.bc_NumeroDocumento = txtnodoc.Text;
             registro.bc_Nombre = txtnombre.Text;
