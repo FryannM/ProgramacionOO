@@ -188,7 +188,7 @@ namespace ProgramacionOO.clases
             }
             catch (Exception e)
             {
-                MessageBox.Show("Para realizar un filtro debes seleccionar un campo, por el cual vas a filtrar");
+                MessageBox.Show(clases.Exepciones.MensajeFiltro, e.ToString());
             }
             return dt;
 
@@ -231,11 +231,11 @@ namespace ProgramacionOO.clases
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Error: Exprexion SQL no completada");
+                    MessageBox.Show(clases.Exepciones.ErrorSQL, e.ToString());
                 }
             }
             return LlenarDataGridView(cm);
         }
     }
-}
 #endregion
+}

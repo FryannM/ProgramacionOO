@@ -88,7 +88,7 @@ namespace ProgramacionOO.vistas
                     MessageBox.Show(clases.Exepciones.ExepcionGuardar, "Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            else { MessageBox.Show("No es un RNC valido"); }
+            else { MessageBox.Show("No es un Cedula Valida"); }
 
         }
 

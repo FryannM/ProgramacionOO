@@ -19,9 +19,9 @@ namespace ProgramacionOO.vistas
         public frmClientes()
         {
             InitializeComponent();
-           
+
             Mostrar();
-                   }
+        }
 
         public frmClientes(string id_tipo_doc, string num_doc, string nombre, string estado)
         {
@@ -30,7 +30,7 @@ namespace ProgramacionOO.vistas
             txtnodoc.Text = num_doc;
             txtnombre.Text = nombre;
             cbEstado.Text = estado;
-          
+
 
         }
         private void frmClientes_Load(object sender, EventArgs e)
@@ -40,14 +40,14 @@ namespace ProgramacionOO.vistas
             Disable(result);
         }
         private void Mostrar()
-        {         
+        {
             registro.BuscarUltimo();
             TxtidCliente.Text = Convert.ToInt16(registro.bc_Clienteid).ToString();
             cbtipoDoc.Text = registro.bc_TipoDocumento;
             txtnodoc.Text = registro.bc_NumeroDocumento;
             txtnombre.Text = registro.bc_Nombre;
             cbEstado.Text = registro.bc_Estado;
-            
+
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -66,30 +66,42 @@ namespace ProgramacionOO.vistas
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            registro.bc_Clienteid = Convert.ToInt16(TxtidCliente.Text);
-            registro.bc_TipoDocumento = cbtipoDoc.Text.Substring(0,3);
-            registro.bc_NumeroDocumento = txtnodoc.Text;
-            registro.bc_Nombre = txtnombre.Text;
-            registro.bc_Estado = cbEstado.Text;
 
-            bool lret;
-            if (TxtidCliente.Text == "0")
+            if (util.ValidacionDocumentos.Validar(txtnodoc.Text.ToArray()))
             {
-                lret = registro.CrearDatos() > 0;
+
+                registro.bc_Clienteid = Convert.ToInt16(TxtidCliente.Text);
+                registro.bc_TipoDocumento = cbtipoDoc.Text.Substring(0, 3);
+                registro.bc_NumeroDocumento = txtnodoc.Text;
+                registro.bc_Nombre = txtnombre.Text;
+                registro.bc_Estado = cbEstado.Text;
+
+                bool lret;
+                if (TxtidCliente.Text == "0")
+                {
+                    lret = registro.CrearDatos() > 0;
+                }
+                else
+                {
+                    lret = registro.ActualizarDatos();
+                    lret = true;
+                }
+                if (lret)
+                {
+                    MessageBox.Show(datamanager.MensajeGuardar, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Disable(true);
+                }
+                else
+                    MessageBox.Show(clases.Exepciones.ExepcionGuardar, "Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                lret = registro.ActualizarDatos();
-                lret = true;
-            }
-            if (lret)
-            {
-                MessageBox.Show(datamanager.MensajeGuardar, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Disable(true);
-            }
-            else
-                MessageBox.Show(clases.Exepciones.ExepcionGuardar, "Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            else { MessageBox.Show("No es un RNC valido"); }
+
+
         }
+
+
+
         private bool Disable(bool result)
         {
             if (result == true)

@@ -58,7 +58,7 @@ namespace ProgramacionOO
         }
         private void docbancariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            vistas.frmTipoDocBancarios frm = new vistas.frmTipoDocBancarios();
+            vistas.frmdocbancarios frm = new vistas.frmdocbancarios();
             frm.MdiParent = this;
             frm.Show();
         }
