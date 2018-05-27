@@ -219,6 +219,7 @@
             // 
             // btnVerBanco
             // 
+            this.btnVerBanco.Image = global::ProgramacionOO.Properties.Resources.Search;
             this.btnVerBanco.Location = new System.Drawing.Point(394, 234);
             this.btnVerBanco.Name = "btnVerBanco";
             this.btnVerBanco.Size = new System.Drawing.Size(59, 45);

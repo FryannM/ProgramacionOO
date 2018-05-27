@@ -58,6 +58,7 @@
             // 
             // btnVerSucursal
             // 
+            this.btnVerSucursal.Image = global::ProgramacionOO.Properties.Resources.Search;
             this.btnVerSucursal.Location = new System.Drawing.Point(483, 245);
             this.btnVerSucursal.Name = "btnVerSucursal";
             this.btnVerSucursal.Size = new System.Drawing.Size(59, 44);

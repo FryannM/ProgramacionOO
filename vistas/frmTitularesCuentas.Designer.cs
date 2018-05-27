@@ -204,7 +204,7 @@
             // 
             // btnVerTitular
             // 
-            this.btnVerTitular.Image = global::ProgramacionOO.Properties.Resources.clients1;
+            this.btnVerTitular.Image = global::ProgramacionOO.Properties.Resources.Search;
             this.btnVerTitular.Location = new System.Drawing.Point(493, 219);
             this.btnVerTitular.Name = "btnVerTitular";
             this.btnVerTitular.Size = new System.Drawing.Size(59, 44);

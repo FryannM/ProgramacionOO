@@ -54,7 +54,7 @@
             // 
             // bt_VerCuentas
             // 
-            this.bt_VerCuentas.Image = global::ProgramacionOO.Properties.Resources.Entry;
+            this.bt_VerCuentas.Image = global::ProgramacionOO.Properties.Resources.Search;
             this.bt_VerCuentas.Location = new System.Drawing.Point(429, 205);
             this.bt_VerCuentas.Name = "bt_VerCuentas";
             this.bt_VerCuentas.Size = new System.Drawing.Size(59, 47);

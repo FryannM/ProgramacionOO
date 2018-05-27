@@ -240,6 +240,7 @@
     <None Include="resources\save.png" />
     <None Include="resources\Logo.png" />
     <None Include="resources\LogoPOO.png" />
+    <None Include="resources\Search.ico" />
     <Content Include="resources\taller.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

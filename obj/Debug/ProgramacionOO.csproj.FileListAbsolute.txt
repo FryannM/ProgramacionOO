@@ -93,7 +93,6 @@ E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmTipoDocBanc
 E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmTitularesCuentas.resources
 E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerCuentas.resources
 E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerTitulares.resources
-E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.VerClientes.resources
 E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.csproj.GenerateResource.Cache
 E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.csproj.CoreCompileInputs.cache
 E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.exe
@@ -102,3 +101,6 @@ E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.csprojResolveAssembly
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerBancos.resources
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerSucursales.resources
 C:\Users\MAMF\Desktop\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerClientes.resources
+E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerBancos.resources
+E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerSucursales.resources
+E:\Programacion\C#\ProgramacionOO\obj\Debug\ProgramacionOO.vistas.frmVerClientes.resources

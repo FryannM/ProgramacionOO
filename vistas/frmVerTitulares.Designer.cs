@@ -33,6 +33,7 @@
             this.cbox_filtarPor = new System.Windows.Forms.ComboBox();
             this.lbl_filtrarPor = new System.Windows.Forms.Label();
             this.dg_VerCuentas = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dg_VerCuentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,11 +89,22 @@
             this.dg_VerCuentas.TabIndex = 9;
             this.dg_VerCuentas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_VerCuentas_CellDoubleClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(24, 460);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(182, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Doble clic para seleccionar un Titular";
+            // 
             // frmVerTitulares
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 482);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbox_buscar);
             this.Controls.Add(this.lbl_Buscar);
             this.Controls.Add(this.cbox_filtarPor);
@@ -113,5 +125,6 @@
         private System.Windows.Forms.ComboBox cbox_filtarPor;
         private System.Windows.Forms.Label lbl_filtrarPor;
         private System.Windows.Forms.DataGridView dg_VerCuentas;
+        private System.Windows.Forms.Label label1;
     }
 }
